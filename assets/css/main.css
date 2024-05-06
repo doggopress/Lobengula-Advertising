@@ -62,8 +62,12 @@
 
 @font-face {
     font-family: 'Lobengula';
-    src: url('assets/fonts/Lobengula-Font.otf') format('opentype'),
-         url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap') format('woff2'); /* Adjust the URL for Montserrat as needed */
+    src: url('../assets/fonts/lobengula-font.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap') format('woff2');
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Tenor+Sans&display=swap");
