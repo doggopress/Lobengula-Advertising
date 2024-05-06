@@ -1,15 +1,94 @@
 /*----------------------------------------
     01. common css
 ----------------------------------------*/
-/*-----------------------------------------------------------------------------------
 
-    Theme Name: Axil - Creative Agency Portfolio HTML5 Template
-    Author: Topylo
-    Support: https://support.topylo.com/
-    Description: Axil - Creative Agency Portfolio HTML5 Template
-    Version: 1.0
+/*
 
------------------------------------------------------------------------------------
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;+++++;+++++++++++++++++++++++++++++++++++++++++++++++x+xxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;+++;+++;++++;+++;++++++++++++++++++++++++++++++++++x+xxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;++;+++;++;+++;++;++++++++++++++++++++++++++++++++++++++x+xxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;++;++;+++;+++++++++++++++++++++++++++++++++++++++++++xxxxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;+;;+;;+;;++;+++;+++++++++++++++++++++++++++++++++++++++++xxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;+;+++++;;+++;+++++++;+++++++++++++++++++++++++++++++++xx+xxxxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;++;++;++;;+++;++;++++++;++++++++++++++++++++++++++++++x+xxxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;+;;+++;;++++++++++++;+++++++++++++++++++++++++++++++++++x+xxxxxxxxxxxxxxXxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;::::::::::::::::::::::;+++;+++;+++;+++++++++++++++++++++++++++++++x+xxxxxxxxxxxxXxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;                      ;++;++;++++++++++++++++++++++++  ;++++++++++xx+xxxxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;                      ;;+++;+++++++;+++++++++++++++;    ;++++++++++xxxxxxxxxxxxxxxXxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;                      ;+;++;++;+++++++++++++++++++;      ;+++++++++x+x+xxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;                      ;++;++;++++;;++++++++++++++;        ;++++++++x+xxxxxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;                      ;+++++;;++++++++++++++++++;          :+++++++xxxxxxxxxxxxxxxxxXXXxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;                      ;+;+;+++++;++++++++++++++;            :+++++++xxxxxxxxxxxxxxxxxXxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;                      ;+;++;;++++;;+++++++++++;              :+++x+xx+xxxxxxxxxxxxxXxXXXxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;                      ;++;++;++;+++++++++++++;                :++++++xxxxxxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;                      ;;+;++;++;++++++++++++;                  :+++xxx+xxxxxxxxxxxxxxxxXxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;;;;;;                      ;++;;++;++;;+++++++++:                    .+++xxxxxxxxxxxxxxxxxXxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;;;+;+;;                      ;+;++;;+;+++;+++++++;                      .++x+x+xxxxxxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;;;;;;;;;;+;;++;;                      ;+;+++++;++++++++++:                         +++xxxxxxxxxxxxxxxxXxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;;;;;;;;;;+;++;++;;++++++;                      ;++;;++;++;++++++++;.                         +xxxxxxxxxxxxxxxxxxxXxXxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;++;++;++;;;+;;+;++;+++++;                      ;;++;+;++;+++++++++++.                         ++xxxxxxxxxxxxxxxxxXxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
++;;;;;;+;++;;++;;++++++++;                      ;+;++;++;+++++++++++++.                         +x+xxxxxxxxxxxxxxxxXxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+++++;++;;++++++++++++++++;                      ;+;;+;+;;++++++++++++++:                         +xxxxxxxxxxxxxxxxxxxXXxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
++++++++++++++++++++;+++++;                      ;;+;;+;;++++++++++++++++:                         ;xxxxxxxxxxxxxxxxxxxxxxXXxXXXXXXXXXXXXXXXXXXXXXXXXXXXX
++++++++++++++++++++++++++;                      ;;++++;++++++++++++++++++:                         ;xxxxxxxxxxxxxxxxxxXXxxXxXXXXXXXXXXXXXXXXXXXXXXXXXXXX
++++++++++++++++++++++++++;                      ;+;;+;++++++++++++++++++++:                         ;xxxxxxxxxxxxxxxxxxxXxXxxXXXXXXXXXXXXXXXXXXXXXXXXXXX
++++++++++++++++++++++++++;                      ;+++;;+++++++++++++++++++++:                         ;xxxxxxxxxxxxxxxxxxxxxXxxXXXXXXXXXXXXXXXXXXXXXXXXXX
++++++++++++++++++++++++++;                      ;;+;;+++++++++++++++++++++++;                         :xxxxxxxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
++++++++++++++++++++++++++;                      ;+;;+++++++++++++++++++++++++;                         :xxxxxxxxxxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXXX
++++++++++++++++++++++++++;                      ;+;;++++++++++++++++++++++++++;                         :xxxxxxxxxxxxxxxxxxxxxXxxXXXXXXXXXXXXXXXXXXXXXXX
++++++++++++++++++++++++++;                      ;;+++++++++++++++++++++++++++++;                         .+xxxxxxxxxxxxxxxxxxXxxXXxXXXXXXXXXXXXXXXXXXXXX
++++++++++++++++++++++++++;                      ;++++++++++++++++++++++++++++++++                         .+xxxxxxxxxxxxxxxxxxxxxxxxxxxXXXXXXXXXXXXXXXXX
++++++++++++++++++++++++++;                      ;+++++++++++++++++++++++++++++++++                         .xxxxxxxxxxxxxxxxxxxXxxXxXXxXXXXXXXXXXXXXXXXX
++++++++++++++++++++++++++;                      ;++++++++++++++++++++++++++++++++++                          xxxxxxxxxxxxxxxxxxxxxxxxxXXxxXXXXXXXXXXXXXX
++++++++++++++++++++++++++;                      ;+++++++++++++++++++++++++++++++++++.                         +xxxxxxxxxxxxxxxxxXxxXxxXxXXxxXXxXXxXXXXXX
++++++++++++++++++++++++++;                      ;++++++++++++++++++++++++++++++++++++.                         +xxxxxxxxxxxxxxxxxxxxXXxxXXXXXXXXxXXXXXXX
++++++++++++++++++++++++++;                      ;+++++++++++++++++++++++++++++++++++++.                         +xxxxxxxxxxxxxxxxxxxxxxxxxXXxxXXXXxXXxXX
++++++++++++++++++++++++++;                      ;;;++++++++++++++++++++++++++++++++++++:                         +xxxxxxxxxxxxxxxxxxxxxxXxxxxxxxXXxxxxXX
++++++++++++++++++++++++++;                                          ;+++++++++++++++++++:                         +xxxxxxxxxxxxxxxxxxxxxxXxxXxxxxxXXxxxx
++++++++++++++++++++++++++;                                           ;+++++++++++++++++++:                         ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
++++++++++++++++++++++++++;                                            ;+++++++++++++++++++;                         ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
++++++++++++++++++++++++++;                                             :+++++++++++++++++++;                         :xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
++++++++++++++++++++++++++;                                              :+++++++++++++++++++;                         :xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
++++++++++++++++++++++++++;                                               :+++++++++++++++++++;                         :xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
++++++++++++++++++++++++++;                                                :+++++++++++++++++++;                         :xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
++++++++++++++++++++++++++;                                                 .++++++++++++++++++++                         .xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
++++++++++++++++++++++++++;                                                  .++++++++++++++++++++                         .+xxxxxxxxxxxxxxxxxxxxxxxxxxxx
++++++++++++++++++++++++++;                                                    ++++++++++++++++++++                         .+xxxxxxxxxxxxxxxxxxxxxxxxxxx
++++++++++++++++++++++++++;                                                     ++++++++++++++++++++                          +xxxxxxxxxxxxxxxxxxxxxxxxxx
++++++++++++++++++++++++++;                                                      ++++++++++++++++++++                          +xxxxxxxx+xxxx+xx++x++x++x
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++xxxxxxxxxx+xxxxxxxx++++x+++x+++xx++xx+xxxx+x+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++x++++xxxxxxx+xx++x+++xxxx+x+x+++xx++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++x++++x+++x+x+xx+++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++x++xx+++x++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++x+++x+++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++;;;++++++;;;+++++;;;;+++++;;;;;;;+++++;;;;;;;;++++++;;;;;;;+++;;;;++x+;;;+++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++   .++++:   ;+++:    ;+++;         ;++        ++++++         ;+   .++   ;+++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++     ++     ;+++      ;++;   +++:   ;+   +++++++++++   :++   :++       ;++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++            ;++   ;;   ++;   ++++   :+       :++++++         ++++.    ++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++   ;    ;   ;+          +;   ;+;.   ++   ;++++++++++   :++;   ++++   ;++++++++++++++++++++++++++++++++++++++++++
++++x++++++++++++++++++++++++++++++++++++   ++. ++   ;:   ++++   .;        .+++        ;+++++         :++++   ;++++++++++++++++++++++++++++++++++++++++++
++xx+xxxxxx+xx+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+xxx++++++x++xxx+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+x+xxxxx+xxxxx++xx+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxx+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxx+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxxxxx+++++++++++++++++;;;+++++++++;++++++++++++++++++++++++++++++++;;;+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxxx+xx+x+   ;++++++        :++:        :+;        +:   :++   :++:        +:   +++   :+   :+++++++;    ;++++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxxxx+x+x+   ;+++++   :++;   .+:  .++:   +;   ++++++:     +   :+    +++;:++:   +++   :+   :+++++++      ++++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxxxxxxxx+   ;++++;   ++++:   +:        ++;       ;+:         :+   ;+++   +:   +++   :+   :++++++   ;;   +++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxxxxxxx++   ;++++;   :+++    +:  .+++   ;;   ++++++:   +     :+    +++   +:   ;+;   ;+   :+++++.         ++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxxxxxxxx+        ++        :++:         +;        +:   ++:   :++.        ++:       :++        ;   ;;;;   :+++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxxxxxx+x++++++++++++++;;;++++++++++++++++++++++++++++++++++++++++++;;;++++++++;;;++++++++++++++++++++++++++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxxxxxxxx+xxx+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx+x++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxxxxxxxxx+xxx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx+x++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx+x++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxxxxxxxxx+xxxx+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx+x+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ */
 
 /************ TABLE OF CONTENTS ***************
 
