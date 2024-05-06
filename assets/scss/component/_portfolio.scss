@@ -76,7 +76,7 @@
 
 }
 
-.protfolio-title-area {
+.portfolio-title-area {
     text-align: center;
     margin-bottom: 100px;
 
@@ -85,7 +85,7 @@
     }
 }
 
-.protfolio-title {
+.portfolio-title {
     font-weight: 500;
     font-size: 100px;
     line-height: 1.08;
@@ -679,7 +679,7 @@
 
 // index-6__protfolio
 
-.protfolio__wrap {
+.portfolio__wrap {
     display: grid;
     grid-template-columns: auto auto;
     gap: 0px 112px;
@@ -705,7 +705,7 @@
     }
 }
 
-.protfolio__item {
+.portfolio__item {
 
     &:nth-child(2),
     &:nth-child(4) {
@@ -721,18 +721,18 @@
     }
 
     &:hover {
-        .protfolio__content {
+        .portfolio__content {
             opacity: 1;
             visibility: visible;
         }
     }
 }
 
-.protfolio__thumb {
+.portfolio__thumb {
     position: relative;
 }
 
-.protfolio__content {
+.portfolio__content {
     padding: 20px 20px;
     background-color: #f9f9f9;
     opacity: 0;
@@ -748,7 +748,7 @@
     }
 }
 
-.protfolio-btn {
+.portfolio-btn {
     position: absolute;
     bottom: 115px;
     left: 17%;
