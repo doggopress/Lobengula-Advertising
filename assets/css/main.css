@@ -699,6 +699,10 @@ p.large {
 
 /*--- color
 -----------------------------------------*/
+.dark-text {
+    color: #000000 !important;
+}
+
 .text-white h1,
 .text-white h2,
 .text-white h3,
@@ -11471,16 +11475,16 @@ body {
   background-color: var(--clr-common-white);
 }
 .theme-dark .portfolio-slide-1 {
-  background-color: var(--clr-common-black);
+  background-color: var(--clr-common-white);
 }
 .theme-dark .portfolio-slide-2 {
-  background-color: var(--clr-common-black);
+  background-color: var(--clr-common-white);
 }
 .theme-dark .portfolio-slide-3 {
-  background-color: var(--clr-common-black);
+  background-color: var(--clr-common-white);
 }
 .theme-dark .portfolio-slide-3-thumb::after {
-  background: linear-gradient(90deg, var(--clr-common-black) 10.97%, rgba(255, 255, 255, 0) 89.51%);
+  background: linear-gradient(90deg, var(--clr-common-white) 10.97%, rgba(255, 255, 255, 0) 89.51%);
 }
 .theme-dark .capabilities__accordion .accordion-button {
   background: #2f2f2f;
@@ -12722,7 +12726,7 @@ body {
 }
 
 .portfolio__num-count {
-  color: var(--clr-theme-primary);
+  color: var(--clr-common-black);
   font-size: 30px;
   margin-bottom: 10px;
 }
@@ -12791,7 +12795,7 @@ body {
   font-size: 100px;
   line-height: 1.08;
   text-transform: uppercase;
-  color: var(--clr-theme-primary);
+  color: var(--clr-common-black);
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .portfolio-title {
