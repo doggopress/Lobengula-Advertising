@@ -144,12 +144,12 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx+x+++++++++++++++++++++++++++++++++++++++++++++++
     src: url('../assets/fonts/lobengula-font.woff2') format('woff2');
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Tenor+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Tenor+Sans&display=swap");
 :root {
   /**
   @font-family declaration
   */
-  --tpl-ff-heading: 'Lobengula Font', 'Montserrat', sans-serif;
+  --tpl-ff-heading: 'Montserrat', sans-serif;
   --tpl-ff-body: 'Montserrat', sans-serif;
   --tpl-ff-fontawesome: 'Font Awesome 6 Pro';
   --tpl-ff-handwriting: 'autographyregular';
@@ -1075,7 +1075,7 @@ p.large {
 .stroke-text {
   font-size: 100px;
   font-weight: 700;
-  font-family: "Archivo", sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #2F2F2F;
@@ -1124,8 +1124,7 @@ i[class^=flaticon-] {
    Font customize
 -----------------------------------------*/
 .font-highlight {
-  font-family: var(--tpl-ff-body);
-  font-weight: 400;
+  font-family: 'Lobengula Font';
 }
 
 .font-normal {
@@ -2222,6 +2221,7 @@ body.mfp-content {
 .link-scroll-line__heading {
   white-space: nowrap;
   margin-bottom: 0;
+  font-family: 'Lobengula Font' !important;
 }
 .link-scroll-line__heading a:hover, .link-scroll-line__heading a:focus {
   color: inherit;
@@ -5710,7 +5710,7 @@ body {
 .hero-area .meta-item-call p {
   font-size: 20px;
   font-weight: 700;
-  font-family: "Archivo", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .hero-area .meta-item-call p a:hover {
   color: var(--clr-theme-2);
@@ -5732,7 +5732,7 @@ body {
   color: #A5A5A5;
   writing-mode: vertical-rl;
   letter-spacing: 7px;
-  font-family: "Archivo", sans-serif;
+  font-family: "Montserrat", sans-serif;
   position: relative;
   line-height: 1;
 }
@@ -6270,11 +6270,12 @@ body {
 }
 
 .hero-3__title {
-  font-size: 110px;
+  font-size: 170px;
   line-height: 1;
   font-weight: 700;
   color: #171717;
   margin-bottom: 30px;
+  font-family: 'Lobengula Font';
 }
 @media only screen and (min-width: 1400px) and (max-width: 1600px) {
   .hero-3__title {
@@ -7085,7 +7086,7 @@ body {
   font-weight: 400;
   text-transform: uppercase;
   color: var(--clr-common-white);
-  font-family: "Archivo", sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 30px;
   margin-bottom: 0;
 }
@@ -7107,7 +7108,7 @@ body {
   font-weight: 400;
   text-transform: uppercase;
   color: var(--clr-common-black);
-  font-family: "Archivo", sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 30px;
   margin-bottom: 0;
 }
@@ -7204,6 +7205,7 @@ body {
 }
 .section__title-main {
   line-height: 1.08;
+  font-family: 'Lobengula Font' !important;
 }
 .section__title-2-wrapper-testimonial-2 .section__title-main {
   color: var(--clr-common-white);
@@ -9859,12 +9861,13 @@ body {
 }
 
 .project__text {
-  font-size: 150px;
+  font-size: 220px;
   font-weight: 500;
   color: var(--clr-theme-primary);
   text-transform: uppercase;
   padding: 50px 0 50px;
   opacity: 1;
+  font-family: 'Lobengula Font' !important;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .project__text {
@@ -10268,7 +10271,7 @@ body {
   line-height: 1.08;
   text-transform: uppercase;
   font-weight: 400;
-  font-family: "Archivo", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #A5A5A5;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
@@ -12656,7 +12659,7 @@ body {
 }
 .blog__item .meta-date {
   color: #A4A4A4;
-  font-family: "Archivo";
+  font-family: "Montserrat";
   font-weight: 700;
   font-size: 30px;
 }
@@ -12874,6 +12877,7 @@ body {
   line-height: 1.08;
   text-transform: uppercase;
   color: var(--clr-common-black);
+  font-family: 'Lobengula Font' !important;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .portfolio-title {
