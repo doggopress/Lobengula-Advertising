@@ -61,7 +61,7 @@
 **********************************************/
 
 @font-face {
-    font-family: 'Lobengula';
+    font-family: 'Lobengula Font';
     src: url('../assets/fonts/lobengula-font.woff2') format('woff2');
 }
 
@@ -70,7 +70,7 @@
   /**
   @font-family declaration
   */
-  --tpl-ff-heading: 'Lobengula', 'Montserrat', sans-serif;
+  --tpl-ff-heading: 'Lobengula Font', 'Montserrat', sans-serif;
   --tpl-ff-body: 'Montserrat', sans-serif;
   --tpl-ff-fontawesome: 'Font Awesome 6 Pro';
   --tpl-ff-handwriting: 'autographyregular';
