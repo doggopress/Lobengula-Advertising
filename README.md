@@ -1,14 +1,10 @@
 Example website: https://alexh232.sg-host.com/creative-agency-dark.html
-4m
 
 Github staging site: https://doggopress.github.io/Lobengula-Advertising/
-3m
 
 Lottie web installation docs: https://airbnb.io/lottie/#/web
-2m
 
 Lottie interactivity guide: https://lottiefiles.com/interactivity
-2m
 
 Github: https://github.com/doggopress/Lobengula-Advertising
 
