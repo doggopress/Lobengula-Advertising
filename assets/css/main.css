@@ -2222,6 +2222,7 @@ body.mfp-content {
   white-space: nowrap;
   margin-bottom: 0;
   font-family: 'Lobengula Font' !important;
+  font-weight: normal !important;
 }
 .link-scroll-line__heading a:hover, .link-scroll-line__heading a:focus {
   color: inherit;
@@ -6272,7 +6273,7 @@ body {
 .hero-3__title {
   font-size: 170px;
   line-height: 1;
-  font-weight: 700;
+  font-weight: normal;
   color: #171717;
   margin-bottom: 30px;
   font-family: 'Lobengula Font';
@@ -7206,6 +7207,7 @@ body {
 .section__title-main {
   line-height: 1.08;
   font-family: 'Lobengula Font' !important;
+  font-weight: normal !important;
 }
 .section__title-2-wrapper-testimonial-2 .section__title-main {
   color: var(--clr-common-white);
@@ -9862,7 +9864,7 @@ body {
 
 .project__text {
   font-size: 220px;
-  font-weight: 500;
+  font-weight: normal;
   color: var(--clr-theme-primary);
   text-transform: uppercase;
   padding: 50px 0 50px;
@@ -12872,8 +12874,8 @@ body {
 }
 
 .portfolio-title {
-  font-weight: 500;
-  font-size: 100px;
+  font-weight: normal;
+  font-size: 160px;
   line-height: 1.08;
   text-transform: uppercase;
   color: var(--clr-common-black);
@@ -12998,7 +13000,8 @@ body {
 .portfolio-slide-1-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: bottom !important;
 }
 .portfolio-slide-1-content h2 {
   margin-bottom: 40px;
