@@ -1,0 +1,172 @@
+/*----------------------------------------
+	15. cover css
+----------------------------------------*/
+@use "../abstract" as *;
+
+// Cover style
+.cover-tab {
+    padding-right: 65px;
+    border-right: 1px solid #D9D9D9;
+    margin-right: 36px;
+
+    @media #{$lg,$xl} {
+        padding-right: 30px;
+        margin-right: 0;
+    }
+
+    @media #{$xs,$sm,$md} {
+        padding-right: 0;
+        margin-right: 0;
+        border-right: 0;
+        border-bottom: 1px solid #D9D9D9;
+        padding-bottom: 35px;
+    }
+
+    .nav-tabs {
+        border-bottom: 0;
+
+        .nav-link {
+            margin-bottom: 0;
+            border-radius: 0;
+            border: 0;
+            width: 100%;
+            text-align: start;
+
+            &:hover,
+            &:focus {
+                border-color: transparent,
+            }
+
+            &.active,
+            &:hover {
+                border: 0;
+                color: #111111;
+                background: var(--clr-common-white);
+                box-shadow: 0px 4px 44px rgba(0, 0, 0, 0.07);
+
+                i {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            i {
+                float: right;
+                color: var(--clr-theme-2);
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    }
+
+    .nav {
+        flex-direction: column;
+        justify-content: start;
+        gap: 12px 0;
+    }
+
+    .nav-link {
+        font-size: 24px;
+        font-weight: 500;
+        font-family: var(--tpl-ff-heading);
+        color: var(--clr-theme-1);
+        padding: 0 30px;
+        height: 66px;
+        transition: .3s all;
+
+        @media #{$xl,$lg,$xxs} {
+            font-size: 20px;
+            padding: 0 25px;
+        }
+
+        &:hover {
+            border: 0;
+            color: #111111;
+            background: var(--clr-common-white);
+            box-shadow: 0px 4px 44px rgba(0, 0, 0, 0.07);
+        }
+    }
+}
+
+.cover-wrapper {
+    margin-left: 30px;
+    position: relative;
+    z-index: 5;
+
+    @media #{$xs,$sm,$md,$lg} {
+        margin-left: 0;
+    }
+}
+
+.cover-thumb {
+    max-width: 585px;
+    filter: drop-shadow(0px 4px 44px rgba(0, 0, 0, 0.07));
+
+    @media #{$xs,$sm,$md} {
+        max-width: 100%;
+    }
+
+    img {
+        width: 100%;
+        aspect-ratio: 100/106;
+    }
+}
+
+.cover-card-content {
+    padding: 30px 30px;
+    background: #F2F2F2;
+    max-width: 570px;
+
+    h3 {
+        font-size: 30px;
+        margin-bottom: 15px;
+
+        @media #{$xs} {
+            font-size: 26px;
+        }
+    }
+
+    p {
+        margin-bottom: 25px;
+    }
+}
+
+.cover-card-inner {
+    position: absolute;
+    right: 0;
+    top: 290px;
+
+    @media #{$xs,$sm,$md} {
+        bottom: 0;
+        top: auto;
+    }
+
+    @media #{$xxs} {
+        position: static;
+    }
+}
+
+.cover-shape-1 {
+    left: -400px;
+    content: "";
+    position: absolute;
+    top: 80px;
+    overflow: hidden;
+
+    @media #{$xs,$sm,$md,$lg,$xl,$xxl} {
+        display: none;
+    }
+}
+
+.cover-shape-2 {
+    right: -40px;
+    content: "";
+    position: absolute;
+    top: 100px;
+    width: 20%;
+    overflow: hidden;
+
+    @media #{$xs,$sm,$md,$lg,$xl} {
+        display: none;
+    }
+}

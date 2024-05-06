@@ -1,0 +1,89 @@
+/*----------------------------------------
+	22. gallery css
+----------------------------------------*/
+@use "../abstract" as *;
+
+// gallery style 
+.gallery-slider {
+    overflow: visible;
+
+    .swiper-wrapper {
+        align-items: flex-end;
+
+        .swiper-slide:nth-child(2n) {
+            .gallery-box-thumb img {
+                aspect-ratio: 100/55;
+
+                @media #{$sm,$xs} {
+                    aspect-ratio: 100/70;
+                }
+            }
+        }
+    }
+}
+
+.gallery {
+    &-box {
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+            .gallery-box-thumb {
+                .area-overlay {
+                    opacity: .5;
+                    visibility: visible;
+                }
+            }
+
+            .gallery-box-content {
+                .area-btn {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        &-thumb {
+
+            img {
+                width: 100%;
+                aspect-ratio: 100/70;
+            }
+
+            .area-overlay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: var(--clr-theme-2);
+                opacity: 0;
+                visibility: hidden;
+                @include transition(.3s);
+            }
+        }
+
+        &-content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .area-btn {
+                opacity: 0;
+                visibility: hidden;
+                @include transition(.3s);
+
+                i {
+                    color: var(--clr-common-white);
+                    font-size: 30px;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,248 @@
+/*----------------------------------------
+	13. contact css
+----------------------------------------*/
+@use "../abstract" as *;
+
+// contact style 
+.contact-area {
+    &__shape {
+        &-1 {
+            position: absolute;
+            top: 80px;
+            left: 8%;
+            animation: zoomInOut 3s infinite linear;
+        }
+
+        &-2 {
+            position: absolute;
+            right: 15%;
+            bottom: 95px;
+
+            @media #{$xs,$sm} {
+                max-width: 100px;
+            }
+
+            @media #{$xxs} {
+                display: none;
+            }
+        }
+    }
+}
+
+.contact {
+    &__btn {
+        @media #{$md,$sm,$xs} {
+            transform: scale(.8);
+        }
+    }
+}
+
+.contact-shapes {
+    .shape-1 {
+        position: absolute;
+        left: -125px;
+        z-index: -1;
+
+        @media #{$xxl} {
+            max-width: 230px;
+        }
+    }
+
+    @media #{$xs,$sm,$lg} {
+        display: none;
+    }
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 20px 15px;
+}
+
+.contact-info-content {
+    span {
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    h4 {
+        margin-bottom: 0;
+        font-size: 20px;
+
+        @media #{$xxs} {
+            font-size: 18px;
+
+            a {
+                &:hover {
+                    color: var(--clr-theme-2);
+                }
+            }
+        }
+    }
+}
+
+.contact-info-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px 20px;
+}
+
+.contact-info-icon {
+    width: 96px;
+    height: 96px;
+    background: linear-gradient(180deg, #14CF93 0%, rgba(20, 207, 147, 0.4) 100%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+
+    @media #{$xxs} {
+        width: 76px;
+        height: 76px;
+    }
+
+    .icon-middle {
+        width: 32px;
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(180deg, #14CF93 0%, #33D6A1 100%);
+        position: absolute;
+        right: 15px;
+        border-radius: 3px;
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            transform: translateY(-50%);
+            left: -10px;
+            width: 0;
+            height: 0;
+            border-top: 7px solid transparent;
+            border-right: 10px solid #14CF93;
+            border-bottom: 7px solid transparent;
+            border-radius: 10px 0px 0px 10px;
+        }
+    }
+
+}
+
+// Contact input
+.contact-form {
+    padding: 60px 60px;
+    background: var(--clr-theme-1);
+    margin-left: 30px;
+
+    @media #{$xl,$lg} {
+        padding: 60px 30px;
+    }
+
+    @media #{$xs,$md,$sm} {
+        padding: 60px 30px;
+        margin-left: 0px;
+    }
+}
+
+.contact-input input,
+.contact-input textarea {
+    height: 60px;
+    width: 100%;
+    font-size: 14px;
+    border: 0;
+    border-bottom: 1px solid #414141;
+    outline: none;
+    background: transparent;
+    color: var(--clr-common-white);
+}
+
+.postbox__comment-check {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.postbox__comment-title {
+    margin-bottom: 40px;
+}
+
+.contact-input {
+    position: relative;
+    margin-bottom: 20px;
+
+    textarea {
+        height: 80px;
+        resize: none;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+
+.contact-btn {
+    .input-btn {
+        color: var(--clr-common-white);
+
+        &:hover {
+            border-color: var(--clr-theme-2);
+        }
+    }
+}
+
+// Contact check
+.e-check-input {
+    margin: 0;
+    appearance: none;
+    -moz-appearance: none;
+    display: block;
+    width: 26px;
+    height: 26px;
+    background: transparent;
+    border: 1px solid #D9D9D9;
+    outline: none;
+    flex: 0 0 auto;
+    padding: 0;
+    border-radius: 50%;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:checked {
+        position: relative;
+    }
+
+    &.is-black {
+        border-color: #414141;
+    }
+
+    &:checked {
+        &::after {
+            box-sizing: border-box;
+            position: absolute;
+            content: "";
+            font-size: 10px;
+            color: var(--clr-theme-2);
+            top: 50%;
+            left: 50%;
+            height: 8px;
+            width: 8px;
+            background: var(--clr-theme-2);
+            border-radius: 50%;
+            @include transform(translate(-50%, -50%));
+        }
+    }
+}
+
+// Location map
+.location-map {
+    iframe {
+        height: 650px;
+        width: 100%;
+        position: relative;
+        top: 10px;
+    }
+}

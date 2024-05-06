@@ -1,0 +1,117 @@
+/*----------------------------------------
+	16. cta css
+----------------------------------------*/
+@use "../abstract" as *;
+
+// cta style 
+.cta-area {
+    background: #1F1F1F;
+}
+
+.cta-wrapper {
+    border-top: 1px solid #414141;
+}
+
+.cta-content {
+    .area-btn {
+        .circle-btn {
+            width: 194px;
+            height: 194px;
+            background: var(--clr-theme-2);
+            color: var(--clr-common-white);
+            font-size: 64px;
+
+            &:hover {
+                background: var(--clr-theme-2);
+                color: var(--clr-common-black);
+            }
+        }
+    }
+
+    .stroke-text {
+        font-size: 140px;
+        text-transform: uppercase;
+        font-weight: 700;
+        line-height: 0.7;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 0px;
+        -webkit-text-stroke-color: #2F2F2F;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: .25;
+        margin-bottom: -50px;
+        display: block;
+
+        @media #{$xl} {
+            font-size: 120px;
+            margin-bottom: -45px;
+        }
+
+        @media #{$lg} {
+            font-size: 100px;
+            margin-bottom: -40px;
+        }
+
+        @media #{$md} {
+            font-size: 90px;
+            margin-bottom: -30px;
+        }
+
+        @media #{$sm,$xs} {
+            font-size: 70px;
+            margin-bottom: -30px;
+        }
+
+        @media #{$xxs} {
+            font-size: 58px;
+            margin-bottom: -20px;
+        }
+    }
+}
+
+.cta-animation {
+    display: flex;
+}
+
+.cta-container--2 {
+    display: flex;
+    align-items: center;
+    padding-left: 77vw;
+    margin-top: -100px;
+}
+
+.cta-text {
+    white-space: nowrap;
+    margin-top: -32px;
+}
+
+.cta-letter-container {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.cta-letter {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 15.63em;
+    line-height: 1;
+    color: #111;
+    transform: translateX(-100%);
+}
+
+// index-6__cta
+
+.ax-cta__title {
+    max-width: 850px;
+    margin: 0 auto;
+
+    span {
+        background: linear-gradient(91.02deg, #14CF93 38.92%, #0094FF 66.4%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+}

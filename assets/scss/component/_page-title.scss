@@ -1,0 +1,174 @@
+/*----------------------------------------
+	29. page-title css
+----------------------------------------*/
+@use "../abstract" as *;
+
+.page-title-area {
+	display: flex;
+	align-items: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	position: relative;
+	z-index: 2;
+}
+
+.breadcrumb-menu {
+	li {
+		position: relative;
+		list-style: none;
+
+		span {
+			font-size: 18px;
+			font-weight: 500;
+			color: var(--clr-theme-1);
+			text-transform: capitalize;
+			font-family: var(--tpl-ff-heading);
+		}
+
+		&:first-child {
+			span {
+				color: var(--clr-theme-1);
+			}
+		}
+
+		&:not(:last-child) {
+			&:after {
+				display: inline-block;
+				content: "";
+				position: absolute;
+				inset-inline-end: -15px;
+				width: 1px;
+				height: 10px;
+				background: #414141;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+	ul {
+		display: flex;
+		gap: 5px 28px;
+		flex-wrap: wrap;
+
+		@media #{$xs} {
+			justify-content: flex-start;
+		}
+	}
+}
+
+.inner-mb {
+	margin-bottom: 75px;
+
+	@media #{$xs,$sm,$md,$lg} {
+		margin-bottom: 20px;
+	}
+}
+
+.page-title {
+	font-size: 65px;
+	font-weight: 700;
+	line-height: 1.17;
+	text-transform: capitalize;
+
+	@media #{$xl} {
+		font-size: 55px;
+	}
+
+	@media #{$md,$lg} {
+		font-size: 50px;
+	}
+
+	@media #{$sm} {
+		font-size: 46px;
+	}
+
+	@media #{$xs} {
+		font-size: 36px;
+		text-align: start;
+	}
+
+	@media #{$xs,$sm,$md,$lg} {
+		br {
+			display: none;
+		}
+	}
+}
+
+.page-title-paragraph {
+	margin-bottom: 0;
+
+	@media #{$xxs,$xs} {
+		padding-top: 30px;
+	}
+}
+
+.page-title-wrappper {
+	&.is-white {
+		.breadcrumb-menu {
+			li {
+				span {
+					color: var(--clr-common-white);
+				}
+
+				&:not(:last-child) {
+					&:after {
+						background: var(--clr-common-white);
+					}
+				}
+
+				&:first-child {
+					span {
+						color: var(--clr-common-white);
+					}
+				}
+			}
+		}
+
+		.page-title {
+			color: var(--clr-common-white);
+		}
+
+		.page-title-paragraph {
+			color: var(--clr-common-white);
+		}
+	}
+}
+
+.page-title-shapes {
+	.shape-1 {
+		position: absolute;
+		right: 0;
+		max-width: 587px;
+		z-index: -1;
+		bottom: 210px;
+
+		@media #{$xxl,$xl} {
+			max-width: 450px;
+		}
+
+		@media #{$lg} {
+			max-width: 400px;
+		}
+
+		@media #{$xs,$sm,$md} {
+			display: none;
+		}
+	}
+
+	.shape-2 {
+		position: absolute;
+		right: 0;
+		top: 90px;
+		z-index: -1;
+
+		@media #{$lg} {
+			max-width: 350px;
+		}
+
+		@media #{$xs,$sm,$md} {
+			display: none;
+		}
+	}
+}

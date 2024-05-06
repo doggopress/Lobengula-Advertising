@@ -1,0 +1,135 @@
+/*----------------------------------------
+	44. signin css
+----------------------------------------*/
+@use "../abstract" as *;
+
+.signin__area {
+    @include flexbox();
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.sign {
+    &__main {
+        &-wrapper {
+            background: var(--clr-theme-1);
+            box-shadow: 0px 4px 8px rgba(247, 66, 111, 0.03);
+            overflow: hidden;
+            width: 580px;
+            max-width: 580px;
+            padding: 65px 75px 65px;
+
+            @media #{$xs} {
+                padding: 65px 50px 65px;
+            }
+
+            @media #{$xxs} {
+                padding: 65px 30px 65px;
+            }
+        }
+    }
+
+    &__input {
+        position: relative;
+        margin-bottom: 20px;
+
+        span {
+            position: absolute;
+            top: 14px;
+            inset-inline-start: 20px;
+
+            i {
+                color: var(--clr-text-9);
+            }
+        }
+
+        input {
+            height: 55px;
+            width: 100%;
+            font-size: 14px;
+            border: 0;
+            border-bottom-color: currentcolor;
+            border-bottom-style: none;
+            border-bottom-width: 0px;
+            border-bottom: 1px solid #414141;
+            outline: none;
+            background: transparent;
+            color: var(--clr-common-white);
+        }
+    }
+
+    &__title {
+        margin-bottom: 30px;
+        color: var(--clr-bg-4);
+        font-size: 30px;
+
+        @media #{$xxs} {
+            font-size: 20px;
+        }
+
+        &-wrapper {
+            &>p {
+                color: #A5A5A5;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__action {
+        @include flexbox();
+        justify-content: space-between;
+        gap: 15px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+
+    &__forget {
+        span {
+            a {
+                &:hover {
+                    color: var(--clr-theme-1);
+                }
+            }
+        }
+    }
+}
+
+.if {
+    &__account {
+        @include flexbox();
+        align-items: end;
+        justify-content: center;
+
+        p {
+            margin-bottom: 0;
+            color: #a5a5a5;
+
+            a {
+                color: #a5a5a5;
+                font-weight: 700;
+
+                &:hover {
+                    color: var(--clr-theme-2);
+                }
+            }
+        }
+    }
+}
+
+.sign__forget {
+    span {
+        color: #a5a5a5;
+
+        a {
+            &:hover {
+                color: var(--clr-theme-2);
+            }
+        }
+    }
+}
+
+.checkbox-text {
+    color: #a5a5a5;
+}

@@ -1,0 +1,62 @@
+/*----------------------------------------
+	26. idea css
+----------------------------------------*/
+@use "../abstract" as *;
+
+.idea__area {
+	background: #1F1F1F;
+}
+
+.idea-shape {
+	position: absolute;
+	bottom: 0;
+	z-index: -1;
+	left: 0;
+
+	@media #{$xl,$lg} {
+		left: 220px;
+		max-width: 410px;
+	}
+
+	@media #{$xs,$sm,$md} {
+		max-width: 250px;
+	}
+}
+
+.idea-thumb {
+	position: relative;
+	top: 0px;
+	padding-bottom: 40px;
+	padding-left: 34px;
+	padding-right: 18px;
+
+	img {
+		width: 100%;
+	}
+
+	@media #{$xs,$sm,$md} {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.round-cercle-2 {
+	position: absolute;
+	top: 43px;
+	right: -137px;
+	z-index: -1;
+	width: 422.24px;
+	height: 378px;
+
+	@media #{$xxl,$xl,$md} {
+		max-width: 350px;
+	}
+
+	@media #{$sm,$lg} {
+		max-width: 300px;
+	}
+
+	@media #{$xs} {
+		display: none;
+	}
+}

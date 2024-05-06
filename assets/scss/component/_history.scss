@@ -1,0 +1,136 @@
+/*----------------------------------------
+	25. History css
+----------------------------------------*/
+@use "../abstract" as *;
+
+.history-thumb-1 {
+    position: absolute;
+    top: 180px;
+    left: -321px;
+    transform: rotate(-15deg);
+    max-width: 690px;
+
+    @media #{$xxl} {
+        max-width: 590px;
+    }
+
+    @media #{$xl} {
+        left: -385px;
+    }
+
+    @media #{$lg} {
+        max-width: 530px;
+    }
+
+    @media #{$md} {
+        max-width: 450px;
+    }
+
+    img {
+        width: 100%;
+        aspect-ratio: 100/115;
+    }
+}
+
+.history-thumb-2 {
+    position: absolute;
+    right: -165px;
+    bottom: 150px;
+    max-width: 690px;
+    transform: rotate(15deg);
+
+    @media #{$xxl} {
+        max-width: 590px;
+    }
+
+    @media #{$xl} {
+        right: -255px;
+        max-width: 550px;
+    }
+
+    @media #{$lg} {
+        max-width: 460px;
+    }
+
+    @media #{$md} {
+        max-width: 330px;
+    }
+
+    img {
+        width: 100%;
+        aspect-ratio: 100/115;
+        ;
+    }
+}
+
+.history-thumb-3 {
+    max-width: 277px;
+    margin-left: 9%;
+
+    @media #{$xxl} {
+        margin-left: 20%;
+    }
+
+    @media #{$xs,$sm} {
+        max-width: 100%;
+        margin: 0;
+    }
+}
+
+.history-content {
+    margin-bottom: 257px;
+
+    @media #{$xs,$sm,$md,$lg} {
+        margin-bottom: 80px;
+    }
+
+    &>h5 {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--clr-common-black);
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 120px;
+        line-height: 1;
+        font-weight: 800;
+        position: relative;
+        margin-bottom: 20px;
+        display: inline-block;
+
+        @media #{$md} {
+            font-size: 90px;
+        }
+
+        @media #{$sm,$xs} {
+            font-size: 70px;
+        }
+
+        @media #{$xxs} {
+            font-size: 60px;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            height: 6px;
+            background: #F2994A;
+            width: 100%;
+            bottom: 22px;
+            z-index: -1;
+        }
+
+        .highlight {
+            color: var(--clr-theme-2);
+        }
+
+    }
+}
+
+.history-thumbs {
+    @media #{$xs,$sm} {
+        display: none;
+    }
+}

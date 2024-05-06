@@ -1,0 +1,177 @@
+/*----------------------------------------
+	42. video css
+----------------------------------------*/
+@use "../abstract" as *;
+
+// video style 
+.video-area {
+    &:hover {
+        #circle-play-b {
+            opacity: 1 !important;
+        }
+    }
+
+    &__video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    &__shape {
+        &-1 {
+            width: 72px;
+            top: 94px;
+            left: 74px;
+            position: absolute;
+            z-index: 1;
+            opacity: .5;
+            animation: zoomInOut 3s infinite linear;
+
+            @media #{$md,$sm,$xs} {
+                top: 25px;
+                width: 50px;
+            }
+        }
+
+        &-2 {
+            width: 72px;
+            bottom: 56px;
+            right: 94px;
+            position: absolute;
+            z-index: 1;
+            opacity: .5;
+            animation: zoomInOut 3s infinite linear;
+
+            @media #{$md,$sm,$xs} {
+                width: 50px;
+            }
+        }
+    }
+}
+
+.video {
+    &__overlay {
+        position: absolute;
+        content: "";
+        width: 500px;
+        height: calc(100% - 300px);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include box-shadow(0px 0px 0px 3000px rgba(255, 255, 255, 1));
+        @include transition(.5s);
+
+        @media #{$sm,$xs} {
+            height: calc(100% - 0px);
+        }
+
+        &.closed {
+            width: 100%;
+            height: 100%;
+            box-shadow: none;
+        }
+
+    }
+
+    &__content {
+        padding: 50px 120px;
+
+        @media #{$xl} {
+            padding: 50px 60px;
+        }
+
+        @media #{$md,$sm,$xs} {
+            padding: 50px 50px;
+        }
+
+        @media #{$lg,$xxs} {
+            padding: 50px 0px;
+        }
+
+        .area-btn-text {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            @include transition(.3s);
+
+            span {
+                font-size: 100px;
+                line-height: 1.08;
+                color: var(--clr-theme-primary);
+                font-weight: 800;
+                font-family: var(--tpl-ff-heading);
+                text-transform: uppercase;
+
+
+                @media #{$xl} {
+                    font-size: 95px;
+                }
+
+                @media #{$lg} {
+                    font-size: 80px;
+                }
+
+                @media #{$md} {
+                    font-size: 60px;
+                }
+
+                @media #{$sm,$xs} {
+                    font-size: 50px;
+                    color: var(--clr-common-white);
+                }
+
+                @media #{$xxs} {
+                    font-size: 40px;
+                }
+
+                &:nth-child(2) {
+                    margin-left: auto;
+                }
+
+            }
+        }
+
+    }
+
+}
+
+.circle-btn-blur {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    @include transition(.3s);
+
+    .icon-box {
+        width: 74px;
+        height: 74px;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(2.5px);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+        border: 3px solid var(--clr-theme-2);
+
+        @media #{$xxs} {
+            width: 60px;
+            height: 60px;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+        }
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}

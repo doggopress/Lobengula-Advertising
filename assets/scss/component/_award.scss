@@ -1,0 +1,87 @@
+/*----------------------------------------
+	05. award css
+----------------------------------------*/
+@use "../abstract" as *;
+
+// award style 
+.award-scroll-line {
+    .award-scroll-line__heading {
+        line-height: 1.08;
+        white-space: nowrap;
+        margin-bottom: 0;
+    }
+}
+
+.award-scroll-line-2 {
+    .award-scroll-line__heading {
+        font-weight: 400;
+        line-height: 1.08;
+        font-family: "Tenor Sans", sans-serif;
+        white-space: nowrap;
+        margin-bottom: 0;
+    }
+}
+
+.award-scroll-wrapper {
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+}
+
+.text__scroll {
+    .swiper-slide {
+        width: auto;
+    }
+}
+
+.title-moving-outer {
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    max-width: 1000% !important;
+    width: 100vw !important;
+}
+
+.title-moving-forward,
+.title-moving-backward {
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 6vw;
+    box-sizing: border-box;
+}
+
+.light-section-wrapper,
+.dark-section-wrapper {
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    max-width: 1000% !important;
+    width: 100vw !important;
+}
+
+.light-section-container,
+.dark-section-container {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.scroll-content {
+    cursor: default !important;
+}
+
+.content-max-width {
+    box-sizing: border-box;
+    padding-left: 80px;
+    padding-right: 80px;
+    max-width: 1320px;
+}
+
+.content-row {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 1;
+    opacity: 1;
+    box-sizing: border-box;
+}

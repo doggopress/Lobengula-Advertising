@@ -1,0 +1,68 @@
+/*----------------------------------------
+	11. capabilities css
+----------------------------------------*/
+@use "../abstract" as *;
+
+// capabilities style 
+.capabilities-area {
+    background: #1F1F1F;
+
+    &__shape {
+        &-1 {
+            position: absolute;
+            width: 430px;
+            bottom: 65px;
+            left: 67%;
+            z-index: -1;
+            animation: shape-rote 30s linear infinite;
+        }
+
+        &-2 {
+            position: absolute;
+            width: 430px;
+            bottom: 225px;
+            left: 69%;
+            z-index: -1;
+            animation: shape-rote 95s linear infinite;
+        }
+    }
+}
+
+@keyframes shape-rote {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.capabilities {
+    &__content {
+        p {
+            color: #D9D9D9;
+            max-width: 705px;
+        }
+
+        .area-btn {
+            margin-top: 75px;
+
+            .c-button__text {
+                color: var(--clr-common-white);
+            }
+        }
+    }
+
+    &-list {
+        ul {
+            li {
+                list-style: none;
+                font-size: 16px;
+                line-height: 35px;
+                color: var(--clr-theme-primary);
+            }
+        }
+    }
+
+}

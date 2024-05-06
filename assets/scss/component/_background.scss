@@ -1,0 +1,38 @@
+/*----------------------------------------
+	06. Background css
+----------------------------------------*/
+@use "../abstract" as *;
+
+/*----------------------------------------
+	BACKGROUND COLOR CSS START
+----------------------------------------*/
+
+/*--- Background color
+-----------------------------------------*/
+.white-bg {
+	background-color: var(--clr-common-white);
+}
+
+.black-bg {
+	background: var(--clr-common-black);
+}
+
+.dark-bg {
+	background-color: var(--clr-common-heading);
+}
+
+.grey-bg {
+	background-color: var(--clr-bg-gray-1);
+}
+
+.footer-bg {
+	background-color: var(--clr-bg-footer);
+}
+
+.primary-bg {
+	background: var(--clr-background-primary);
+}
+
+.alice-blue-bg {
+	background: var(--clr-bg-6);
+}

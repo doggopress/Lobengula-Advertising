@@ -1,0 +1,68 @@
+/*----------------------------------------
+	37. step css
+----------------------------------------*/
+@use "../abstract" as *;
+
+// step style 
+
+.step-item {
+	padding: 28px 30px;
+	background: var(--clr-common-white);
+	border-radius: 37px;
+	@include transition(.3S);
+
+	@media #{$xxs,$xl} {
+		padding: 28px 25px;
+	}
+
+	&:hover {
+		background: #14CF93;
+		box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07);
+
+		.num__count {
+			color: var(--clr-common-white);
+		}
+	}
+}
+
+.step-content-heading {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 10px 15px;
+	margin-bottom: 20px;
+}
+
+.step-content {
+	&>p {
+		margin-bottom: 0;
+		font-size: 16px;
+	}
+}
+
+.step-title {
+	font-size: 20px;
+	margin-bottom: 0;
+}
+
+.step-area.is-grey-bg {
+	background-color: #f6f6f6;
+}
+
+.counter-row {
+	counter-reset: count;
+}
+
+.num__count {
+	font-size: 20px;
+	font-weight: 700;
+	color: #A5A5A5;
+	font-family: var(--tpl-ff-heading);
+}
+
+.num__count::before {
+	counter-increment: count;
+	content: "0" counter(count);
+	transition: all 500ms ease;
+	display: inline-block;
+}

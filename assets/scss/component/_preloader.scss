@@ -1,0 +1,99 @@
+/*----------------------------------------
+	PRELOADER CSS START
+----------------------------------------*/
+@use "../abstract" as *;
+
+.ax-loader-wrap {
+	overflow: hidden;
+	height: 100%;
+	background-color: rgb(29, 29, 48);
+	z-index: 1000;
+	position: relative;
+}
+
+.ax-loader-inner {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	width: 100%;
+}
+
+.ax-loader {
+	position: relative;
+	margin-left: 92px;
+
+	@media #{$sm,$xs} {
+		transform: scale(0.6);
+		margin-left: 45px;
+	}
+
+}
+
+.ax-loader-item {
+	position: absolute;
+	width: 6px;
+	height: 80px;
+	margin-top: -45px;
+	border-radius: 0px;
+	background-color: #14CF93;
+	animation: ax-loader-aim 0.8s infinite;
+	animation-direction: alternate-reverse;
+}
+
+.ax-loader {
+	.ax-loader-item {
+		&:nth-child(1) {
+			margin-left: 0px;
+		}
+
+		&:nth-child(2) {
+			margin-left: -14px;
+			animation-delay: 0.1s;
+		}
+
+		&:nth-child(3) {
+			margin-left: -28px;
+			animation-delay: 0.2s;
+		}
+
+		&:nth-child(4) {
+			margin-left: -42px;
+			animation-delay: 0.3s;
+		}
+
+		&:nth-child(5) {
+			margin-left: -56px;
+			animation-delay: 0.4s;
+		}
+
+		&:nth-child(6) {
+			margin-left: -70px;
+			animation-delay: 0.5s;
+		}
+
+		&:nth-child(7) {
+			margin-left: -84px;
+			animation-delay: 0.6s;
+		}
+
+		&:nth-child(8) {
+			margin-left: -98px;
+			animation-delay: 0.7s;
+		}
+	}
+}
+
+@keyframes ax-loader-aim {
+	0% {
+		height: 2px;
+		margin-top: 0;
+		transform: rotate(0deg);
+	}
+
+	100% {
+		height: 80px;
+		transform: rotate(0deg);
+	}
+}

@@ -1,0 +1,96 @@
+/*----------------------------------------
+    18. cursor css
+----------------------------------------*/
+@use "../abstract" as *;
+
+.discuss-area {
+    &__bg {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/bg/grid-line.png);
+            opacity: .5;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: var(--clr-common-white);
+            opacity: .9;
+        }
+
+        .noise-wrapper {
+            opacity: 0.3;
+            z-index: 1;
+
+            .noise {
+                animation: none;
+            }
+        }
+    }
+}
+
+.discuss {
+    &__content-wrapper {
+        padding: 0 70px;
+
+        @media #{$lg,$md,$sm,$xs} {
+            padding: 0 0px;
+        }
+    }
+
+    &__btn {
+
+        &.circle-btn {
+            width: 216px;
+            height: 216px;
+
+            &:hover {
+                .icon-box {
+                    i {
+                        color: var(--clr-theme-2);
+                    }
+                }
+            }
+
+            .icon-box {
+                width: 160px;
+                height: 160px;
+                position: relative;
+                overflow: hidden;
+                font-size: 53px;
+                color: var(--clr-common-white);
+                z-index: 1;
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background: #000000;
+                    opacity: .6;
+                    z-index: -1;
+                }
+
+                i {
+                    animation: none;
+                    font-size: 53px;
+                }
+            }
+
+        }
+    }
+}

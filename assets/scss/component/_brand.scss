@@ -1,0 +1,233 @@
+/*----------------------------------------
+	09. brand-area css
+----------------------------------------*/
+@use "../abstract" as *;
+
+// brand-area style 
+.dark-overlay {
+    position: relative;
+    z-index: 55;
+}
+
+.dark-overlay:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: #111;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.brand-area {
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 30px;
+    }
+}
+
+// brand-area-2 style 
+.brand-area-2 {
+    background: #1F1F1F;
+}
+
+// brand-wrapper style 
+.brand-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px 50px;
+
+    @media (min-width:1400px) {
+        justify-content: space-between;
+    }
+}
+
+// brand-item style 
+.brand-item {
+    text-align: center;
+
+    img {
+        filter: grayscale(1);
+        @include transition(.5s);
+        display: inline-block;
+        max-width: 200px;
+    }
+}
+
+// brand-active style 
+.brand-active {
+    .slick-list {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    .slick-track {
+        display: flex;
+        align-items: center;
+    }
+
+    .slick-slide {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+// Brand grid
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px 30px;
+
+    @media #{$lg} {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media #{$md,$sm} {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media #{$xs} {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .brand-item {
+        border: 1px solid #414141;
+        padding: 52px 0;
+        transition: .3s ease-in-out;
+
+        &:hover {
+            border-color: var(--clr-common-white);
+
+            img {
+                filter: grayscale(0);
+            }
+        }
+    }
+}
+
+.brand-testimonial-item {
+    padding: 40px 40px 35px;
+    background: #242424;
+    border-radius: 6px;
+
+    @media #{$xl,$xxs} {
+        padding: 40px 30px 35px;
+    }
+}
+
+.brand-testimonial-icon {
+    margin-bottom: 20px;
+}
+
+.brand-testimonial-content {
+    &>p {
+        color: #D9D9D9;
+        margin-bottom: 30px;
+    }
+}
+
+.testimonial-author {
+    h4 {
+        color: var(--clr-common-white);
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    p {
+        color: #848484;
+        margin-bottom: 0;
+    }
+}
+
+// brand-2
+.slider-nav {
+    height: 46px;
+    width: 46px;
+    background: var(--clr-common-white);
+    border-radius: 50%;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.15);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #14CF93;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+
+    &:hover {
+        background: var(--clr-theme-2);
+        color: var(--clr-common-black);
+    }
+}
+
+.slider-nav-wrapper {
+
+    .slider-nav-next {
+        left: auto;
+        right: -25px;
+
+        @media #{$xxl,$xl,$lg} {
+            right: -18px;
+        }
+    }
+
+    .slider-nav-prev {
+        left: -25px;
+
+        @media #{$xxl,$xl,$lg} {
+            left: -18px;
+        }
+    }
+}
+
+.slider-nav-wrapper {
+    opacity: 0;
+    visibility: hidden;
+
+    @media #{$xs} {
+        display: none;
+    }
+}
+
+.nav-on-hover {
+    &:hover {
+        .slider-nav-wrapper {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.brand-title {
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+// Brand round
+
+.brand-round-item {
+    width: 330px;
+    height: 330px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #D9D9D9;
+    border-radius: 50%;
+
+    img {
+        filter: grayscale(1);
+        max-width: 229px;
+        @include transition(.5s);
+
+        &:hover {
+            filter: grayscale(0);
+        }
+    }
+}
