@@ -1591,42 +1591,5 @@
 			scrub: 0.8 // Enables smooth scrolling effect
 		}
 	});
-
-    // Background Video Pointer
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const videoBackground = document.querySelector('.video-background');
-        const hoverEffect = document.createElement('div');
-        hoverEffect.classList.add('hover-effect');
-        hoverEffect.innerHTML = '<span>Play now</span>';
-        videoBackground.appendChild(hoverEffect);
     
-        hoverEffect.addEventListener('click', function() {
-            const video = document.createElement('video');
-            video.src = videoBackground.dataset.src;
-            video.autoplay = true;
-            video.loop = true;
-            video.muted = true;
-            video.style.width = '100%';
-            video.style.height = '100%';
-            video.style.objectFit = 'cover';
-            videoBackground.innerHTML = '';
-            videoBackground.appendChild(video);
-            hoverEffect.style.display = 'none';
-        });
-    
-        videoBackground.addEventListener('mouseenter', function() {
-            hoverEffect.style.transform = 'scale(1.1)';
-            videoBackground.style.cursor = 'pointer';
-        });
-    
-        videoBackground.addEventListener('mouseleave', function() {
-            hoverEffect.style.transform = 'scale(1)';
-            videoBackground.style.cursor = 'auto';
-        });
-    });
-    
-    
-
-
 })(jQuery);
