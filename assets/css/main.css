@@ -2242,6 +2242,18 @@ body.mfp-content {
   width: 75px;
   height: auto;
 }
+@media only screen and (max-width: 767px) {
+    .link-scroll-line__heading .link-separate-icon svg {
+        width: 35px;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .link-separate-icon {
+        top: -10px;
+    }
+}
 .link-scroll-line__heading .stroke-text {
   font-size: inherit;
 }
@@ -6313,7 +6325,7 @@ body {
 }
 @media (max-width:450px) {
   .hero-3__title {
-    font-size: 38px;
+    font-size: 80px;
   }
 }
 .hero-3__title .top {
@@ -9901,7 +9913,7 @@ body {
 }
 @media (max-width: 575px) {
   .project__text {
-    font-size: 34px;
+    font-size: 60px;
   }
 }
 
@@ -12911,7 +12923,7 @@ body {
 }
 @media (max-width:450px) {
   .portfolio-title {
-    font-size: 36px;
+    font-size: 60px;
   }
 }
 
@@ -17142,4 +17154,46 @@ label {
   background-color: #fdad00;
 }
 
+/* CUSTOM CSS */
+
+.mzilikazi {
+    padding-bottom: 200px;
+}
+
+@media only screen and (max-width: 767px) {
+    .mzilikazi {
+        padding-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .portfolio-slide-1-content {
+        padding-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .portfolio-slide-2-content {
+        padding-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .portfolio-slide-3-content {
+        padding-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .choose-area h2.xlarge {
+        font-size: 60px;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .team-area-2 .section__title-main {
+        font-size: 60px;
+    }
+}
 /*# sourceMappingURL=main.css.map */

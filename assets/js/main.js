@@ -767,6 +767,16 @@
 		})
 	}
 
+    // Scroll To Section
+
+    // document.querySelectorAll("nav button").forEach((btn, index) => {
+    //     btn.addEventListener("click", () => {
+    //       gsap.to(window, {duration: 1, scrollTo:{y:"#section" + (index + 1), offsetY:70}});
+    //     });
+    // });
+
+
+
 	/*======================================
 	28. Hero-2 text animation
 	========================================*/
