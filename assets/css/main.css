@@ -139,6 +139,10 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx+x+++++++++++++++++++++++++++++++++++++++++++++++
 
 **********************************************/
 
+.hidden {
+    visibility: hidden !important;
+}
+
 @font-face {
     font-family: 'Lobengula Font';
     src: url('../assets/fonts/lobengula-font.woff2') format('woff2');
@@ -2224,6 +2228,10 @@ body.mfp-content {
   font-family: 'Lobengula Font' !important;
   font-weight: normal !important;
 }
+.link-separate-icon {
+    position: relative;
+    top: -19px;
+  }
 .link-scroll-line__heading a:hover, .link-scroll-line__heading a:focus {
   color: inherit;
 }
@@ -2231,7 +2239,7 @@ body.mfp-content {
   -webkit-text-stroke-color: inherit;
 }
 .link-scroll-line__heading .link-separate-icon svg {
-  width: 50px;
+  width: 75px;
   height: auto;
 }
 .link-scroll-line__heading .stroke-text {
