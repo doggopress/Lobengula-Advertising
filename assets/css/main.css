@@ -145,7 +145,11 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx+x+++++++++++++++++++++++++++++++++++++++++++++++
 
 @font-face {
     font-family: 'Lobengula Font';
-    src: url('../assets/fonts/lobengula-font.woff2') format('woff2');
+    src: url('../assets/fonts/lobengula-font.woff2') format('woff2'),
+         url('../assets/fonts/lobengula-font.woff') format('woff'),
+         url('../assets/fonts/lobengula-font.ttf') format('truetype'),
+         url('../assets/fonts/lobengula-font.otf') format('opentype'),
+         url('../assets/fonts/lobengula-font.eot') format('embedded-opentype');
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Tenor+Sans&display=swap");
@@ -1128,7 +1132,7 @@ i[class^=flaticon-] {
    Font customize
 -----------------------------------------*/
 .font-highlight {
-  font-family: 'Lobengula Font';
+  font-family: 'Lobengula Font' !important;
 }
 
 .font-normal {
@@ -6296,7 +6300,7 @@ body {
   font-weight: normal;
   color: #171717;
   margin-bottom: 30px;
-  font-family: 'Lobengula Font';
+  font-family: 'Lobengula Font' !important;
 }
 @media only screen and (min-width: 1400px) and (max-width: 1600px) {
   .hero-3__title {
