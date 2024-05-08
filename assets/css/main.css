@@ -10212,6 +10212,7 @@ body {
   width: 572px;
   left: 43%;
   z-index: -1;
+  opacity: 0.05;
 }
 @media (max-width: 575px), only screen and (min-width: 576px) and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
   .team-area-2__shape-1 {
@@ -10434,7 +10435,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 0.01%, #FFFFFF 79.95%);
+  content: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 0.01%, #ffffffba 79.95%);
   top: 0;
   left: 0;
   transform: translateY(50%);
@@ -10444,7 +10445,16 @@ body {
   -ms-transition: all 0.5s ease-out 0s;
   -o-transition: all 0.5s ease-out 0s;
   transition: all 0.5s ease-out 0s;
+  background-image: url(../../assets/img/people/resized/Brenda-Khumalo-Managing-Director2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
+
+/* Hover Image Swaps Start (not working) */
+
+/* Hover Image Swaps End */
+
 @media (hover: none) {
   .member-box-2 .member-thumb-overlay {
     transform: translateY(0);
