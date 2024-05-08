@@ -10117,6 +10117,13 @@ body {
   visibility: visible;
 }
 
+@media screen and (max-width: 767px) {
+    .project__item .project-box-3-content {
+        opacity: 1;
+        visibility: visible;
+      }
+  }
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -10459,6 +10466,7 @@ body {
   .member-box-2 .member-thumb-overlay {
     transform: translateY(0);
     opacity: 1;
+    background-image: url();
   }
 }
 .member-box-2 .member-content {
