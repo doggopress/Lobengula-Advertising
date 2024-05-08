@@ -1,6 +1,9 @@
 /***************************************************
 ==================== JS INDEX ======================
 ****************************************************
+
+Copyright © 2024 Lobengula Advertising
+
 // 00. PreLoader
 // 02. Mobile Menu Js
 // 03. Sidebar
@@ -1592,3 +1595,5 @@
 	});
     
 })(jQuery);
+
+// Copyright © 2024 Lobengula Advertising
