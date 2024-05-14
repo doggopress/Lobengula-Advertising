@@ -40,7 +40,7 @@
 
         // FIXME: Update this to your desired email address.
 
-        $recipient = "admin@topylo.net";
+        $recipient = "info@lobengula.co.za";
 
 
 
@@ -52,7 +52,7 @@
 
         //Email Header
 
-        $head = " ====== TOPYLO ====== ";
+        $head = " ====== LOBENGULA ADVERTISING ====== ";
 
 
 

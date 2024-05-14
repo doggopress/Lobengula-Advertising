@@ -43,3 +43,75 @@
 @use "component/footer";
 @use "component/preloader";
 @use "component/progress-bar";
+
+
+.mzilikazi {
+    padding-bottom: 200px;
+}
+
+@media screen and (max-width: 767px) {
+    .mzilikazi {
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .portfolio-slide-1-content {
+        padding-top: 0px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .portfolio-slide-2-content {
+        padding-top: 0px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .portfolio-slide-3-content {
+        padding-top: 0px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .choose-area h2.xlarge {
+        font-size: 60px;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .team-area-2 .section__title-main {
+        font-size: 60px;
+    }
+}
+
+.team-area-2 {
+    padding-bottom: 200px !important;
+}
+
+* {
+    cursor: none !important;
+}
+
+*:hover {
+    cursor: none !important;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.viewport-header {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
