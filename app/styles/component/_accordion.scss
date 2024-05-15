@@ -115,12 +115,12 @@
 
         &:not(.collapsed) {
             background: none;
-            color: var(--clr-theme-2);
+            color: var(--clr-theme-2) !important;
             box-shadow: none;
             pointer-events: none;
 
             &::after {
-                color: var(--clr-theme-2);
+                color: var(--clr-theme-2) !important;
                 transform: rotate(360deg);
                 background-image: none;
                 content: "\f068";
@@ -230,7 +230,7 @@
             font-weight: bold;
             text-transform: uppercase;
             font-family: var(--tpl-ff-section);
-            color: #191919;
+            color: var(--clr-theme-3);
             padding: 34px 30px;
 
             @media #{$xxs} {
@@ -240,6 +240,7 @@
 
             &::after {
                 color: #191919;
+                color: var(--clr-theme-3);
             }
 
             &::not(.collapsed) {
