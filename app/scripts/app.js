@@ -203,10 +203,11 @@ Copyright © 2024 Lobengula Advertising
 
 	/*======================================
 	08. service hover Js
-	========================================*/
+	========================================* /
 	$(".single-service").on("mouseenter", function () {
 		$(this).addClass("active").siblings().removeClass("active");
 	});
+	/**/
 
 	// /*======================================
 	// process hover Js
@@ -264,7 +265,7 @@ Copyright © 2024 Lobengula Advertising
 
 	/*======================================
 	10. Active Odometer Counter 
-	========================================*/
+	========================================* /
 	jQuery('.odometer').appear(function (e) {
 		var odo = jQuery(".odometer");
 		odo.each(function () {
@@ -272,6 +273,7 @@ Copyright © 2024 Lobengula Advertising
 			jQuery(this).html(countNumber);
 		});
 	});
+	/**/
 
 	/*======================================
 	11. magnificPopup js 
@@ -314,7 +316,7 @@ Copyright © 2024 Lobengula Advertising
 
 	/*======================================
 	13. testimonial slider  
-	========================================*/
+	========================================* /
 	let testimonialSlider = new Swiper(".testimonial-slider", {
 		loop: true,
 		freemode: true,
@@ -364,10 +366,11 @@ Copyright © 2024 Lobengula Advertising
 			},
 		},
 	});
+	/**/
 
 	/*======================================
 	14. portfolio slider  
-	========================================*/
+	========================================* /
 	let portfolio = new Swiper(".portfolio__slider", {
 		loop: false,
 		freemode: true,
@@ -384,10 +387,11 @@ Copyright © 2024 Lobengula Advertising
 			prevEl: ".portfolio-slider-button-prev",
 		},
 	});
+	/**/
 
 	/*======================================
 	14.1. portfolio slider 
-	========================================*/
+	========================================* /
 	let portfolioSlider2 = new Swiper(".strategy__slider", {
 		loop: false,
 		freemode: true,
@@ -400,6 +404,7 @@ Copyright © 2024 Lobengula Advertising
 			releaseOnEdges: true,
 		},
 	});
+	/**/
 
 	/*======================================
 	15. brand activation 
@@ -453,7 +458,7 @@ Copyright © 2024 Lobengula Advertising
 	});
 	/*======================================
 	15.1. brand activation 
-	========================================*/
+	========================================* /
 	var brand2 = new Swiper('.brand-active-2', {
 		slidesPerView: 3,
 		spaceBetween: 30,
@@ -480,10 +485,11 @@ Copyright © 2024 Lobengula Advertising
 			},
 		},
 	});
+	/**/
 
 	/*======================================
 	15.2. brand activation 
-	========================================*/
+	========================================* /
 	var brand3 = new Swiper('.swiper-round-active', {
 		slidesPerView: 6,
 		spaceBetween: 0,
@@ -516,6 +522,7 @@ Copyright © 2024 Lobengula Advertising
 			},
 		},
 	});
+	/**/
 
 	/*======================================
 	16. team slider  
@@ -529,7 +536,7 @@ Copyright © 2024 Lobengula Advertising
 		},
 		slidesPerView: 1,
 		spaceBetween: 30,
-		centeredSlides: false,
+		centeredSlides: true,
 		simulateTouch: true,
 		speed: 1000,
 		mousewheel: {
@@ -578,7 +585,7 @@ Copyright © 2024 Lobengula Advertising
 
 	/*======================================
 	17. service slider  
-	========================================*/
+	========================================* /
 	let serviceSlider = new Swiper(".service-slider", {
 		loop: false,
 		freemode: true,
@@ -612,10 +619,11 @@ Copyright © 2024 Lobengula Advertising
 			},
 		},
 	});
+	/**/
 
 	/*======================================
 	18. gallery slider 
-	========================================*/
+	========================================* /
 	let gallerySlider = new Swiper(".gallery-slider", {
 		loop: true,
 		freemode: true,
@@ -649,10 +657,11 @@ Copyright © 2024 Lobengula Advertising
 			},
 		},
 	});
+	/**/
 
 	/*======================================
 	19. blogpost slider
-	========================================*/
+	========================================* /
 	let blogpostSlider = new Swiper(".blogpost-slider", {
 		loop: false,
 		freemode: true,
@@ -686,10 +695,11 @@ Copyright © 2024 Lobengula Advertising
 			},
 		},
 	});
+	/**/
 
 	/*======================================
 	19.1. blogpost slider
-	========================================*/
+	========================================* /
 	let teamSlider5 = new Swiper(".team-slider-active", {
 		loop: true,
 		freemode: true,
@@ -719,6 +729,7 @@ Copyright © 2024 Lobengula Advertising
 			},
 		},
 	});
+	/**/
 
 	/*======================================
 	20. video play 
@@ -752,7 +763,7 @@ Copyright © 2024 Lobengula Advertising
 
 	/*======================================
 	21. case slider
-	========================================*/
+	========================================* /
 	var caseSlider = new Swiper(".case-slider-active", {
 		slidesPerView: "auto",
 		centeredSlides: true,
@@ -784,6 +795,7 @@ Copyright © 2024 Lobengula Advertising
 			},
 		},
 	});
+	/**/
 
 	/*======================================
 	22. TEAM ACTIVE
@@ -796,12 +808,13 @@ Copyright © 2024 Lobengula Advertising
 
 	/*======================================
 	24. hero-2__img-box Active
-	========================================*/
+	========================================* /
 	$(document).on('mouseover', '.hero-2__img-box', function () {
 		$(this).addClass('active');
 		$('.hero-2__img-box').removeClass('active');
 		$(this).addClass('active');
 	});
+	/**/
 
 	/*======================================
 	25. Gsap RegisterPlugin
@@ -1059,7 +1072,7 @@ Copyright © 2024 Lobengula Advertising
 	}
 	/*======================================
 	38. Button Movein Animation JS
-	========================================*/
+	========================================* /
 
 	const axil_all_btns = gsap.utils.toArray(".btn_wrapper");
 	if (axil_all_btns.length > 0) {
@@ -1096,6 +1109,7 @@ Copyright © 2024 Lobengula Advertising
 			});
 		});
 	});
+	/**/
 
 	/*======================================
 	39. animate-image
@@ -1243,7 +1257,7 @@ Copyright © 2024 Lobengula Advertising
 
 	/*======================================
 	43. strategy Section
-	========================================*/
+	========================================* /
 	if (device_width > 1199) {
 
 		var strategy_wrapper = document.querySelector('.strategy-wrapper');
@@ -1308,6 +1322,7 @@ Copyright © 2024 Lobengula Advertising
 			}
 		}
 	}
+	/**/
 
 	/*======================================
 	44. Charchater Come long Animation
@@ -1626,7 +1641,7 @@ Copyright © 2024 Lobengula Advertising
 	}
 	/*======================================
 	57. Testimonial Active JS
-	========================================*/
+	========================================* /
 	var ax_testimonial_active = new Swiper(".ax_testimonial_active", {
 		slidesPerView: 4,
 		spaceBetween: 30,
@@ -1663,6 +1678,7 @@ Copyright © 2024 Lobengula Advertising
 
 		},
 	});
+	/**/
 
 	/*======================================
 	58. Parallax animation JS
