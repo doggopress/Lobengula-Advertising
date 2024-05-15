@@ -570,6 +570,7 @@
 .hero-3-area {
     padding-top: 310px;
     padding-bottom: 150px;
+    min-height: 100vh;
 
     @media #{$lg} {
         padding-top: 300px;
@@ -591,6 +592,16 @@
         padding-bottom: 90px;
     }
 
+    .area__btn {
+        display: block;
+        z-index: 9999;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 9999;
+        transform: translateX(-50%) translateY(60%);
+    }
+
     .container {
         max-width: 1640px;
     }
@@ -602,6 +613,8 @@
 
     &__bg {
         z-index: -1;
+
+        
 
         &::before {
             position: absolute;
@@ -642,6 +655,7 @@
         font-weight: 700;
         color: #171717;
         margin-bottom: 30px;
+        letter-spacing: 10px;
 
         @media #{$xxl} {
             font-size: 120px;
@@ -748,8 +762,9 @@
         line-height: 1.66;
         color: #171717;
         max-width: 538px;
+        max-width: 100%;
         margin-bottom: 75px;
-        margin-left: 241px;
+        //margin-left: 241px;
 
         @media #{$xl} {
             font-size: 20px;
@@ -773,6 +788,16 @@
         @media #{$lg,$md,$sm,$xs} {
             margin-left: 0;
         }
+    }
+
+    &__shapes {
+        z-index: 1;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
     }
 
     &__shape {
@@ -1129,4 +1154,14 @@
 }
 .hero-btn {
     margin-top: 50px;
+}
+
+.o-hero__video {
+    position: absolute;
+    top:0;
+    left:0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
 }

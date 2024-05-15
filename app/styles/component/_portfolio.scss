@@ -34,19 +34,45 @@
 
 }
 
+.pattern-wrapper {
+    top:0;
+    left:0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100px;
+
+    .horizontal-black {
+        position: absolute;
+        top:-15px;
+        left:0;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100px;
+
+        background-color: transparent;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url('../assets/images/patterns/pattern-horizontal-black.png');
+    }
+}
+
 // portfolio-horizontal-area
 .portfolio__area {
     overflow: hidden;
     direction: ltr;
+    background-color: var(--clr-common-white);;
 
 
     @media #{$lg} {
-        background-color: var(--clr-bg-6);
+        background-color: var(--clr-common-white);;
     }
 
 
     @media #{$md,$sm,$xs} {
-        background-color: var(--clr-bg-6);
+        background-color: var(--clr-common-white);;
     }
 
 }
@@ -87,7 +113,7 @@
 
 .portfolio-title {
     font-weight: 500;
-    font-size: 100px;
+    font-size: 15vw;
     line-height: 1.08;
     text-transform: uppercase;
     color: var(--clr-theme-primary);

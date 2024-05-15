@@ -44,5 +44,22 @@
         $fl.next(".sub-menu").slideToggle();
     });
 
+    $(".sidebar-menu-area a").on('click', function (event) {
+        //event.preventDefault();
+
+        const nav = document.querySelector(".main-nav-js");
+        const navLinks = document.querySelectorAll(".main-nav-js .menu-list .menu-item");
+
+        nav.classList.remove("show-menu");
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = "";
+            } else {
+                link.style.animation = `navLinkFade 0.4s ease forwards ${index / 10 + 0.5
+                        }s `;
+                }
+        });
+    });
+
 
 })(jQuery);

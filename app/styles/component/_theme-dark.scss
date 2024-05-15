@@ -50,7 +50,8 @@
 
     .sticky {
         background: var(--clr-common-black);
-        box-shadow: 0px 20px 30px rgba(255, 255, 255, 0.1);
+        //box-shadow: 0px 20px 30px rgba(255, 255, 255, 0.1);
+        box-shadow: 0px 20px 30px rgb(0 0 0 / 60%);
     }
 
     .team-area__overlay:after {
@@ -266,10 +267,12 @@
 
     .hero-3__title {
         color: var(--clr-common-white);
+        text-align: center;
     }
 
     .hero-3__text {
         color: var(--clr-common-white);
+        text-align: center;
     }
 
     .hero-3__subtitle {

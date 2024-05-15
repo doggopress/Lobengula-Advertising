@@ -37,7 +37,7 @@
 	height: 80px;
 	margin-top: -45px;
 	border-radius: 0px;
-	background-color: #14CF93;
+	background-color: var(--clr-theme-2);
 	animation: ax-loader-aim 0.8s infinite;
 	animation-direction: alternate-reverse;
 }

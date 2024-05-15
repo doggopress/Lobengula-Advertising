@@ -450,7 +450,7 @@
 
 .project-area-2 {
     position: relative;
-    background-color: transparent;
+    background-color: #1c1c1c;
     overflow: hidden;
 }
 
@@ -484,9 +484,9 @@
 }
 
 .project__sub-title {
-    font-size: 16px;
+    font-size: 40px;
     font-weight: 600;
-    color: var(--clr-theme-primary);
+    color: var(--clr-common-white);
     text-transform: uppercase;
     font-family: var(--tpl-ff-section);
     margin-bottom: 0;

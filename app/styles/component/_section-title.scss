@@ -27,17 +27,18 @@
             align-items: flex-start;
             gap: 27px;
             margin-bottom: 30px;
+            justify-content: center;
 
             .section {
                 &__subtitle {
                     &-text {
-                        font-size: 16px;
+                        font-size: 40px;
                         font-weight: 600;
-                        color: var(--clr-theme-1);
+                        color: var(--clr-common-white) !important;
                         text-transform: uppercase;
                         font-family: var(--tpl-ff-section);
-                        margin-bottom: 0;
-                        line-height: 25px;
+                        margin-bottom: 2em;
+                        line-height: 60px;
                         padding-bottom: 10px;
                         display: inline-block;
                         position: relative;

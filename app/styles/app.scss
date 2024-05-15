@@ -107,13 +107,19 @@
     padding-bottom: 200px !important;
 }
 
-* {
-    cursor: none !important;
-}
+/** /
+@media not all and (hover: none) {
 
-*:hover {
-    cursor: none !important;
+    * {
+        cursor: none !important;
+    }
+
+    *:hover {
+        cursor: none !important;
+    }
+
 }
+/**/
 
 video {
   object-fit: cover;

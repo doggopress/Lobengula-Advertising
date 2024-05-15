@@ -1,16 +1,6 @@
 import $ from 'jquery';
 
-//import './vendor';
-
 import 'scripts/vendor/bootstrap.bundle.min';
-
-//import 'scripts/vendor/swiper-bundle.min.js';
-//import 'scripts/vendor/slick.min.js';
-//import 'scripts/vendor/magnific-popup.min.js';
-//import 'scripts/vendor/jquery.appear.js';
-//import 'scripts/vendor/jquery.odometer.min.js';
-//import 'scripts/vendor/chroma.min.js';
-//import { waypoints } from 'waypoints';
 
 import 'odometer';
 import 'jquery.appear';
@@ -162,8 +152,12 @@ Copyright © 2024 Lobengula Advertising
 	04. Sticky Header Js
 	========================================*/
 	windowOn.on("scroll", function () {
+		const hero = $('.hero-3-area').height();
+
+		//alert(hero);
+
 		var scroll = $(window).scrollTop();
-		if (scroll < 100) {
+		if (scroll < parseInt(hero)) {
 			$("#header-sticky").removeClass("sticky");
 		} else {
 			$("#header-sticky").addClass("sticky");
@@ -217,11 +211,13 @@ Copyright © 2024 Lobengula Advertising
 	// /*======================================
 	// process hover Js
 	// ========================================*/
-	// $(document).on('mouseover', '.mouse-over', function () {
-	// 	$(this).addClass('active');
-	// 	$('.mouse-over').removeClass('active');
-	// 	$(this).addClass('active');
-	// });
+	/** /
+	$(document).on('mouseover', '.mouse-over', function () {
+		$(this).addClass('active');
+		$('.mouse-over').removeClass('active');
+		$(this).addClass('active');
+	});
+	/**/
 
 	/*======================================
 	09. Mouse Custom Cursor
@@ -526,14 +522,27 @@ Copyright © 2024 Lobengula Advertising
 	========================================*/
 	let teamSlider = new Swiper(".team-slider", {
 		loop: true,
-		freemode: true,
+		parallax: true,
+		freeMode: {
+			enabled: true,
+			sticky: false,
+		},
 		slidesPerView: 1,
 		spaceBetween: 30,
 		centeredSlides: false,
+		simulateTouch: true,
 		speed: 1000,
+		mousewheel: {
+			invert: false,
+		},
 		navigation: {
 			nextEl: ".team-slider-button-next",
 			prevEl: ".team-slider-button-prev",
+		},
+		autoplay: {
+			//delay: 2000,
+			//disableOnInteraction: false,
+			//pauseOnMouseEnter: true
 		},
 		breakpoints: {
 			// when window width is >= 320px
@@ -554,6 +563,15 @@ Copyright © 2024 Lobengula Advertising
 			},
 			1400: {
 				slidesPerView: 4,
+				parallax: true,
+				mousewheel: {
+					invert: false,
+				},
+				autoplay: {
+					delay: 2000,
+					disableOnInteraction: false,
+					pauseOnMouseEnter: true
+				},
 			},
 		},
 	});

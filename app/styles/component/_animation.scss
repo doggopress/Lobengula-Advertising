@@ -674,6 +674,26 @@
 	}
 }
 
+
+/*======================================
+Rotate center
+========================================*/
+
+.rotate-center {
+    -webkit-animation: rotate-center 40s linear infinite both;
+    animation: rotate-center 40s linear infinite both;
+}
+
+@keyframes rotate-center {
+	from {
+		transform: rotate(0);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 /*======================================
 Animate slide-left 
 ========================================*/
@@ -689,6 +709,7 @@ Animate slide-left
 		transform: translateX(-100%);
 	}
 }
+
 
 /*======================================
 Hero-6 Animation 
