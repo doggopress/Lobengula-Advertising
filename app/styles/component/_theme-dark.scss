@@ -154,7 +154,7 @@
     }
 
     .portfolio-slide-3-thumb::after {
-        background: linear-gradient(90deg, var(--clr-common-black) 10.97%, rgba(255, 255, 255, 0) 89.51%);
+        background: linear-gradient(90deg, var(--clr-common-white) 10.97%, rgba(255, 255, 255, 0) 89.51%);
     }
 
     .capabilities__accordion .accordion-button {
@@ -252,16 +252,6 @@
         color: var(--clr-common-black);
     }
 
-
-
-
-
-
-
-
-
-
-
     .hheader-latout-top-content-wrapper .meta-item__text p {
         color: var(--clr-common-white);
     }
@@ -307,7 +297,8 @@
     }
 
     .choose-area-content .thumb-wrapper::after {
-        background: linear-gradient(180deg, #222222 0%, rgba(255, 255, 255, 0) 100%);
+        background: none;
+        //background: linear-gradient(180deg, #222222 0%, rgba(255, 255, 255, 0) 100%);
     }
 
     .choose-area-content p {
@@ -327,7 +318,7 @@
     }
 
     .member-box-2 .member-designation {
-        color: #545454b5;
+        //color: #545454b5;
     }
 
     .hr1 {

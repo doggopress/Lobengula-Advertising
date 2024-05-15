@@ -109,6 +109,11 @@ module.exports = (env) => {
 									type: 'src'
 								},
 								{
+									tag: 'span',
+									attribute: 'data-background',
+									type: 'src'
+								},
+								{
 									tag: 'img',
 									attribute: 'data-srcset',
 									type: 'srcset'

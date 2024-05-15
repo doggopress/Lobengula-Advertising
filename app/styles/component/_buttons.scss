@@ -625,13 +625,13 @@
 	}
 
 	&:after {
-		background-color: #14CF93;
+		background-color: var(--clr-theme-2);
 
 	}
 
 	&:hover {
 		transform: scale(1.0);
-		border-color: #14CF93;
+		border-color:  var(--clr-theme-2);
 
 		&:after,
 		&:before {

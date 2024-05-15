@@ -207,7 +207,13 @@
 
         h2 {
             margin-bottom: 40px;
+            letter-spacing: 10px;
 
+        }
+
+        p {
+            max-width: 720px;
+            font-family: var(--tpl-ff-section);
         }
 
         .area-btn {
@@ -239,7 +245,8 @@
 // portfolio-slide-2 style 
 .portfolio-slide-2 {
     height: 100vh;
-    background: #CFDAE3;
+    //background: #CFDAE3;
+    background: var(--clr-common-white);
     z-index: 1;
 
 
@@ -250,12 +257,18 @@
     &-content {
 
         h2 {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
+            letter-spacing: 10px;
 
             span {
                 color: var(--clr-theme-2);
                 font-weight: 400;
             }
+        }
+
+        p {
+            max-width: 720px;
+            font-family: var(--tpl-ff-section);
         }
 
         .awards-list {
@@ -305,6 +318,7 @@
 
         h2 {
             margin-bottom: 40px;
+            letter-spacing: 10px;
 
             span {
                 font-weight: 400;
@@ -313,6 +327,7 @@
 
         p {
             max-width: 720px;
+            font-family: var(--tpl-ff-section);
         }
 
         .area-btn {
