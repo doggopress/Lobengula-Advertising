@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /fonts/
+Disallow: /images/
+Disallow: /assets/
+
+Sitemap: https://lobengula.co.za/sitemap.xml

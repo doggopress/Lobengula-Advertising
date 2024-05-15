@@ -1,0 +1,543 @@
+# Apache Configuration File
+
+# Author        : ...a few Good Devs...
+# Author URI    : www.5ivedesign.co.za
+
+RewriteEngine on
+
+# Remove HTML file extension
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+
+<IfModule mod_mime.c>
+	AddType text/css .css
+	AddType text/x-component .htc
+	AddType application/x-javascript .js
+	AddType application/javascript .js2
+	AddType text/javascript .js3
+	AddType text/x-js .js4
+	AddType video/asf .asf .asx .wax .wmv .wmx
+	AddType video/avi .avi
+	AddType image/bmp .bmp
+	AddType application/java .class
+	AddType video/divx .divx
+	AddType application/msword .doc .docx
+	AddType application/vnd.ms-fontobject .eot
+	AddType application/x-msdownload .exe
+	AddType image/gif .gif
+	AddType application/x-gzip .gz .gzip
+	AddType image/x-icon .ico
+	AddType image/jpeg .jpg .jpeg .jpe
+	AddType image/webp .webp
+	AddType application/json .json
+	AddType application/vnd.ms-access .mdb
+	AddType audio/midi .mid .midi
+	AddType video/quicktime .mov .qt
+	AddType audio/mpeg .mp3 .m4a
+	AddType video/mp4 .mp4 .m4v
+	AddType video/mpeg .mpeg .mpg .mpe
+	AddType video/webm .webm
+	AddType video/ogg .ogm
+	AddType video/ogg .ogv
+	AddType video/ogg .ogg
+	AddType application/vnd.ms-project .mpp
+	AddType application/x-font-otf .otf
+	AddType application/vnd.ms-opentype ._otf
+	AddType application/vnd.oasis.opendocument.database .odb
+	AddType application/vnd.oasis.opendocument.chart .odc
+	AddType application/vnd.oasis.opendocument.formula .odf
+	AddType application/vnd.oasis.opendocument.graphics .odg
+	AddType application/vnd.oasis.opendocument.presentation .odp
+	AddType application/vnd.oasis.opendocument.spreadsheet .ods
+	AddType application/vnd.oasis.opendocument.text .odt
+	AddType audio/ogg .ogg
+	AddType application/pdf .pdf
+	AddType image/png .png
+	AddType application/vnd.ms-powerpoint .pot .pps .ppt .pptx
+	AddType audio/x-realaudio .ra .ram
+	AddType image/svg+xml .svg .svgz
+	AddType application/x-shockwave-flash .swf
+	AddType application/x-tar .tar
+	AddType image/tiff .tif .tiff
+	AddType application/x-font-ttf .ttf .ttc
+	AddType application/vnd.ms-opentype ._ttf
+	AddType audio/wav .wav
+	AddType audio/wma .wma
+	AddType application/vnd.ms-write .wri
+	AddType application/font-woff .woff
+	AddType application/font-woff2 .woff2
+	AddType application/vnd.ms-excel .xla .xls .xlsx .xlt .xlw
+	AddType application/zip .zip
+</IfModule>
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresByType text/css A31536000
+	ExpiresByType text/x-component A31536000
+	ExpiresByType application/x-javascript A31536000
+	ExpiresByType application/javascript A31536000
+	ExpiresByType text/javascript A31536000
+	ExpiresByType text/x-js A31536000
+	ExpiresByType video/asf A31536000
+	ExpiresByType video/avi A31536000
+	ExpiresByType image/bmp A31536000
+	ExpiresByType application/java A31536000
+	ExpiresByType video/divx A31536000
+	ExpiresByType application/msword A31536000
+	ExpiresByType application/vnd.ms-fontobject A31536000
+	ExpiresByType application/x-msdownload A31536000
+	ExpiresByType image/gif A31536000
+	ExpiresByType application/x-gzip A31536000
+	ExpiresByType image/x-icon A31536000
+	ExpiresByType image/jpeg A31536000
+	ExpiresByType image/webp A31536000
+	ExpiresByType application/json A31536000
+	ExpiresByType application/vnd.ms-access A31536000
+	ExpiresByType audio/midi A31536000
+	ExpiresByType video/quicktime A31536000
+	ExpiresByType audio/mpeg A31536000
+	ExpiresByType video/mp4 A31536000
+	ExpiresByType video/mpeg A31536000
+	ExpiresByType video/webm A31536000
+	ExpiresByType application/vnd.ms-project A31536000
+	ExpiresByType application/x-font-otf A31536000
+	ExpiresByType application/vnd.ms-opentype A31536000
+	ExpiresByType application/vnd.oasis.opendocument.database A31536000
+	ExpiresByType application/vnd.oasis.opendocument.chart A31536000
+	ExpiresByType application/vnd.oasis.opendocument.formula A31536000
+	ExpiresByType application/vnd.oasis.opendocument.graphics A31536000
+	ExpiresByType application/vnd.oasis.opendocument.presentation A31536000
+	ExpiresByType application/vnd.oasis.opendocument.spreadsheet A31536000
+	ExpiresByType application/vnd.oasis.opendocument.text A31536000
+	ExpiresByType audio/ogg A31536000
+	ExpiresByType application/pdf A31536000
+	ExpiresByType image/png A31536000
+	ExpiresByType application/vnd.ms-powerpoint A31536000
+	ExpiresByType audio/x-realaudio A31536000
+	ExpiresByType image/svg+xml A31536000
+	ExpiresByType application/x-shockwave-flash A31536000
+	ExpiresByType application/x-tar A31536000
+	ExpiresByType image/tiff A31536000
+	ExpiresByType application/x-font-ttf A31536000
+	ExpiresByType application/vnd.ms-opentype A31536000
+	ExpiresByType audio/wav A31536000
+	ExpiresByType audio/wma A31536000
+	ExpiresByType application/vnd.ms-write A31536000
+	ExpiresByType application/font-woff A31536000
+	ExpiresByType application/font-woff2 A31536000
+	ExpiresByType application/vnd.ms-excel A31536000
+	ExpiresByType application/zip A31536000
+</IfModule>
+<IfModule mod_deflate.c>
+		AddOutputFilterByType DEFLATE text/css text/x-component application/x-javascript application/javascript text/javascript text/x-js text/html text/richtext text/plain text/xsd text/xsl text/xml image/bmp application/java application/msword application/vnd.ms-fontobject application/x-msdownload image/x-icon image/webp application/json application/vnd.ms-access video/webm application/vnd.ms-project application/x-font-otf application/vnd.ms-opentype application/vnd.oasis.opendocument.database application/vnd.oasis.opendocument.chart application/vnd.oasis.opendocument.formula application/vnd.oasis.opendocument.graphics application/vnd.oasis.opendocument.presentation application/vnd.oasis.opendocument.spreadsheet application/vnd.oasis.opendocument.text audio/ogg application/pdf application/vnd.ms-powerpoint image/svg+xml application/x-shockwave-flash image/tiff application/x-font-ttf application/vnd.ms-opentype audio/wav application/vnd.ms-write application/font-woff application/font-woff2 application/vnd.ms-excel
+	<IfModule mod_mime.c>
+		# DEFLATE by extension
+		AddOutputFilter DEFLATE js css htm html xml
+	</IfModule>
+</IfModule>
+<FilesMatch "\.(css|htc|less|js|js2|js3|js4|CSS|HTC|LESS|JS|JS2|JS3|JS4)$">
+	FileETag MTime Size
+	<IfModule mod_headers.c>
+		 Header unset Set-Cookie
+	</IfModule>
+</FilesMatch>
+<FilesMatch "\.(html|htm|rtf|rtx|txt|xsd|xsl|xml|HTML|HTM|RTF|RTX|TXT|XSD|XSL|XML)$">
+	FileETag MTime Size
+	<IfModule mod_headers.c>
+		Header append Vary User-Agent env=!dont-vary
+	</IfModule>
+</FilesMatch>
+<FilesMatch "\.(asf|asx|wax|wmv|wmx|avi|bmp|class|divx|doc|docx|eot|exe|gif|gz|gzip|ico|jpg|jpeg|jpe|webp|json|mdb|mid|midi|mov|qt|mp3|m4a|mp4|m4v|mpeg|mpg|mpe|webm|mpp|otf|_otf|odb|odc|odf|odg|odp|ods|odt|ogg|pdf|png|pot|pps|ppt|pptx|ra|ram|svg|svgz|swf|tar|tif|tiff|ttf|ttc|_ttf|wav|wma|wri|woff|woff2|xla|xls|xlsx|xlt|xlw|zip|ASF|ASX|WAX|WMV|WMX|AVI|BMP|CLASS|DIVX|DOC|DOCX|EOT|EXE|GIF|GZ|GZIP|ICO|JPG|JPEG|JPE|WEBP|JSON|MDB|MID|MIDI|MOV|QT|MP3|M4A|MP4|M4V|MPEG|MPG|MPE|WEBM|MPP|OTF|_OTF|ODB|ODC|ODF|ODG|ODP|ODS|ODT|OGG|PDF|PNG|POT|PPS|PPT|PPTX|RA|RAM|SVG|SVGZ|SWF|TAR|TIF|TIFF|TTF|TTC|_TTF|WAV|WMA|WRI|WOFF|WOFF2|XLA|XLS|XLSX|XLT|XLW|ZIP)$">
+	FileETag MTime Size
+	<IfModule mod_headers.c>
+		 Header unset Set-Cookie
+	</IfModule>
+</FilesMatch>
+<FilesMatch "\.(bmp|class|doc|docx|eot|exe|ico|webp|json|mdb|webm|mpp|otf|_otf|odb|odc|odf|odg|odp|ods|odt|ogg|pdf|pot|pps|ppt|pptx|svg|svgz|swf|tif|tiff|ttf|ttc|_ttf|wav|wri|woff|woff2|xla|xls|xlsx|xlt|xlw|BMP|CLASS|DOC|DOCX|EOT|EXE|ICO|WEBP|JSON|MDB|WEBM|MPP|OTF|_OTF|ODB|ODC|ODF|ODG|ODP|ODS|ODT|OGG|PDF|POT|PPS|PPT|PPTX|SVG|SVGZ|SWF|TIF|TIFF|TTF|TTC|_TTF|WAV|WRI|WOFF|WOFF2|XLA|XLS|XLSX|XLT|XLW)$">
+	<IfModule mod_headers.c>
+		 Header unset Last-Modified
+	</IfModule>
+</FilesMatch>
+<IfModule mod_headers.c>
+	Header set Referrer-Policy ""
+</IfModule>
+# END W3TC Browser Cache
+
+# BEGIN W3TC CDN
+<IfModule mod_headers.c>
+	Header set Access-Control-Allow-Origin "*"
+</IfModule>
+# END W3TC CDN
+
+# ##############################################################################
+# # INTERNET EXPLORER                                                          #
+# ##############################################################################
+
+# ------------------------------------------------------------------------------
+# | Better website experience                                                  |
+# ------------------------------------------------------------------------------
+
+# Force IE to render pages in the highest available mode in the various
+# cases when it may not: http://hsivonen.iki.fi/doctype/ie-mode.pdf.
+# Use, if installed, Google Chrome Frame.
+
+<IfModule mod_headers.c>
+Header set X-UA-Compatible "IE=edge,chrome=1"
+# `mod_headers` can't match based on the content-type, however, we only
+# want to send this header for HTML pages and not for the other resources
+<FilesMatch "\.(appcache|crx|css|eot|gif|htc|ico|jpe?g|js|m4a|m4v|manifest|mp4|oex|oga|ogg|ogv|otf|pdf|png|safariextz|svg|svgz|ttf|vcf|webapp|webm|webp|woff|xml|xpi)$">
+Header unset X-UA-Compatible
+</FilesMatch>
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# | Proper MIME types for all files                                            |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_mime.c>
+
+AddType text/css .css
+AddType text/x-component .htc
+
+# Audio
+AddType audio/mp4                                   m4a f4a f4b
+AddType audio/ogg                                   oga ogg
+
+# JavaScript
+# Normalize to standard type (it's sniffed in IE anyways):
+# http://tools.ietf.org/html/rfc4329#section-7.2
+AddType application/javascript                      js jsonp
+AddType application/json                            json
+AddType application/x-javascript .js
+AddType application/javascript .js2
+AddType text/javascript .js3
+AddType text/x-js .js4
+
+# Video
+AddType video/mp4                                   mp4 m4v f4v f4p
+AddType video/ogg                                   ogv
+AddType video/webm                                  webm
+AddType video/x-flv                                 flv
+
+# Web fonts
+AddType application/font-woff                       woff
+AddType application/vnd.ms-fontobject               eot
+
+# Browsers usually ignore the font MIME types and sniff the content,
+# however, Chrome shows a warning if other MIME types are used for the
+# following fonts.
+AddType application/x-font-ttf                      ttc ttf
+AddType font/opentype                               otf
+
+# Make SVGZ fonts work on iPad:
+# https://twitter.com/FontSquirrel/status/14855840545
+AddType     image/svg+xml                           svg svgz
+AddEncoding gzip                                    svgz
+
+# Other
+AddType application/octet-stream                    safariextz
+AddType application/x-chrome-extension              crx
+AddType application/x-opera-extension               oex
+AddType application/x-shockwave-flash               swf
+AddType application/x-web-app-manifest+json         webapp
+AddType application/x-xpinstall                     xpi
+AddType application/xml                             atom rdf rss xml
+AddType image/webp                                  webp
+AddType image/x-icon                                ico
+AddType text/cache-manifest                         appcache manifest
+AddType text/vtt                                    vtt
+AddType text/x-component                            htc
+AddType text/x-vcard                                vcf
+AddType application/octet-stream .ics
+
+</IfModule>
+
+
+
+# ------------------------------------------------------------------------------
+# | UTF-8 encoding                                                             |
+# ------------------------------------------------------------------------------
+
+# Use UTF-8 encoding for anything served as `text/html` or `text/plain`.
+AddDefaultCharset utf-8
+
+# Force UTF-8 for certain file formats.
+<IfModule mod_mime.c>
+AddCharset utf-8 .atom .css .js .json .rss .vtt .webapp .xml
+</IfModule>
+
+# ##############################################################################
+# # SECURITY                                                                   #
+# ##############################################################################
+
+# ------------------------------------------------------------------------------
+# | Content Security Policy (CSP)                                              |
+# ------------------------------------------------------------------------------
+
+# You can mitigate the risk of cross-site scripting and other content-injection
+# attacks by setting a Content Security Policy which whitelists trusted sources
+# of content for your site.
+
+# The example header below allows ONLY scripts that are loaded from the current
+# site's origin (no inline scripts, no CDN, etc). This almost certainly won't
+# work as-is for your site!
+
+# To get all the details you'll need to craft a reasonable policy for your site,
+# read: http://html5rocks.com/en/tutorials/security/content-security-policy (or
+# see the specification: http://w3.org/TR/CSP).
+
+# <IfModule mod_headers.c>
+#    Header set Content-Security-Policy "script-src 'self'; object-src 'self'"
+#    <FilesMatch "\.(appcache|crx|css|eot|gif|htc|ico|jpe?g|js|m4a|m4v|manifest|mp4|oex|oga|ogg|ogv|otf|pdf|png|safariextz|svg|svgz|ttf|vcf|webapp|webm|webp|woff|xml|xpi)$">
+#        Header unset Content-Security-Policy
+#    </FilesMatch>
+# </IfModule>
+
+<IfModule mod_headers.c>
+	Header set Content-Security-Policy "img-src *.googletagmanager.com"
+    Header set Content-Security-Policy "script-src-elem 'self' 'unsafe-inline' nonce-747597838555 nonce-747597838558 https://polyfill.io https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://www.google-analytics.com https://www.google.com https://*.5ivedesign.co.za https://5ivedesign.co.za https://*.5ivedesign.ca https://5ivedesign.ca https://*.5ivedesign.io https://5ivedesign.io https://*.cloud5ive.io https://cloud5ive.io; object-src 'self'"
+    <FilesMatch "\.(appcache|crx|css|eot|gif|htc|ico|jpe?g|js|m4a|m4v|manifest|mp4|oex|oga|ogg|ogv|otf|pdf|png|safariextz|svg|svgz|ttf|vcf|webapp|webm|webp|woff|xml|xpi)$">
+        Header unset Content-Security-Policy
+    </FilesMatch>
+    
+    Header always append X-Frame-Options SAMEORIGIN
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header setifempty Referrer-Policy: same-origin
+    Header set X-XSS-Protection "1; mode=block"
+    #Header set X-Permitted-Cross-Domain-Policies "none"
+    Header set Referrer-Policy "no-referrer"
+    Header set X-Content-Type-Options: nosniff
+    Header set Permissions-Policy "microphone=(), camera=(), midi=(), gyroscope=(), geolocation=(self), autoplay=*"
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# | File access                                                                |
+# ------------------------------------------------------------------------------
+
+# Block access to directories without a default document.
+# Usually you should leave this uncommented because you shouldn't allow anyone
+# to surf through every directory on your server (which may includes rather
+# private places like the CMS's directories).
+
+<IfModule mod_autoindex.c>
+Options -Indexes
+</IfModule>
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Block access to hidden files and directories.
+# This includes directories used by version control systems such as Git and SVN.
+
+<IfModule mod_rewrite.c>
+RewriteCond %{SCRIPT_FILENAME} -d [OR]
+RewriteCond %{SCRIPT_FILENAME} -f
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Block access to backup and source files.
+# These files may be left by some text editors and can pose a great security
+# danger when anyone has access to them.
+
+<FilesMatch "(^#.*#|\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|sw[op])|~)$">
+Order allow,deny
+Deny from all
+Satisfy All
+</FilesMatch>
+
+# ------------------------------------------------------------------------------
+# | Secure Sockets Layer (SSL)                                                 |
+# ------------------------------------------------------------------------------
+
+# Rewrite secure requests properly to prevent SSL certificate warnings, e.g.:
+# prevent `https://www.example.com` when your certificate only allows
+# `https://secure.example.com`.
+
+# <IfModule mod_rewrite.c>
+#    RewriteCond %{SERVER_PORT} !^443
+#    RewriteRule ^ https://example-domain-please-change-me.com%{REQUEST_URI} [R=301,L]
+# </IfModule>
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Force client-side SSL redirection.
+
+# If a user types "example.com" in his browser, the above rule will redirect him
+# to the secure version of the site. That still leaves a window of opportunity
+# (the initial HTTP connection) for an attacker to downgrade or redirect the
+# request. The following header ensures that browser will ONLY connect to your
+# server via HTTPS, regardless of what the users type in the address bar.
+# http://www.html5rocks.com/en/tutorials/security/transport-layer-security/
+
+<IfModule mod_headers.c>
+Header set Strict-Transport-Security max-age=16070400;
+</IfModule>
+
+# ##############################################################################
+# # WEB PERFORMANCE                                                            #
+# ##############################################################################
+
+# ------------------------------------------------------------------------------
+# | Compression                                                                |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+
+# Force compression for mangled headers.
+# http://developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping
+<IfModule mod_setenvif.c>
+<IfModule mod_headers.c>
+SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+</IfModule>
+</IfModule>
+
+<IfModule mod_headers.c>
+Header append Vary User-Agent env=!dont-vary
+</IfModule>
+
+# Compress all output labeled with one of the following MIME-types
+# (for Apache versions below 2.3.7, you don't need to enable `mod_filter`
+#  and can remove the `<IfModule mod_filter.c>` and `</IfModule>` lines
+#  as `AddOutputFilterByType` is still in the core directives).
+<IfModule mod_filter.c>
+AddOutputFilterByType DEFLATE application/atom+xml \
+application/javascript \
+application/x-javascript \
+application/json \
+application/rss+xml \
+application/vnd.ms-fontobject \
+application/x-font-ttf \
+application/x-web-app-manifest+json \
+application/xhtml+xml \
+application/xml \
+font/opentype \
+image/svg+xml \
+image/x-icon \
+text/xsl \
+text/css \
+text/x-js \
+text/html \
+text/plain \
+text/javascript \
+text/x-component \
+text/richtext text/xsd \
+text/xml
+
+</IfModule>
+
+<IfModule mod_mime.c>
+# DEFLATE by extension
+AddOutputFilter DEFLATE js css htm html xml
+</IfModule>
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# | Content transformations                                                    |
+# ------------------------------------------------------------------------------
+
+# Prevent some of the mobile network providers from modifying the content of
+# your site: http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9.5.
+
+# <IfModule mod_headers.c>
+#    Header set Cache-Control "no-transform"
+# </IfModule>
+
+<IfModule mod_headers.c>
+Header append Vary User-Agent env=!dont-vary
+</IfModule>
+
+<FilesMatch "\.(php|html|css|htc|less|js|js2|js3|js4|CSS|HTC|LESS|JS|JS2|JS3|JS4)$">
+FileETag MTime Size
+<IfModule mod_headers.c>
+Header set Pragma "public"
+Header append Cache-Control "public"
+Header append Server "cloudHunts"
+Header set X-Powered-By "a few good devs...cloud5ive.io"
+</IfModule>
+</FilesMatch>
+
+# ------------------------------------------------------------------------------
+# | ETag removal                                                               |
+# ------------------------------------------------------------------------------
+
+# Since we're sending far-future expires headers (see below), ETags can
+# be removed: http://developer.yahoo.com/performance/rules.html#etags.
+
+# `FileETag None` is not enough for every server.
+<IfModule mod_headers.c>
+Header unset ETag
+</IfModule>
+
+FileETag None
+
+# ------------------------------------------------------------------------------
+# | File concatenation                                                         |
+# ------------------------------------------------------------------------------
+
+# Allow concatenation from within specific CSS and JS files, e.g.:
+# Inside of `script.combined.js` you could have
+#   <!--#include file="libs/jquery.js" -->
+#   <!--#include file="plugins/jquery.idletimer.js" -->
+# and they would be included into this single file.
+
+<IfModule mod_include.c>
+#    <FilesMatch "\.combined\.js$">
+#        Options +Includes
+#        AddOutputFilterByType INCLUDES application/javascript application/json
+#        SetOutputFilter INCLUDES
+#    </FilesMatch>
+<FilesMatch "\.combined\.css$">
+Options +Includes
+AddOutputFilterByType INCLUDES text/css
+SetOutputFilter INCLUDES
+</FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive on
+
+# Perhaps better to whitelist expires rules? Perhaps.
+ExpiresDefault                          "access plus 1 month"
+
+# Data
+ExpiresByType text/xml                  "access plus 0 seconds"
+ExpiresByType application/xml           "access plus 0 seconds"
+ExpiresByType application/json          "access plus 0 seconds"
+
+# Favicon (cannot be renamed)
+ExpiresByType image/x-icon              "access plus 1 year"
+
+# Media: images, video, audio
+ExpiresByType image/gif                 "access plus 1 month"
+ExpiresByType image/png                 "access plus 1 month"
+ExpiresByType image/jpeg                "access plus 1 month"
+ExpiresByType video/ogg                 "access plus 1 month"
+ExpiresByType audio/ogg                 "access plus 1 month"
+ExpiresByType video/mp4                 "access plus 1 year"
+ExpiresByType video/webm                "access plus 1 year"
+
+# Webfonts
+ExpiresByType application/x-font-ttf    "access plus 1 year"
+ExpiresByType font/opentype             "access plus 1 year"
+ExpiresByType application/x-font-woff   "access plus 1 year"
+ExpiresByType image/svg+xml             "access plus 1 month"
+ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+
+# CSS and JavaScript
+ExpiresByType text/css                  "access plus 1 year"
+ExpiresByType application/javascript    "access plus 1 year"
+
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|fonts.css|css|js|mp4)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>

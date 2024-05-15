@@ -1,0 +1,157 @@
+const path = require('path');
+const webpack = require('webpack');
+const ZipPlugin = require('zip-webpack-plugin');
+const rules = require('require.all')('./tasks/rules');
+const TerserPlugin = require("terser-webpack-plugin");
+const plugins = require('require.all')('./tasks/plugins');
+const safePostCssParser = require('postcss-safe-parser');
+//const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
+
+module.exports = env => {
+	let environment = env.NODE_ENV;
+	env.NODE_ENV = JSON.stringify(environment);
+
+	rules((name, rule) => rule(environment));
+	plugins((name, rule) => rule(environment));
+
+	return ({
+		mode: environment,
+		entry: {
+			app: [
+				path.resolve(__dirname, 'app/scripts/app.js'),
+				path.resolve(__dirname, 'app/styles/app.scss')
+			]
+		},
+		output: {
+			filename: '[name].js',
+			chunkFilename: '[name].chunk.js',
+		},
+		module: {
+			rules: [
+				...rules.files,
+				rules.scripts,
+				rules.styles
+			]
+		},
+		plugins: [
+			plugins.html,
+			plugins.distBuild,
+			plugins.distClean,
+			plugins.extractStyles,
+			new CompressionPlugin({
+				algorithm: 'gzip',
+				compressionOptions: { level: 9 },
+				filename: '[path].gz[query]',
+				minRatio: 0.8,
+				test: /\.(js|css|html|svg)$/,
+			}),
+			new CompressionPlugin({
+				algorithm: 'brotliCompress',
+				compressionOptions: { level: 11 },
+				filename: '[path].br[query]',
+				minRatio: 0.8,
+				test: /\.(js|css|html|svg)$/,
+			}),
+			new webpack.ProvidePlugin({
+				$: 'jquery',
+				jQuery: 'jquery',
+				'window.jQuery': 'jquery',
+				//ScrollTrigger: 'scrolltrigger',
+				//TweenMax: 'TweenMax',
+				//'window.TweenMax': 'TweenMax',
+				//gsap: './vendor/gsap.min',
+				//'window.gsap': 'gsap',
+				//SplitText: './vendor/SplitText.min',
+				//ScrollToPlugin: './vendor/ScrollToPlugin.min',
+				//ScrollTrigger: './vendor/ScrollTrigger.min',
+				ScrollSmoother: './vendor/ScrollSmoother.min'
+				//'window.ScrollToPlugin': 'ScrollToPlugin'
+				
+			}),
+			new ZipPlugin({
+				filename: 'lobengula-website.zip'
+			})
+		],
+		devServer: {
+			open: false,
+			port: 5001,
+			compress: true,
+			https: {
+				key: '../../conf/crt/cloud5ive/localhost.key',
+				cert: '../../conf/crt/cloud5ive/localhost.crt'
+			},
+			hot: true,
+			historyApiFallback: true,
+			watchOptions: {
+				poll: true
+			}
+			// proxy: { '/api': 'http://localhost:3000' }
+		},
+		optimization: {
+			minimize: true,
+			minimizer: [
+				new TerserPlugin({
+					terserOptions: {
+						parse: {
+							ecma: 8
+						},
+						compress: {
+							comparisons: false,
+							ecma: 5,
+							inline: 2
+						},
+						mangle: {
+							safari10: true
+						},
+						output: {
+							ascii_only: true,
+							comments: false,
+							ecma: 5
+						}
+					}
+				}),
+				new OptimizeCSSAssetsPlugin({
+					cssProcessorOptions: {
+						parser: safePostCssParser,
+						map: false,
+					},
+					cssProcessorPluginOptions: {
+						preset: [
+							'default',
+							{
+							  discardComments: {
+								removeAll: true,
+							  },
+							  minifyFontValues: {
+								removeQuotes: false,
+							  }
+							}
+						]
+					},
+				}),
+			],
+			splitChunks: {
+				cacheGroups: {
+					vendor: {
+						chunks: 'all',
+						test: path.resolve(__dirname, 'node_modules'),
+						name: 'vendor',
+						enforce: true
+					}
+				}
+			}
+		},
+		resolve: {
+			alias: {
+				'styles': path.resolve(__dirname, 'app/styles'),
+				'assets': path.resolve(__dirname, 'app/assets'),
+				'scripts': path.resolve(__dirname, 'app/scripts'),
+				'~': path.resolve(__dirname, 'node_modules'),
+				//'ScrollSmoother': path.resolve(__dirname, 'app/scripts/vendor/ScrollSmoother.min')
+			}
+		}
+	});
+};

@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Lobengula Font';
+    src: url('./fonts/lobengula-font.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/lobengula-font.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/lobengula-font.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/lobengula-font.woff') format('woff'), /* Pretty Modern Browsers */
+         url('./fonts/lobengula-font.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('./fonts/lobengula-font.otf')  format('opentype'); /* iOS */
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Tenor+Sans&display=swap");
+
+// font family 
+$font-family: (
+    ff: (
+        "heading" : "'Lobengula Font', 'Archivo', sans-serif",
+        "section" : "'Montserrat', 'Archivo', sans-serif",
+        "body" : "'Tenor Sans', sans-serif",
+        "fontawesome" : "'Font Awesome 6 Pro'",
+        "handwriting" : "'autographyregular'",
+    )
+);

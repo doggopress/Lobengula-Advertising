@@ -1,0 +1,38 @@
+# Temporary folders and files
+.sass-cache/
+.test/
+.vscode/
+npm-debug.log
+.code-workspace
+cypress/integration/examples/
+cypress/fixtures/example.json
+
+*.mp4
+*.zip
+*.ftpquota
+*.code-workspace
+*.DS_Store
+
+*.pem
+*.env
+*.env.example
+
+
+# Distribution folders
+dist/
+
+# Test Folders
+tests/e2e/videos/
+
+# Packages folders
+vendor/
+node_modules/
+!app/styles/vendor/
+
+# Rich media folders
+app/assets/videos/*
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

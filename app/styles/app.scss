@@ -1,0 +1,146 @@
+@import '../../node_modules/animate.css/animate.css';
+@import '../../node_modules/@fancyapps/ui/dist/fancybox/fancybox.css';
+@import '../../node_modules/swiper/swiper-bundle.min.css';
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+@import '../../node_modules/magnific-popup/dist/magnific-popup.css';
+@import '../../node_modules/odometer/themes/odometer-theme-default.css';
+
+@import 'vendor/backToTop.css';
+@import 'vendor/meanmenu.css';
+
+@import 'vendor/flaticon_axil.css';
+@import 'vendor/fontAwesome6Pro.css';
+
+@import 'vendor/default.css';
+
+@import "component/common";
+@import "component/buttons";
+@import "component/animation";
+@import "component/header";
+@import "component/menu";
+@import "component/banner";
+@import "component/background";
+@import "component/cursor";
+@import "component/hero";
+@import "component/brand";
+@import "component/counter";
+@import "component/section-title";
+@import "component/about";
+@import "component/award";
+@import "component/contact";
+@import "component/services";
+@import "component/project";
+@import "component/team";
+@import "component/process";
+@import "component/testimonial";
+@import "component/theme-dark";
+@import "component/blog";
+@import "component/fact";
+@import "component/portfolio";
+@import "component/capabilities";
+@import "component/accordion";
+@import "component/video";
+@import "component/cta";
+@import "component/choose";
+@import "component/gallery";
+@import "component/discuss";
+@import "component/features";
+@import "component/idea";
+@import "component/cover";
+@import "component/work";
+@import "component/history";
+@import "component/strategy";
+@import "component/step";
+@import "component/intro.scss";
+@import "component/page-title";
+@import "component/pricing";
+@import "component/sign.scss";
+@import "component/footer";
+@import "component/preloader";
+@import "component/progress-bar";
+
+
+
+
+.mzilikazi {
+    padding-bottom: 200px;
+}
+
+@media screen and (max-width: 767px) {
+    .mzilikazi {
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .portfolio-slide-1-content {
+        padding-top: 0px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .portfolio-slide-2-content {
+        padding-top: 0px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .portfolio-slide-3-content {
+        padding-top: 0px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .choose-area h2.xlarge {
+        font-size: 60px;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .team-area-2 .section__title-main {
+        font-size: 60px;
+    }
+}
+
+.team-area-2 {
+    padding-bottom: 200px !important;
+}
+
+* {
+    cursor: none !important;
+}
+
+*:hover {
+    cursor: none !important;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.viewport-header {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.font-family-montserrat {
+    font-family: var(--tpl-ff-section);
+}
+
+.font-family-lobengula {
+    font-family: var(--tpl-ff-heading);
+}
+
+.font-style-italic {
+    font-style: italic;
+}
