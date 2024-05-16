@@ -9,6 +9,23 @@
 	background-color: rgb(29, 29, 48);
 	z-index: 1000;
 	position: relative;
+
+	&:before {
+		content: ''; 
+		position: absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height: 100%;
+		opacity: .1;
+		z-index: 1;
+		filter: brightness(0.1);
+		background-color: transparent;
+		//background-size: contain;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-image: url('../assets/images/logo/la/Logo-icon@2x.png');
+	}
 }
 
 .ax-loader-inner {

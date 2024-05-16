@@ -20,6 +20,7 @@
 	"dependencies": {
 		"@babel/polyfill": "^7.8.3",
 		"@fancyapps/ui": "^5.0.36",
+		"@lottiefiles/lottie-player": "^2.0.4",
 		"animate.css": "^4.1.1",
 		"bootstrap": "^5.3.3",
 		"chroma-js": "^2.4.2",

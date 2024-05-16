@@ -74,6 +74,34 @@ module.exports = (env) => {
 			]
 		},
 		{
+			test: /\.(json|lottie)$/,
+			use: [
+				{
+					loader: 'file-loader',
+					options: {
+						outputPath: 'lottie',
+						attributes: {
+							list: [
+								// All default supported tags and attributes
+								//'...',
+								{
+									tag: 'lottie-player',
+									attribute: 'data-src',
+									type: 'src'
+								},
+								{
+									tag: 'lottie-player',
+									attribute: 'src',
+									type: 'src'
+								},
+							]
+						}
+						/**/
+					}
+				}
+			]
+		},
+		{
 			test: /\.(woff(2)?|ttf|eot|svg|otf)$/,
 			use: [
 				{

@@ -574,7 +574,7 @@ label {
 	&__text {
 		p {
 			color: #A4A4A4;
-			letter-spacing: 4.5px;
+			//letter-spacing: 4px;
 			margin-bottom: 0;
 			font-size: 16px;
 
@@ -711,11 +711,18 @@ label {
 		margin-right: 2em;
 		a {
 			color: var(--clr-common-white);
+			color: #A5A5A5;
 
 			&:hover {
 				color: var(--clr-theme-2);
 			}
 		}
+	}
+
+	@media only screen and (max-width: 767px) {
+		//flex-direction: column-reverse;
+		justify-content: flex-start;
+		margin-bottom: 1em;
 	}
 }
 

@@ -580,6 +580,7 @@
 
 // project-box-3 style 
 .project-box-3 {
+    
     &:hover {
 
         .area-thumb-content {
@@ -592,15 +593,95 @@
     &-thumb {
         position: relative;
 
-        img {
-            width: 100%;
-            aspect-ratio: 100/110;
+        > a {
+            cursor: default;
+            display: block;
+            //border: 1px solid #FFFFFF;
+            position: relative;
+
+            img {
+                width: 100%;
+                aspect-ratio: 100/110;
+                border: 2px solid #FFFFFF;
+            }
+
+            &:before,
+            &:after {
+                position: absolute;
+                background-color: #444;
+                background-size: 15px 15px;
+                //background-image: url('../assets/images/la/White-Symbol-2.png');
+                background-repeat: repeat;
+                z-index: -1;
+                transition: 1s;
+                content: '';
+                pointer-events: none;
+
+                width: 102%;
+                height: 20%;
+                left: -1%;
+                
+            }
+
+            &:after {
+                top: -1%;
+            }
+
+            &:before {
+                bottom: -1%;
+            }
+            /**/
+
+            &:hover {
+
+                img {
+                    border-color: #F44336;
+                }
+                
+                &:before {
+                    height: 52%;
+                    background-color: var(--clr-theme-2);
+                    //box-shadow: inset 0px 0 0 2px #414141;
+                }
+                &:after {
+                    height: 52%;
+                    background-color: var(--clr-theme-2);
+                    //z-index: 2;
+                    //box-shadow: inset 0px 0 0 2px #414141;      
+                }
+            }
         }
 
         .area__btn {
             position: absolute;
-            bottom: 0;
-            right:0;
+            //bottom: 0;
+            //right:0;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            transform: translateX(-50%) translateY(-50%);
+
+            &:before {
+                content: '';
+                position: absolute;
+                top:0;
+                left:0;
+                pointer-events: none;
+            }
+
+            &:hover ~ a {
+                &:before {
+                    height: 52%;
+                    background-color: var(--clr-theme-2);
+                    //box-shadow: inset 0px 0 0 2px #414141;
+                }
+                &:after {
+                    height: 52%;
+                    background-color: var(--clr-theme-2);
+                    //z-index: 2;
+                    //box-shadow: inset 0px 0 0 2px #414141;      
+                }
+            }
         }
 
         .area-thumb-content {
@@ -648,21 +729,21 @@
         bottom: 100px;
         background-color: var(--clr-common-white);
         margin: 20px 20px;
-        opacity: 0;
-        visibility: hidden;
+        opacity: 1;
+        visibility: visible;
         transition: .5s ease-in-out;
 
         .tag {
             font-size: 16px;
-            color: var(--clr-theme-2);
-            background: var(--clr-common-white);
+            color: var(--clr-common-white);
+            background: var(--clr-common-black);
             padding: 2px 16px;
             display: inline-block;
             border-radius: 0;
             border: 1px solid #D9D9D9;
 
             &:hover {
-                color: var(--clr-common-white);
+                color: var(--clr-theme-2);
                 background-color: var(--clr-theme-1);
                 border-color: var(--clr-theme-1);
             }
@@ -670,22 +751,54 @@
         }
 
         .project-box-3-title {
-            font-size: 24px;
+            font-size: 18px;
             font-family: var(--tpl-ff-heading);
             font-weight: 300;
             margin-bottom: 0;
             line-height: 1.25;
-            margin-top: 20px;
+            margin-top: 0;
 
             @media #{$xs} {
                 font-size: 20px;
-                margin-top: 10px;
+                margin-top: 0;
             }
 
             &:hover {
                 color: var(--clr-common-white);
             }
         }
+    }
+
+    .ribbon {
+        transform: rotate(-45deg); 
+        border: 25px solid transparent;
+        border-top: 25px solid #434343;
+        position: absolute;
+        right: -7.8%;
+        bottom: 2.5%;
+        padding: 0;
+        //width: 120px;
+        color: white;
+        text-shadow: 1px 1px 1px #000;
+        font-size: 11px;
+        width: 30%;
+        height: 8%;
+        z-index: 1;
+        pointer-events: none;
+
+        &.activation {
+            border-top-color: #673ab7;
+        }
+
+        &.digital-film {
+            border-top-color: #2196f3;
+        }
+    }
+    .ribbon .txt {
+          position: absolute;
+          top: -26px;
+          left: 26px;
+          letter-spacing: 1px;
     }
 }
 

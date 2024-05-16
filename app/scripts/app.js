@@ -2,6 +2,9 @@ import $ from 'jquery';
 
 import 'scripts/vendor/bootstrap.bundle.min';
 
+import '@lottiefiles/lottie-player';
+//import {LottiePlayer} from "@lottiefiles/lottie-player";
+
 import 'odometer';
 import 'jquery.appear';
 import 'slick-carousel';
@@ -104,6 +107,60 @@ Copyright © 2024 Lobengula Advertising
 
 (function ($) {
 
+	/*======================================
+	00. PreLoader
+	========================================*/
+	let lottiePlayerPreloader;
+	function preloadAssets( callback ) {
+
+		lottiePlayerPreloader = document.querySelector("#lottie-preloader");
+
+		if( lottiePlayerPreloader ) {
+			lottiePlayerPreloader.load("https://cdn.cloud5ive.io/lobengula/lottie/preloader/preloader-03.json");
+
+			lottiePlayerPreloader.addEventListener("load", () => {
+				console.log("Lottie Preloader Loaded!");
+				callback(lottiePlayerPreloader);
+			});
+
+		} else {
+
+			callback(false);
+		}
+
+	}
+
+	$(window).on("load", ()=> {
+		
+		preloadAssets( (lplyr)=>{
+
+			if( lplyr === false ) {
+
+				document.body.classList.remove('js-loading');
+				document.body.classList.add('js-loaded');
+				$("#ax-loader-wrap").fadeOut(500);
+
+			} else {
+
+				setTimeout( ()=>{
+					// eslint-disable-next-line no-use-before-define
+					setTimeout( ()=>{
+						document.body.classList.remove('js-loading');
+						document.body.classList.add('js-loaded');
+		
+						$("#ax-loader-wrap").fadeOut(500, ()=>{
+							lplyr.stop();
+						});
+						
+					}, 2500);
+				}, 1000 );
+			}
+
+			//OdoObjectFit.cover(document.querySelector('.js-home-video'));
+			
+		});
+	});
+
 	document.addEventListener("DOMContentLoaded", () => {
 	("use strict");
 
@@ -115,13 +172,6 @@ Copyright © 2024 Lobengula Advertising
 	let md = 768;
 	let sm = 576;
 	let device_width = window.innerWidth;
-
-	/*======================================
-	00. PreLoader
-	========================================*/
-	windowOn.on("load", function () {
-		$("#ax-loader-wrap").fadeOut(500);
-	});
 
 	/*======================================
 	Mobile Menu Js
@@ -155,17 +205,88 @@ Copyright © 2024 Lobengula Advertising
 	04. Sticky Header Js
 	========================================*/
 	windowOn.on("scroll", function () {
+
+		//viewportAnimationsToggle();
+
 		const hero = $('.hero-3-area').height();
-
-		//alert(hero);
-
-		var scroll = $(window).scrollTop();
-		if (scroll < parseInt(hero)) {
+		const scroll = $(window).scrollTop();
+		if (scroll < parseInt(hero)) { //if (scroll < 100) {
 			$("#header-sticky").removeClass("sticky");
 		} else {
 			$("#header-sticky").addClass("sticky");
 		}
+
+		
 	});
+
+	function isInViewport(element) {
+		if ( element === undefined ) {
+			return false;
+		} else {
+			const rect = element.getBoundingClientRect();
+			return (
+				rect.top >= 0 &&
+				rect.left >= 0 &&
+				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+			);
+		}
+	}
+
+	function viewportAnimationsToggle() {
+
+		const	sectionHome = document.getElementById('home'),
+				sectionAbout = document.getElementById('about-us'),
+				sectionServices = document.getElementById('what-we-do'),
+				sectionWork = document.getElementById('our-work'),
+				sectionTeam = document.getElementById('our-team'),
+				sectionContact = document.getElementById('contact');
+				
+
+		if ( isInViewport(sectionHome) ) {
+			document.body.classList.add('page-active-home');
+		} else {
+			document.body.classList.remove('page-active-home');
+		}
+
+		if ( isInViewport(sectionAbout) ) {
+			document.body.classList.add('page-active-about');
+		} else {
+			document.body.classList.remove('page-active-about');
+		}
+
+		if ( isInViewport(sectionServices) ) {
+			document.body.classList.add('page-active-services');
+		} else {
+			document.body.classList.remove('page-active-services');
+		}
+
+		if ( isInViewport(sectionWork) ) {
+			document.body.classList.add('page-active-work');
+		} else {
+			document.body.classList.remove('page-active-work');
+		}
+
+		if ( isInViewport(sectionTeam) ) {
+			document.body.classList.add('page-active-team');
+		} else {
+			document.body.classList.remove('page-active-team');
+		}
+
+		if ( isInViewport(sectionContact) ) {
+			document.body.classList.add('page-active-contact');
+		} else {
+			document.body.classList.remove('page-active-contact');
+		}
+
+		/** /
+		if ( isInViewport(sectionDownloadAll) ) {
+			sectionFooter.classList.add('in-viewport');
+		} else {
+			sectionFooter.classList.remove('in-viewport');
+		}
+		/**/
+	}
 
 	/*======================================
 	05. Data Background
@@ -566,7 +687,7 @@ Copyright © 2024 Lobengula Advertising
 			prevEl: ".team-slider-button-prev",
 		},
 		autoplay: {
-			delay: .1,
+			delay: 1000,
 			disableOnInteraction: false,
 			pauseOnMouseEnter: true
 		},
@@ -1214,7 +1335,7 @@ Copyright © 2024 Lobengula Advertising
 						pin: true,
 						scrub: 1,
 						start: "top 90",
-						end: "+=5000"
+						end: "+=6000"
 					}
 				});
 
@@ -1619,6 +1740,7 @@ Copyright © 2024 Lobengula Advertising
 			},
 		});
 	}
+
 	/*======================================
 	56. Progress Bar Animation JS
 	========================================*/
@@ -1649,6 +1771,7 @@ Copyright © 2024 Lobengula Advertising
 			}, "<");
 		})
 	}
+	
 	/*======================================
 	57. Testimonial Active JS
 	========================================* /
