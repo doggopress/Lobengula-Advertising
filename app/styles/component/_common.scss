@@ -140,7 +140,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx+x+++++++++++++++++++++++++++++++++++++++++++++++
 
 **********************************************/
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Tenor+Sans&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Tenor+Sans&display=swap');
 
 * {
 	margin: 0;
@@ -441,22 +441,68 @@ p {
 }
 
 // scrollbar 
-::-webkit-scrollbar {
-	height: 4px;
-	width: 4px;
-	background: transparent;
+html.no-custom-scroll {
+
+	&::-webkit-scrollbar {
+		height: 4px;
+		width: 4px;
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: var(--clr-theme-2);
+		-webkit-border-radius: 1ex;
+		-webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.75);
+	}
+
+	&::-webkit-scrollbar-corner {
+		background: transparent;
+	}
 }
 
-::-webkit-scrollbar-thumb {
-	background: var(--clr-theme-2);
-	-webkit-border-radius: 1ex;
-	-webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.75);
+html.custom-scroll {
+	.scrollbar-thumb {
+		background: var(--clr-theme-2) !important;
+	}
+	.ck-site {
+		width: 100%;
+		height: 100dvh;
+		overflow-x: hidden;
+		overflow: hidden;
+		background: transparent;
+		scroll-snap-type: y mandatory;
+	}
+
+	.o-scrollbar-wrapper {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 100vw;
+	}
+
+	.o-scrollbar {
+		position: absolute!important;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	[data-scrollbar] {
+		display: block;
+		position: relative;
+	}
+
+	.o-scrollbar-inner {
+		width: 100vw;
+		overflow: hidden;
+		position: relative;
+	}
 }
 
-::-webkit-scrollbar-corner {
-	background: transparent;
-}
 
+// selection
 
 *::-moz-selection {
 	background: var(--clr-common-black);
@@ -475,6 +521,7 @@ p {
 	color: var(--clr-common-white);
 	text-shadow: none;
 }
+
 
 /*--
     - Input Placeholder
@@ -1288,7 +1335,7 @@ video {
 
 	&::after {
 		position: absolute;
-		content: "\f00d";
+		//content: "\f00d";
 		height: 100%;
 		width: 100%;
 		font-family: var(--tpl-ff-fontawesome);

@@ -93,18 +93,14 @@
 }
 
 .portfolio__wrapper {
-    width: 400%;
+    width: 600%;
     height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: no-wrap;
     flex-wrap: no-wrap;
 
     @media #{$lg,$md,$sm,$xs} {
         width: 100%;
         height: auto;
-        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
 

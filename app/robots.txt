@@ -2,5 +2,7 @@ User-agent: *
 Disallow: /fonts/
 Disallow: /images/
 Disallow: /assets/
+Disallow: /lottie/
+Disallow: /videos/
 
 Sitemap: https://lobengula.co.za/sitemap.xml

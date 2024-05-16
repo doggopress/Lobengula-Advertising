@@ -716,6 +716,10 @@ label {
 			&:hover {
 				color: var(--clr-theme-2);
 			}
+
+			&.active {
+				color: var(--clr-theme-2);
+			}
 		}
 	}
 

@@ -136,14 +136,7 @@ Copyright © 2024 Lobengula Advertising
 	
 	<!-- Place favicon.ico in the root directory -->
 	<link rel="shortcut icon" type="image/x-icon" href="assets/images/la/lobengula-favicon.png">
-	<!-- CSS here -->
-	<!--
-	<script src="./scripts/vendor/SplitText.min.js"></script>
-	<script src="./scripts/vendor/ScrollSmoother.min.js"></script>
-	<script src="./scripts/vendor/ScrollToPlugin.min.js"></script>
-	<script src="./scripts/vendor/ScrollTrigger.min.js"></script>
-	-->
-
+	
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 	
 	<style>
@@ -155,7 +148,7 @@ Copyright © 2024 Lobengula Advertising
 		body.js-loading #smooth-wrapper,
 		body.js-loading .offcanvas-nav-wrapper {
 			opacity: 0;
-			overflow: hidden;
+			overflow: hidden !important;
 			pointer-events: none;
 			transition: all 0.5s ease-in-out;
 		}
@@ -177,7 +170,7 @@ Copyright © 2024 Lobengula Advertising
 
 </head>
 
-<body class="js-loading">
+<body class="js-loading page-home">
 
 	<!--[if lte IE 9]>
 	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -195,7 +188,7 @@ Copyright © 2024 Lobengula Advertising
 			<div class="sidebar-menu-area">
 				<ul class="menu-list">
 					<li class="menu-item">
-						<a href="#" class="drop-down" data-hover='Home'>Home</a>
+						<a href="#home" class="drop-down" data-hover='Home'>Home</a>
 					</li>
 					<li class=" menu-item">
 						<a href="#about-us" data-hover='About'>About</a>
@@ -261,7 +254,7 @@ Copyright © 2024 Lobengula Advertising
 										<nav id="mobile-menu">
 											<ul>
 												<li>
-													<a href="#">HOME</a>
+													<a href="#home">HOME</a>
 												</li>
 												<li>
 													<a href="#about-us">ABOUT</a>
@@ -304,13 +297,14 @@ Copyright © 2024 Lobengula Advertising
 	</header>
 	<!-- NAV MENU END -->
 
-	<div id="smooth-wrapper">
-		<div id="smooth-content">
+	<div id="smooth-wrapper" class="o-scrollbar-wrapper">
+		<div id="smooth-content" class="o-scrollbar js-scrollbar">
+
+			<div class="o-scrollbar-inner">
 			<!-- Add your site or application content here -->
-			<main>
+			<main class="ck-site">
 
-			<!-- HOME START  -->
-
+				<!-- HOME START  -->
 				<section id="home" class="hero-3-area p-relative fix">
 
 					<video
@@ -333,25 +327,9 @@ Copyright © 2024 Lobengula Advertising
 						<a href="#about-us"><span class="font-family-montserrat">SCROLL</span></a>
 					</div>
 					<div class="hero-3-area__bg area-absolute"></div>
-					<!--
-					<div class="area__btn">
-						<a href="assets/video/hero-vid.mp4" class="circle-btn popup-video">
-							<span class="icon-box"
-								data-background="assets/images/la/play-btn.gif">
-								<svg width="24" height="26" viewBox="0 0 24 26" fill="none"
-									xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M23.1646 13L0.66455 25.9904L0.664551 0.00961778L23.1646 13Z"
-										fill="white"></path>
-								</svg>
-							</span>
-							<img src="assets/images/icons/play-text-white.png" alt="Play Reel"
-								class="image-text">
-						</a>
-					</div>
-					-->
+					
 					<div class="hero-3__shapes">
-						<img class="hero-3__shape-1" src="assets/images/shapes/circle-line.png" alt="">
+						<img class="hero-3__shape-1 rotate-center" src="assets/images/shapes/circle-line.png" alt="">
 						<img class="hero-3__shape-2 rotate-center" src="assets/images/la/White-Symbol-3.png" alt="">
 						<img class="hero-3__shape-3 rotate-center" src="assets/images/la/White-Symbol-2.png" alt="">
 					</div>
@@ -392,11 +370,11 @@ Copyright © 2024 Lobengula Advertising
 						</div>
 					</div>
 				</section>
-			<!-- HOME END  -->
+				<!-- HOME END  -->
 
-			<!-- WHO WE ARE START -->
-				<section id="about-us" class="portfolio__area">
-					<div class="portfolio__wrapper">
+				<!-- WHO WE ARE START -->
+				<section id="about-us" class="portfolio__area" data-anchor="About" data-duration="100%">
+					<div class="portfolio__wrapper" data-anchor="About" data-duration="100%">
 						<div class="portfolio__title-wrap wf_panel">
 							<!--
 							<div class="pattern-wrapper">
@@ -1721,9 +1699,9 @@ Copyright © 2024 Lobengula Advertising
 						</div>
 					</div>
 				</section>
-			<!-- WHO WE ARE END  -->
+				<!-- WHO WE ARE END  -->
 
-			<!-- WHAT WE DO START  -->
+				<!-- WHAT WE DO START  -->
 				<section id="what-we-do" class="choose-area section-spacing">
 					<div class="container">
 						<div class="row">
@@ -1738,7 +1716,7 @@ Copyright © 2024 Lobengula Advertising
 												<span>03</span>
 											</div>
 										</div>
-										<h2 class="section__title-main xlarge uppercase mb-0 bdFadeRight" style="color:#FFFFFF;">
+										<h2 class="section__title-main xlarge uppercase mb-0" style="color:#FFFFFF;">
 											Our approach is<br>
 											<span class=" tpl__theme-color">anything but</span><br>
 											traditional
@@ -1873,10 +1851,11 @@ Copyright © 2024 Lobengula Advertising
 						</div>
 					</div>
 				</section>
-			<!--WHAT WE DO END  -->
+				<!--WHAT WE DO END  -->
 
-			<!-- OUR WORK START  -->
-				<section id="our-work" class="project-area-2 p-relative fix section-spacing">
+				<!-- OUR WORK START  -->
+				
+				<section id="our-work" class="project-area-2 p-relative fix section-spacing" data-anchor="Work" data-duration="150%">
 					<div class="noise-wrapper">
 						<div class="noise"></div>
 					</div>
@@ -1886,12 +1865,10 @@ Copyright © 2024 Lobengula Advertising
 							<div class="section__title-3-wrapper text-center">
 								<h2 class="project__sub-title" style="margin-bottom: 4em;">our work <span>05</span></h2>
 								
-								<!--
-								<h2 class="project__text">case study</h2>
-								-->
+								
 							</div>
 							<div class="project__list-1">
-								<div class="project__item">
+								<div class="project__item pi-01">
 									<div class="project-box-3 mb-70">
 										
 										<div class="project-box-3-thumb">
@@ -1921,11 +1898,7 @@ Copyright © 2024 Lobengula Advertising
 											
 										</div>
 										<div class="project-box-3-content">
-											<!--
-											<a href="javascript:;" class="tag font-family-montserrat">
-												<strong>ACTIVATION</strong>
-											</a>
-											-->
+											
 											<h3 class="project-box-3-title">
 												<a href="javascript:;" class=" font-family-montserrat">
 													Bronze winner - Loeries 2023 Old Mutual
@@ -1934,7 +1907,7 @@ Copyright © 2024 Lobengula Advertising
 										</div>
 									</div>
 								</div>
-								<div class="project__item">
+								<div class="project__item pi-02">
 									<div class="project-box-3 mb-70">
 										
 										<div class="project-box-3-thumb">
@@ -1973,7 +1946,7 @@ Copyright © 2024 Lobengula Advertising
 										</div>
 									</div>
 								</div>
-								<div class="project__item">
+								<div class="project__item pi-03">
 									<div class="project-box-3 mb-70">
 										
 										<div class="project-box-3-thumb">
@@ -2016,13 +1989,14 @@ Copyright © 2024 Lobengula Advertising
 						</div>
 					</div>
 				</section>
-			<!-- OUR WORK END  -->
+				
+				<!-- OUR WORK END  -->
 
-			<!-- TEAM START  -->
+				<!-- TEAM START  -->
 				<section id="our-team" class="team-area-2 section-spacing-top p-relative fix">
 					<div class="team-area-2__bg area-absolute"></div>
 					<div class="area-shapes">
-						<img class="team-area-2__shape-1" src="assets/images/la/White-Symbol-3.png" alt="image not found">
+						<img class="team-area-2__shape-1 rotate-center" src="assets/images/la/White-Symbol-3.png" alt="">
 					</div>
 					<div class="container">
 						<div class="row section-title-spacing">
@@ -2030,15 +2004,19 @@ Copyright © 2024 Lobengula Advertising
 								<div class="section__title-3-wrapper section__title-wrapper-team">
 									<div class="section__subtitle-3 tpl__flex-center">
 										<p class="section__subtitle-text">
-											our team
+											our tribe
 										</p>
+										<!--
 										<div class="section__subtitle-number">
 											<span>04</span>
 										</div>
+										-->
 									</div>
+									<!--
 									<h2 class="section__title-main xlarge uppercase tpl__item-center title-anim">
 										Our <span class=" tpl__theme-color">Tribe</span>
 									</h2>
+									-->
 								</div>
 							</div>
 						</div>
@@ -2578,10 +2556,10 @@ Copyright © 2024 Lobengula Advertising
 					</div>
 
 				</section>
-			<!-- TEAM END  -->
+				<!-- TEAM END  -->
 
-			<!-- SHARE PASSION, TALENT, VISION, PURPOSE START  -->
-				<section class="link-scroll-area p-relative fix  pb-0">
+				<!-- [LINGO] START  -->
+				<section class="link-scroll-area p-relative fix pt-40" style="background: #0d0d0d;">
 					<div class="swiper text__scroll">
 						<div class="swiper-wrapper link-scroll-wrapper">
 							<div class="swiper-slide">
@@ -2837,10 +2815,8 @@ Copyright © 2024 Lobengula Advertising
 					</div>
 
 				</section>
-
-				<div class="hr1" style="margin-bottom: 1em;"></div>
 				
-				<section class="link-scroll-area p-relative fix pt-0 section-spacing-bottom">
+				<section class="link-scroll-area p-relative fix pt-0 section-spacing-bottom" style="background: #0d0d0d;">
 					<div class="swiper text__scroll" dir="rtl">
 						<div class="swiper-wrapper link-scroll-wrapper">
 							<div class="swiper-slide">
@@ -3035,155 +3011,159 @@ Copyright © 2024 Lobengula Advertising
 					</div>
 
 				</section>
-				
-			<!-- SHARE PASSION, TALENT, VISION, PURPOSE END -->
+				<!-- [LINGO] END -->
 
-			</main>
-
-			<!-- footer-area-start -->
-			<footer id="contact">
-				<section class="footer-area footer__bg section-spacing">
-					<div class="container">
-						<div class="row gy-50">
-							<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
-								<div class="footer__widget footer__widget-1">
-									<div class="footer__logo mb-20">
-										<a href="index.html"><img src="assets/images/logo/logo-white.svg"
-												alt="Lobengula Advertising Logo"></a>
-									</div>
-									<p class="made-by-text mb-30 font-family-montserrat">Lobengula Advertising</p>
-									<div class="social-links">
-										<ul>
-											<li>
-												<a href="https://za.linkedin.com/in/brenda-khumalo-a830098b" target="_blank">
-													<i class="fab fa-linkedin-in"></i>
-													<span class="icon-text">IN</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.instagram.com/lobengula_advertising/" target="_blank">
-													<i class="fab fa-instagram"></i>
-													<span class="icon-text">TW</span>
-												</a>
-											</li>
-											
-										</ul>
-									</div>
-									<div class="address-box mb-40">
-										<br /><br />
-										<h4 class="country-name mb-25 font-family-montserrat">Office address</h4>
-										<div class="address-list">
+				<!-- footer-area-start -->
+				<footer id="contact">
+					<section class="footer-area footer__bg section-spacing">
+						<div class="container">
+							<div class="row gy-50">
+								<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
+									<div class="footer__widget footer__widget-1">
+										<div class="footer__logo mb-20">
+											<a href="index.html"><img src="assets/images/logo/logo-white.svg"
+													alt="Lobengula Advertising Logo"></a>
+										</div>
+										<p class="made-by-text mb-30 font-family-montserrat">Lobengula Advertising</p>
+										<div class="social-links">
 											<ul>
-												<li class="font-family-montserrat">
-													<a href="https://maps.app.goo.gl/P8awiTzM4ZFqkYgZ9" target="_blank">
-														Alpha House, Ballywoods Office Park,
-														<br>
-														33 Ballyclare Dr, Bryanston,
-														<br>
-														Sandton,
-														<br />
-														2191,
-														<br />
-														South Africa
+												<li>
+													<a href="https://za.linkedin.com/in/brenda-khumalo-a830098b" target="_blank">
+														<i class="fab fa-linkedin-in"></i>
+														<span class="icon-text">IN</span>
 													</a>
 												</li>
+												<li>
+													<a href="https://www.instagram.com/lobengula_advertising/" target="_blank">
+														<i class="fab fa-instagram"></i>
+														<span class="icon-text">TW</span>
+													</a>
+												</li>
+												
 											</ul>
+										</div>
+										<div class="address-box mb-40">
+											<br /><br />
+											<h4 class="country-name mb-25 font-family-montserrat">Office address</h4>
+											<div class="address-list">
+												<ul>
+													<li class="font-family-montserrat">
+														<a href="https://maps.app.goo.gl/P8awiTzM4ZFqkYgZ9" target="_blank">
+															Alpha House, Ballywoods Office Park,
+															<br>
+															33 Ballyclare Dr, Bryanston,
+															<br>
+															Sandton,
+															<br />
+															2191,
+															<br />
+															South Africa
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xl-8 col-lg-6 col-md-12 col-sm-12">
+									<div class="footer__widget footer__widget-4">
+										<h4 class="footer__widget-title mb-30 font-family-montserrat" style="font-weight: bold;text-transform: uppercase;">Contact us</h4>
+										<p class="mb-20 font-family-montserrat">
+											We're always on the lookout for the cutting-edge tech and brand innovations. Join us today.
+										</p>
+										<div class="joining-form p-relative">
+											<form action="#">
+												<div class="input-wrapper mb-30">
+													<div class="single-input-field field-email">
+														<input id="input-name" type="text" name="name" placeholder="Name" pattern="[a-zA-Z][a-zA-Z ]{2,}" required />
+													</div>
+													<div class="single-input-field field-email">
+														<input id="input-company" type="text" name="company" placeholder="Company" pattern="[a-zA-Z][a-zA-Z ]{2,}" required />
+													</div>
+													
+												</div>
+												
+												<div class="input-wrapper mb-30">
+													<div class="single-input-field field-email">
+														<input id="input-email" type="email" name="email" placeholder="email address"  required />
+													</div>
+													<div class="single-input-field field-email">
+														<input id="input-tel" type="tel" name="tel" placeholder="Contact number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+													</div>
+												</div>
+
+												<div class="input-wrapper mb-30">
+													<div class="single-input-field field-email">
+														<textarea id="input-message" name="message" placeholder="Your message" rows="3" required></textarea>
+													</div>
+												</div>
+												
+												
+												<label for="privacy-policy" class="font-family-montserrat">
+													<input type="checkbox" name="tos" id="privacy-policy" style="display: none;" required>
+													<span class="check">
+														<svg width="18px" height="18px" viewBox="0 0 18 18">
+															<path
+																d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
+															</path>
+															<polyline points="1 9 7 14 15 4"></polyline>
+														</svg>
+													</span>
+													I Agree to the Privacy policy
+													
+													<div class="joining__btn">
+														<br />
+														<button type="submit" class="border-btn" style="padding:.8em 4em;border-color:#414141;">
+															Send <i class="fal fa-long-arrow-right"></i>
+														</button>
+													</div>
+												</label>
+											</form>
 										</div>
 									</div>
 								</div>
 							</div>
+						</div>
+					</section>
+					
 
-							<div class="col-xl-8 col-lg-6 col-md-12 col-sm-12">
-								<div class="footer__widget footer__widget-4">
-									<h4 class="footer__widget-title mb-30 font-family-montserrat" style="font-weight: bold;text-transform: uppercase;">Contact us</h4>
-									<p class="mb-20 font-family-montserrat">
-										We're always on the lookout for the cutting-edge tech and brand innovations. Join us today.
-									</p>
-									<div class="joining-form p-relative">
-										<form action="#">
-											<div class="input-wrapper mb-30">
-												<div class="single-input-field field-email">
-													<input id="input-name" type="text" name="name" placeholder="Name" pattern="[a-zA-Z][a-zA-Z ]{2,}" required />
-												</div>
-												<div class="single-input-field field-email">
-													<input id="input-company" type="text" name="company" placeholder="Company" pattern="[a-zA-Z][a-zA-Z ]{2,}" required />
-												</div>
-												
-											</div>
-											
-											<div class="input-wrapper mb-30">
-												<div class="single-input-field field-email">
-													<input id="input-email" type="email" name="email" placeholder="email address"  required />
-												</div>
-												<div class="single-input-field field-email">
-													<input id="input-tel" type="tel" name="tel" placeholder="Contact number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
-												</div>
-											</div>
-
-											<div class="input-wrapper mb-30">
-												<div class="single-input-field field-email">
-													<textarea id="input-message" name="message" placeholder="Your message" rows="3" required></textarea>
-												</div>
-											</div>
-											
-											
-											<label for="privacy-policy" class="font-family-montserrat">
-												<input type="checkbox" name="tos" id="privacy-policy" style="display: none;" required>
-												<span class="check">
-													<svg width="18px" height="18px" viewBox="0 0 18 18">
-														<path
-															d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
-														</path>
-														<polyline points="1 9 7 14 15 4"></polyline>
-													</svg>
-												</span>
-												I Agree to the Privacy policy
-												
-												<div class="joining__btn">
-													<br />
-													<button type="submit" class="border-btn" style="padding:.8em 4em;border-color:#414141;">
-														Send <i class="fal fa-long-arrow-right"></i>
-													</button>
-												</div>
-											</label>
-										</form>
+					<div class="copyright-area copyright__bg pb-30 p-relative z-index-1">
+						<div class="container">
+							<div class="footer-top pt-30"></div>
+							<div class="row">
+								
+								<div class="col-12 col-md-6 order-2 order-md-1">
+									<!-- 
+										tpl__item-center
+									-->
+									<div class="copyright__text font-family-montserrat">
+										<p>Copyright &copy; 2024 Lobengula Advertising (Pty) Ltd.</p>
 									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				
-
-				<div class="copyright-area copyright__bg pb-30 p-relative z-index-1">
-					<div class="container">
-						<div class="footer-top pt-30"></div>
-						<div class="row">
-							
-							<div class="col-12 col-md-6 order-2 order-md-1">
-								<!-- 
-									 tpl__item-center
-								-->
-								<div class="copyright__text font-family-montserrat">
-									<p>Copyright &copy; 2024 Lobengula Advertising (Pty) Ltd.</p>
+								<div class="col-12 col-md-6 order-1 order-md-2">
+									<ul class="footer-tos-links">
+										<li>
+											<a href="./website-disclaimer.html">Disclaimer</a>
+										</li>
+										<li>
+											<a href="./privacy-policy.html">Privacy Policy</a>
+										</li>
+										<li>
+											<a href="./cookies-policy.html">Cookies Policy</a>
+										</li>
+									</ul>
 								</div>
+								
 							</div>
-							<div class="col-12 col-md-6 order-1 order-md-2">
-								<ul class="footer-tos-links">
-									<li>
-										<a href="./privacy-policy">Privacy Policy</a>
-									</li>
-									<li>
-										<a href="./cookies-policy">Cookies Policy</a>
-									</li>
-								</ul>
-							</div>
-							
 						</div>
 					</div>
-				</div>
-			</footer>
-			<!-- footer-area-end -->
+				</footer>
+				<!-- footer-area-end -->
+
+			</main>
+
+			</div>
 		</div>
 	</div>
 
@@ -3198,7 +3178,17 @@ Copyright © 2024 Lobengula Advertising
 	<!-- mouse cursor drag start -->
 	<div class="mouseCursor cursor-outer"></div>
 	<div class="mouseCursor cursor-inner"><span>Drag</span></div>
+	<div class="mouseCursor cursor-inner cursor-inner__video"><span>Play</span></div>
 	<!-- mouse cursor drag end -->
+
+	<script src="https://www.google.com/recaptcha/api.js?render=6Lf7KewiAAAAANVzM0WfQbP7_vyxj51oQ5uBv7fy"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"  type="text/plain" data-cookiecategory="analytics"></script>
+	<script type="text/plain" data-cookiecategory="analytics" nonce="707597834480">
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date())
+		gtag('config', 'G-XXXXXXXXXX');
+	</script>
 	
 </body>
 

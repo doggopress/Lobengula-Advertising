@@ -5,7 +5,7 @@ const rules = require('require.all')('./tasks/rules');
 const TerserPlugin = require("terser-webpack-plugin");
 const plugins = require('require.all')('./tasks/plugins');
 const safePostCssParser = require('postcss-safe-parser');
-//const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
@@ -38,6 +38,45 @@ module.exports = env => {
 		},
 		plugins: [
 			plugins.html,
+			new HtmlWebpackPlugin({
+				hash: true,
+				filename: 'website-disclaimer.html',
+				template: './app/website-disclaimer.html',
+				minify: {
+					collapseWhitespace: true,
+					removeComments: true,
+					useShortDoctype: true,
+					minifyJS: true,
+					minifyCSS: true,
+					minifyURLs: true,
+				}
+			}),
+			new HtmlWebpackPlugin({
+				hash: true,
+				filename: 'privacy-policy.html',
+				template: './app/privacy-policy.html',
+				minify: {
+					collapseWhitespace: true,
+					removeComments: true,
+					useShortDoctype: true,
+					minifyJS: true,
+					minifyCSS: true,
+					minifyURLs: true,
+				}
+			}),
+			new HtmlWebpackPlugin({
+				hash: true,
+				filename: 'cookies-policy.html',
+				template: './app/cookies-policy.html',
+				minify: {
+					collapseWhitespace: true,
+					removeComments: true,
+					useShortDoctype: true,
+					minifyJS: true,
+					minifyCSS: true,
+					minifyURLs: true,
+				}
+			}),
 			plugins.distBuild,
 			plugins.distClean,
 			plugins.extractStyles,

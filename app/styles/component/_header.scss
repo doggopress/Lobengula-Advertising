@@ -829,12 +829,8 @@
 			max-width: 100%
 		}
 
-		&::-webkit-scrollbar {
-			display: none;
-			width: 5px;
-		}
-
 		&::before {
+			/** /
 			content: "Explore Pages.";
 			position: absolute;
 			top: 45%;
@@ -855,26 +851,31 @@
 			letter-spacing: 5px;
 			text-align: right;
 			z-index: -1;
+			/**/
+			content:'';
+			position: absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height: 100%;
+			opacity: .4;
+			//z-index: 1;
+			filter: brightness(0.1);
+			background-color: transparent;
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-image: url('../assets/images/logo/la/Logo-icon@2x.png');
+
+			pointer-events: none;
 
 			@media #{$xs,$sm,$md} {
-				display: none;
-				visibility: hidden
+				//display: none;
+				//visibility: hidden
 			}
 
 			@media #{$xl} {
 				font-size: 200px
-			}
-		}
-
-		&::-webkit-scrollbar-track {
-			background: #f1f1f1;
-		}
-
-		&::-webkit-scrollbar-thumb {
-			background: #999;
-
-			&:hover {
-				background: var(--border-color);
 			}
 		}
 
@@ -1150,6 +1151,31 @@
 		padding: 0 5px;
 		border-radius: 50%;
 		display: inline-block;
+	}
+}
+
+html.no-custom-scroll {
+
+	.offcanvas-nav-wrapper {
+		.main-nav-js {
+
+			&::-webkit-scrollbar {
+				display: none;
+				width: 5px;
+			}
+
+			&::-webkit-scrollbar-track {
+				background: #f1f1f1;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background: #999;
+
+				&:hover {
+					background: var(--border-color);
+				}
+			}
+		}
 	}
 }
 

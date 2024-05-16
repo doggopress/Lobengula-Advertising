@@ -4,18 +4,53 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+            
+<url>
+  <loc>https://lobengula.co.za/</loc>
+  <lastmod>2024-05-15T08:55:17+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://lobengula.co.za#about-us</loc>
+  <lastmod>2024-05-15T08:55:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lobengula.co.za#what-we-do</loc>
+  <lastmod>2024-05-15T08:55:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lobengula.co.za#our-work</loc>
+  <lastmod>2024-05-15T08:55:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lobengula.co.za#our-team</loc>
+  <lastmod>2024-05-15T08:55:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lobengula.co.za#contact</loc>
+  <lastmod>2024-05-15T08:55:17+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lobengula.co.za/privacy-policy.html</loc>
+  <lastmod>2024-05-15T08:55:17+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lobengula.co.za/cookies-policy.html</loc>
+  <lastmod>2024-05-15T08:55:17+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
 
+<url>
+  <loc>https://lobengula.co.za/website-disclaimer.html</loc>
+  <lastmod>2024-05-15T08:55:17+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
 
-
-    <url>
-      <loc>https://5ivedesign.co.za/</loc>
-      <lastmod>2023-09-14T08:18:53+00:00</lastmod>
-      <priority>1.00</priority>
-    </url>
-    <url>
-      <loc>https://5ivedesign.co.za/RR_Foundation.pdf</loc>
-      <lastmod>2023-09-14T08:18:53+00:00</lastmod>
-      <priority>0.80</priority>
-    </url>
 
 </urlset>
