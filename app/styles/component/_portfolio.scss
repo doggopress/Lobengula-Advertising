@@ -80,8 +80,16 @@
 .portfolio__area .wf_panel {
     width: 100%;
     height: 100%;
+    height: calc(100dvh - 70px);
     will-change: transform;
     opacity: 1 !important;
+    display: flex;
+    align-content: center;
+    align-items: center;
+
+    .image-container {
+        align-content: center;
+    }
 }
 
 .portfolio__wrapper {
@@ -154,7 +162,7 @@
 }
 
 .portfolio__slide-area-1 {
-    background-color: var(--clr-common-white);
+    //background-color: var(--clr-common-white);
     background-repeat: no-repeat;
     background-position: 200px calc(100% - 150px);
 
@@ -188,7 +196,7 @@
 // portfolio-slide-1 style 
 .portfolio-slide-1 {
     // height: 1190px;
-    background: var(--clr-common-white);
+    //background: var(--clr-common-white);
     z-index: 1;
 
     @media #{$lg,$md,$sm,$xs} {
@@ -196,12 +204,13 @@
     }
 
     &-thumb {
-        position: absolute;
+        position: relative;
         left: 0;
-        width: 42%;
-        height: 100%;
+        width: 100%;
+        height: auto;
         top: 0;
         z-index: -1;
+        pointer-events: none;
 
         @media #{$md,$sm,$xs} {
             display: none;
@@ -272,7 +281,7 @@
 .portfolio-slide-2 {
     height: 100vh;
     //background: #CFDAE3;
-    background: var(--clr-common-white);
+    //background: var(--clr-common-white);
     z-index: 1;
 
 
@@ -327,7 +336,7 @@
 // portfolio-slide-3 style 
 .portfolio-slide-3 {
     height: 100vh;
-    background: var(--clr-common-white);
+    //background: var(--clr-common-white);
     z-index: 1;
 
 

@@ -1,6 +1,7 @@
 @import '../../node_modules/animate.css/animate.css';
 @import '../../node_modules/@fancyapps/ui/dist/fancybox/fancybox.css';
 @import '../../node_modules/swiper/swiper-bundle.min.css';
+//@import '../styles/vendor/swiper-bundle.css';
 @import '../../node_modules/slick-carousel/slick/slick.scss';
 @import '../../node_modules/magnific-popup/dist/magnific-popup.css';
 @import '../../node_modules/odometer/themes/odometer-theme-default.css';
@@ -26,8 +27,8 @@
 //@import "component/counter";
 @import "component/section-title";
 //@import "component/about";
-//@import "component/award";
-//@import "component/contact";
+@import "component/award";
+@import "component/contact";
 //@import "component/services";
 @import "component/project";
 @import "component/team";
@@ -74,19 +75,19 @@
 
 @media screen and (max-width: 767px) {
     .portfolio-slide-1-content {
-        padding-top: 0px;
+        //padding-top: 0px;
     }
 }
 
 @media screen and (max-width: 767px) {
     .portfolio-slide-2-content {
-        padding-top: 0px;
+        //padding-top: 0px;
     }
 }
 
 @media screen and (max-width: 767px) {
     .portfolio-slide-3-content {
-        padding-top: 0px;
+        //padding-top: 0px;
     }
 }
 

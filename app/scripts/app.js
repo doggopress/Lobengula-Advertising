@@ -6,7 +6,8 @@ import 'odometer';
 import 'jquery.appear';
 import 'slick-carousel';
 import 'magnific-popup';
-import Swiper from 'swiper';
+//import Swiper from 'swiper';
+import 'scripts/vendor/swiper.bundle.min';
 import chroma from "chroma-js";
 import 'vanilla-cookieconsent';
 import 'scripts/vendor/meanmenu';
@@ -102,6 +103,8 @@ Copyright © 2024 Lobengula Advertising
 ****************************************************/
 
 (function ($) {
+
+	document.addEventListener("DOMContentLoaded", () => {
 	("use strict");
 
 	var windowOn = $(window);
@@ -289,30 +292,44 @@ Copyright © 2024 Lobengula Advertising
 	/* magnificPopup video view */
 	$(".popup-video").magnificPopup({
 		// disableOn: 700,
+		preloader: true,
 		type: 'iframe',
 		mainClass: '.popup-video',
 		// removalDelay: 160,
 		preloader: true,
-		fixedContentPos: false
+		fixedContentPos: true
 	});
 
 
 	/*======================================
 	12. award scroll  
 	========================================*/
-	let award__scroll = new Swiper(".text__scroll", {
+	//document.addEventListener("DOMContentLoaded", () => {
+	//if( document.querySelector('.text__scroll') ) {
+	/**/
+	//setTimeout(()=>{
+	let award__scroll = new Swiper('.text__scroll', {
 		loop: true,
+		//loopedSlides: 4,
+		//autoplay:true,
 		freemode: false,
-		slidesPerView: "auto",
+		slidesPerView:'auto',
+		//slidesPerGroupAuto: true,
 		centeredSlides: true,
 		spaceBetween: 30,
-		speed: 15000,
-		simulateTouch: false,
+		speed: 6000,
+		simulateTouch: true,
 		autoplay: {
 			delay: 1,
-			disableOnInteraction: true,
+			//reverseDirection: true
+			//disableOnInteraction: false,
 		},
+		allowTouchMove: false,
+  		disableOnInteraction: false
 	});
+	//}, 3000);
+	//}
+	/**/
 
 	/*======================================
 	13. testimonial slider  
@@ -408,7 +425,7 @@ Copyright © 2024 Lobengula Advertising
 
 	/*======================================
 	15. brand activation 
-	========================================*/
+	========================================* /
 	$('.brand-active').slick({
 		dots: false,
 		arrows: false,
@@ -529,16 +546,18 @@ Copyright © 2024 Lobengula Advertising
 	========================================*/
 	let teamSlider = new Swiper(".team-slider", {
 		loop: true,
-		parallax: true,
+		parallax: false,
 		freeMode: {
 			enabled: true,
 			sticky: false,
 		},
-		slidesPerView: 1,
+		//slidesPerView: 1,
+		slidesPerView:'auto',
+		slidesPerGroupAuto: true,
 		spaceBetween: 30,
 		centeredSlides: true,
 		simulateTouch: true,
-		speed: 1000,
+		speed: 6000,
 		mousewheel: {
 			invert: false,
 		},
@@ -547,9 +566,9 @@ Copyright © 2024 Lobengula Advertising
 			prevEl: ".team-slider-button-prev",
 		},
 		autoplay: {
-			//delay: 2000,
-			//disableOnInteraction: false,
-			//pauseOnMouseEnter: true
+			delay: .1,
+			disableOnInteraction: false,
+			pauseOnMouseEnter: true
 		},
 		breakpoints: {
 			// when window width is >= 320px
@@ -569,16 +588,7 @@ Copyright © 2024 Lobengula Advertising
 				slidesPerView: 3,
 			},
 			1400: {
-				slidesPerView: 4,
-				parallax: true,
-				mousewheel: {
-					invert: false,
-				},
-				autoplay: {
-					delay: 2000,
-					disableOnInteraction: false,
-					pauseOnMouseEnter: true
-				},
+				slidesPerView: 4
 			},
 		},
 	});
@@ -1692,6 +1702,8 @@ Copyright © 2024 Lobengula Advertising
 			end: 'bottom top', // Adjust the scroll range to reduce padding at the bottom
 			scrub: 0.8 // Enables smooth scrolling effect
 		}
+	});
+
 	});
     
 })(jQuery);

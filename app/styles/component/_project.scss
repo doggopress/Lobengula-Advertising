@@ -597,6 +597,12 @@
             aspect-ratio: 100/110;
         }
 
+        .area__btn {
+            position: absolute;
+            bottom: 0;
+            right:0;
+        }
+
         .area-thumb-content {
             position: absolute;
             width: 100%;

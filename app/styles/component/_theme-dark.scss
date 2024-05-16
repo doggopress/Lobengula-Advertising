@@ -267,12 +267,12 @@
 
     .hero-3__title {
         color: var(--clr-common-white);
-        text-align: center;
+        text-align: left;
     }
 
     .hero-3__text {
         color: var(--clr-common-white);
-        text-align: center;
+        text-align: left;
     }
 
     .hero-3__subtitle {
@@ -301,6 +301,8 @@
 
     .choose-area-content .thumb-wrapper::after {
         background: none;
+        //border: 1px solid #575757;
+        box-shadow: 0 10px 15px #000;
         //background: linear-gradient(180deg, #222222 0%, rgba(255, 255, 255, 0) 100%);
     }
 
