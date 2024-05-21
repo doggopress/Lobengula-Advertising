@@ -130,7 +130,7 @@ export default class AnimationHelper {
 
 		let tween = TweenMax.fromTo(target, .5,
 			{
-				webkitFilter: 'blur(10px)',
+				webkitFilter: 'blur(0px)',
 				autoAlpha: 1
 				//scale: 2
 			},
@@ -167,7 +167,45 @@ export default class AnimationHelper {
 		return tween;
 	}
 
-    portfolioScroll(target){
+    AboutEnter(target){
+
+		let tween = TweenMax.fromTo(
+			target, .5,
+			{
+				x: 0,
+				autoAlpha: 1
+			},
+			{
+				x: '-100%',
+				autoAlpha: 1,
+				delay: .5,
+				ease: Power0.easeNone
+			}
+		);
+
+		return tween;
+
+	}
+
+    portfolioScroll(target, xPercent){
+
+		let tween = TweenMax.fromTo(target, .5,
+			{
+				autoAlpha: 1
+				//scale: 2
+			},
+			{
+				xPercent: xPercent,
+                duration: 1,
+                autoAlpha: 1,
+                ease: "none"
+			}
+		);
+
+		return tween;
+	}
+
+    portfolioScroll2(target){
 
         function addSectionCallbacks(timeline, { start, end, param, onEnter, onLeave, onEnterBack, onLeaveBack }) {
             let trackDirection = animation => {

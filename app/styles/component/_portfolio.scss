@@ -65,6 +65,17 @@
     direction: ltr;
     background-color: var(--clr-common-white);;
 
+    /** /
+    .about-pin {
+        top:100dvh !important;
+        left:0 !important;
+        width: 100dvw;
+        height: 100dvh;
+        display: block;
+        z-index: 9999;
+        overflow: hidden;
+    }
+    /**/
 
     @media #{$lg} {
         background-color: var(--clr-common-white);;
@@ -93,10 +104,18 @@
 }
 
 .portfolio__wrapper {
-    width: 600%;
-    height: 100%;
+    width: 100dvw;
+    height: 100dvh;
+    display: block;
+    /** /
     display: flex;
     flex-wrap: no-wrap;
+    /**/
+    pointer-events: none;
+
+    .swiper-slide {
+        width: 100vw !important;
+    }
 
     @media #{$lg,$md,$sm,$xs} {
         width: 100%;
@@ -104,6 +123,10 @@
         flex-wrap: wrap;
     }
 
+}
+
+#about-us.visible .portfolio__wrapper {
+    pointer-events: all;
 }
 
 .portfolio-title-area {

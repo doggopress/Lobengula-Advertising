@@ -70,37 +70,37 @@ export default class Scroll {
 				sectionContact = document.getElementById('contact');
 				
 
-		if ( this.isInViewport(sectionHome) ) {
+		if ( sectionHome && this.isInViewport(sectionHome) ) {
 			document.body.classList.add('page-active-home');
 		} else {
 			//document.body.classList.remove('page-active-home');
 		}
 
-		if ( this.isInViewport(sectionAbout) ) {
+		if ( sectionAbout && this.isInViewport(sectionAbout) ) {
 			document.body.classList.add('page-active-about');
 		} else {
 			//document.body.classList.remove('page-active-about');
 		}
 
-		if ( this.isInViewport(sectionServices) ) {
+		if ( sectionServices && this.isInViewport(sectionServices) ) {
 			document.body.classList.add('page-active-services');
 		} else {
 			//document.body.classList.remove('page-active-services');
 		}
 
-		if ( this.isInViewport(sectionWork) ) {
+		if ( sectionWork && this.isInViewport(sectionWork) ) {
 			document.body.classList.add('page-active-work');
 		} else {
 			//document.body.classList.remove('page-active-work');
 		}
 
-		if ( this.isInViewport(sectionTeam) ) {
+		if ( sectionTeam && this.isInViewport(sectionTeam) ) {
 			document.body.classList.add('page-active-team');
 		} else {
 			//document.body.classList.remove('page-active-team');
 		}
 
-		if ( this.isInViewport(sectionContact) ) {
+		if ( sectionContact && this.isInViewport(sectionContact) ) {
 			document.body.classList.add('page-active-contact');
 		} else {
 			//document.body.classList.remove('page-active-contact');
@@ -190,6 +190,28 @@ export default class Scroll {
 		});
 
 		document.querySelectorAll('.sidebar-menu-area ul li a').forEach((btn, index) => {
+			btn.addEventListener('click', (evt) => {
+
+				evt.preventDefault();
+
+				const sectionId = evt.currentTarget.getAttribute('href');
+				if( sectionId ) {
+					//gsap.to(window, {duration: 1, scrollTo:{y:'#section' + (index + 1), offsetY:70}});
+					if( document.body.classList.contains('page-home') ) {
+						this.scrollbar.scrollIntoView(document.querySelector(sectionId), {
+							offsetTop: 25
+						});
+					} else {
+						//window.location.href=
+						window.open(`${window.location.origin}/${sectionId}`,'_self'); 
+					}
+				}
+
+				
+			});
+		});
+
+		document.querySelectorAll('.link-home').forEach((btn, index) => {
 			btn.addEventListener('click', (evt) => {
 
 				evt.preventDefault();

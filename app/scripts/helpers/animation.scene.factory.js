@@ -23,6 +23,13 @@ export default class SceneFactory {
 		.addTo(settings.addTo)
 		.setClassToggle( settings.triggerElement, 'visible');
 
+        if( settings.setPin === true ) {
+            scene.setPin( '.scroll-content');
+        }
+        //if( settings.setTween !== null ) {
+        //    scene.setTween(settings.setTween);
+        //}
+
 		scrollParent.options.scenes.push(scene);
 
 		return scene;

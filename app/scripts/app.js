@@ -19,10 +19,12 @@ import 'scripts/components/backToTop';
 import 'scripts/components/ajax-form.js';
 import 'scripts/components/service-accordion.js';
 
+import AboutSlider from 'scripts/components/slider.about';
 import TeamSlider from 'scripts/components/slider.team';
 import MenuMobile from 'scripts/components/menu.mobile';
 import MouseCursor from 'scripts/components/mouse.cursor';
 import TextScrollSlider from 'scripts/components/slider.text-scroll';
+import { _isUndefined } from 'gsap/gsap-core';
 
 
 /***************************************************
@@ -86,10 +88,16 @@ const CUSTOM_SCROLLBAR = true;
 
 	function createScenes( callback ) {
 
+		new MouseCursor();
+		new MenuMobile();
+		new TeamSlider();
+		//new AboutSlider();
+		new TextScrollSlider();
+
 		if( CUSTOM_SCROLLBAR === true ) {
 
 			$('html').addClass('custom-scroll');
-	
+
 			const TLscenes = [];
 	
 			// eslint-disable-next-line no-unused-vars
@@ -101,33 +109,152 @@ const CUSTOM_SCROLLBAR = true;
 					callback();
 				}
 			});
+			
+			let duration = 1;
 			const controller = new ScrollMagic.Controller();
+			const sections = gsap.utils.toArray(".wf_panel");
+			const sectionIncrement = duration / (sections.length - 1);
 
-			new MouseCursor();
-			new MenuMobile();
-			new TeamSlider();
-			new TextScrollSlider();
+			/** /
+			const s = new ScrollMagic.Scene({
+				triggerElement: '.portfolio__wrapper',
+				triggerHook: 0.9, // show, when scrolled 10% into view
+				duration: '80%', // hide 10% before exiting view (80% + 10% from bottom)
+				offset: 50 // move trigger to center of element
+			})
+			.setPin('.portfolio__wrapper')
+			.addTo(controller);
 
-			//return;
-			const portfolio__area = document.querySelector('.portfolio__area');
-			if( portfolio__area ) {
-				TLscenes.push({TimeLineScene: AnimationScenes.TLscene2(), element: '.portfolio__area'});
-			}
+			s.on('enter', (e) => {
+				console.log(`About entered`);
+				//tween.play();
+			});
+	
+			s.on('leave', (e) => {
+				console.log(`About left`);
+				//tween.reverse();
+			});
+
+			scroll.options.scenes.push(s);
+
+			return
+			/**/
+
+			
+			/** /
+			let tl = gsap.timeline({
+					scrollTrigger: {
+						trigger: ".portfolio__wrapper",
+						pin: true,
+						scrub: 1,
+						start: "top 90",
+						end: "+=6000"
+					}
+				});
+				/** /
+
+			tl.to(sections, {
+				xPercent: -100 * (sections.length - 1),
+				duration: duration,
+				ease: "none"
+			});
+			/**/
+
+			//return
+
+			/** /
+			const s = new ScrollMagic.Scene({
+				triggerElement: '.portfolio__wrapper',
+				triggerHook: 0.9, // show, when scrolled 10% into view
+				duration: '80%', // hide 10% before exiting view (80% + 10% from bottom)
+				offset: 50 // move trigger to center of element
+			})
+			.setPin('#about-us')
+			//.setTween(tween)
+			//.setClassToggle(section, 'visible') // add class to reveal
+			.addTo(controller);
+			/**/
+
+			// START
+			/* * /
+			sections.forEach((section, index) => {
+
+				let tween = gsap.from(section, {
+					opacity: 0,
+					scale: 0.6,
+					duration: 0.5,
+					force3D: true,
+					paused: true
+				});
+
+				const s = new ScrollMagic.Scene({
+					
+					triggerElement: section,
+					//triggerHook: sectionIncrement * (index - 0.99),
+					//duration: sectionIncrement * (index + 0.99),
+					triggerHook: 0.9, // show, when scrolled 10% into view
+					duration: '80%', // hide 10% before exiting view (80% + 10% from bottom)
+					offset: 50 // move trigger to center of element
+				})
+				//.setPin('.portfolio__wrapper')
+				.setTween(tween)
+				//.setClassToggle(section, 'visible') // add class to reveal
+				.addTo(controller);
+		
+				s.on('enter', (e) => {
+					console.log(`About[${index}] entered`);
+					tween.play();
+				});
+		
+				s.on('leave', (e) => {
+					console.log(`About[${index}] left`);
+					tween.reverse();
+				});
+		
+				scroll.options.scenes.push(s);
+
+				scroll.scrollbar.track.update();
+
+			});
+			/**/
+			// END
+
+			/** /
+			const s = new ScrollMagic.Scene({
+				triggerElement: '.portfolio__area',
+				triggerHook: 0.9, // show, when scrolled 10% into view
+				duration: '80%', // hide 10% before exiting view (80% + 10% from bottom)
+				offset: 50 // move trigger to center of element
+			})
+			.setClassToggle('.portfolio__area', 'visible') // add class to reveal
+			.addTo(controller);
+	
+			s.on('enter', (e) => {
+				console.log('About entered');
+			});
+	
+			s.on('leave', (e) => {
+				console.log('About left');
+			});
+	
+			scroll.options.scenes.push(s);
+			/**/
 
 			const projects = document.querySelector('.project-area-2');
 			if( projects ) {
 				TLscenes.push({TimeLineScene: AnimationScenes.TLsceneProject(), element: '.project-area-2'});
 			}
-	
-			/** /
-			const projects = document.querySelectorAll('.project__item');
-			if( projects ) {
-				projects.forEach((elem)=>{
-					TLscenes.push({TimeLineScene: AnimationScenes.TLsceneProject(), element: elem});
-				});
+
+			const portfolio__area = document.querySelector('.portfolio__area');
+			if( portfolio__area ) {
+				//return;
+				TLscenes.push(
+					{
+						TimeLineScene: AnimationScenes.TLsceneAboutUs(), 
+						element: '.portfolio__area'
+					}
+				);
 			}
-			/**/
-			
 	
 			TLscenes.forEach((scene, index )=>{
 	
@@ -137,14 +264,33 @@ const CUSTOM_SCROLLBAR = true;
 				const sceneDuration = sceneElem.getAttribute('data-duration');
 	
 				if ( sceneElem ) {
+
+					//let aboutSwiper = (sceneElemName === 'About') ? new AboutSlider() : null;
+					let aboutSwiper = null;
+
+					if( (sceneElemName === 'About') ) {
+						aboutSwiper = new AboutSlider();
+						//console.log(aboutSwiper);
+						aboutSwiper.detachEvents();
+
+						/**/
+						aboutSwiper.on('slideChange', (swiper) => {
+							console.log('slide changed', {
+								activeIndex: swiper.activeIndex, 
+								isEnd: swiper.isEnd
+							});
+						});
+						/**/
+					}
 	
 					const currentScene = sceneFactory.createScene({
 						triggerElement: sceneElem,
 						//offset: $('#home').height()/2,
 						offset: 0,
 						duration: sceneDuration,
-						//triggerHook: 0.9,
-						triggerHook: 'onEnter',
+						triggerHook: (sceneElemName === 'About') ? .1 : 0.9,
+						//triggerHook: 'onEnter',
+						setPin: (sceneElemName === 'About') ? false : false,
 						setTween: scene.TimeLineScene,
 						addTo: controller,
 						toggleClass: 'visible'
@@ -152,10 +298,22 @@ const CUSTOM_SCROLLBAR = true;
 	
 					currentScene.on('enter', () => {
 						console.log(`${sceneElemName} Entered`);
+
+						if( sceneElemName === 'About' && aboutSwiper !== null ) {
+							aboutSwiper.attachEvents();
+
+							scroll.scrollbar.scrollIntoView(document.querySelector(`#about-us`), {
+								offsetTop: 25
+							});
+						}
 					});
 	
 					currentScene.on('leave', () => {
 						console.log(`${sceneElemName} Left`);
+
+						if( sceneElemName === 'About' && aboutSwiper !== null ) {
+							aboutSwiper.detachEvents();
+						}
 					});
 	
 					// background visuals
@@ -183,10 +341,32 @@ const CUSTOM_SCROLLBAR = true;
 				}
 	
 			});
+
+			return;
 	
 		} else {
 			$('html').addClass('no-custom-scroll');
 		}
+	}
+
+	function addSectionCallbacks2(timeline, { start, end, param, onEnter, onLeave, onEnterBack, onLeaveBack }) {
+		let trackDirection = animation => {
+			let onUpdate = animation.eventCallback("onUpdate"),
+				prevTime = animation.time();
+			animation.direction = animation.reversed() ? -1 : 1;
+			animation.eventCallback("onUpdate", () => {
+				let time = animation.time();
+				if (prevTime !== time) {
+					animation.direction = time < prevTime ? -1 : 1;
+					prevTime = time;
+				}
+				onUpdate && onUpdate.call(animation);
+			});
+		},
+			empty = v => v;
+		timeline.direction || trackDirection(timeline);
+		start >= 0 && timeline.add(() => ((timeline.direction < 0 ? onLeaveBack : onEnter) || empty)(param), start);
+		end <= timeline.duration() && timeline.add(() => ((timeline.direction < 0 ? onEnterBack : onLeave) || empty)(param), end);
 	}
 
 	$(window).on("load", ()=> {
@@ -336,7 +516,7 @@ const CUSTOM_SCROLLBAR = true;
 
 	/*======================================
 	42. portfolio Section
-	========================================* /
+	========================================*/
 	if (device_width > 1199) {
 		return;
 		var portfolio__wrapper = document.querySelector('.portfolio__wrapper');
@@ -391,7 +571,7 @@ const CUSTOM_SCROLLBAR = true;
 				.setClassToggle( section, 'visible');
 		
 				//scrollParent.options.scenes.push(scene);
-				/** /
+				/**/
 			});
 
 			function addSectionCallbacks(timeline, { start, end, param, onEnter, onLeave, onEnterBack, onLeaveBack }) {
