@@ -90,7 +90,8 @@ const CUSTOM_SCROLLBAR = true;
 
 		new MouseCursor();
 		new MenuMobile();
-		new TeamSlider();
+		let teamSlider = new TeamSlider();
+		teamSlider.detachEvents();
 		//new AboutSlider();
 		new TextScrollSlider();
 
@@ -115,130 +116,23 @@ const CUSTOM_SCROLLBAR = true;
 			const sections = gsap.utils.toArray(".wf_panel");
 			const sectionIncrement = duration / (sections.length - 1);
 
-			/** /
-			const s = new ScrollMagic.Scene({
-				triggerElement: '.portfolio__wrapper',
-				triggerHook: 0.9, // show, when scrolled 10% into view
-				duration: '80%', // hide 10% before exiting view (80% + 10% from bottom)
-				offset: 50 // move trigger to center of element
-			})
-			.setPin('.portfolio__wrapper')
-			.addTo(controller);
+			const sectionHome = document.querySelector('#home');
+			const sectionWWD = document.querySelector('#what-we-do');
+			const sectionOurWork = document.querySelector('#our-work');
+			const sectionContact = document.querySelector('#contact');
 
-			s.on('enter', (e) => {
-				console.log(`About entered`);
-				//tween.play();
-			});
-	
-			s.on('leave', (e) => {
-				console.log(`About left`);
-				//tween.reverse();
-			});
-
-			scroll.options.scenes.push(s);
-
-			return
-			/**/
-
-			
-			/** /
-			let tl = gsap.timeline({
-					scrollTrigger: {
-						trigger: ".portfolio__wrapper",
-						pin: true,
-						scrub: 1,
-						start: "top 90",
-						end: "+=6000"
-					}
-				});
-				/** /
-
-			tl.to(sections, {
-				xPercent: -100 * (sections.length - 1),
-				duration: duration,
-				ease: "none"
-			});
-			/**/
-
-			//return
-
-			/** /
-			const s = new ScrollMagic.Scene({
-				triggerElement: '.portfolio__wrapper',
-				triggerHook: 0.9, // show, when scrolled 10% into view
-				duration: '80%', // hide 10% before exiting view (80% + 10% from bottom)
-				offset: 50 // move trigger to center of element
-			})
-			.setPin('#about-us')
-			//.setTween(tween)
-			//.setClassToggle(section, 'visible') // add class to reveal
-			.addTo(controller);
-			/**/
-
-			// START
-			/* * /
-			sections.forEach((section, index) => {
-
-				let tween = gsap.from(section, {
-					opacity: 0,
-					scale: 0.6,
-					duration: 0.5,
-					force3D: true,
-					paused: true
-				});
-
-				const s = new ScrollMagic.Scene({
-					
-					triggerElement: section,
-					//triggerHook: sectionIncrement * (index - 0.99),
-					//duration: sectionIncrement * (index + 0.99),
-					triggerHook: 0.9, // show, when scrolled 10% into view
-					duration: '80%', // hide 10% before exiting view (80% + 10% from bottom)
-					offset: 50 // move trigger to center of element
-				})
-				//.setPin('.portfolio__wrapper')
-				.setTween(tween)
-				//.setClassToggle(section, 'visible') // add class to reveal
-				.addTo(controller);
-		
-				s.on('enter', (e) => {
-					console.log(`About[${index}] entered`);
-					tween.play();
-				});
-		
-				s.on('leave', (e) => {
-					console.log(`About[${index}] left`);
-					tween.reverse();
-				});
-		
-				scroll.options.scenes.push(s);
-
-				scroll.scrollbar.track.update();
-
-			});
-			/**/
-			// END
-
-			/** /
-			const s = new ScrollMagic.Scene({
-				triggerElement: '.portfolio__area',
-				triggerHook: 0.9, // show, when scrolled 10% into view
-				duration: '80%', // hide 10% before exiting view (80% + 10% from bottom)
-				offset: 50 // move trigger to center of element
-			})
-			.setClassToggle('.portfolio__area', 'visible') // add class to reveal
-			.addTo(controller);
-	
-			s.on('enter', (e) => {
-				console.log('About entered');
-			});
-	
-			s.on('leave', (e) => {
-				console.log('About left');
-			});
-	
-			scroll.options.scenes.push(s);
-			/**/
+			if( sectionHome ) {
+				TLscenes.push({TimeLineScene: AnimationScenes.TLNavigation(sectionHome), element: '#home'});
+			}
+			if( sectionWWD ) {
+				TLscenes.push({TimeLineScene: AnimationScenes.TLNavigation(sectionWWD), element: '#what-we-do'});
+			}
+			if( sectionOurWork ) {
+				TLscenes.push({TimeLineScene: AnimationScenes.TLNavigation(sectionOurWork), element: '#our-work'});
+			}
+			if( sectionContact ) {
+				TLscenes.push({TimeLineScene: AnimationScenes.TLNavigation(sectionContact), element: '#contact'});
+			}
 
 			const projects = document.querySelector('.project-area-2');
 			if( projects ) {
@@ -255,11 +149,22 @@ const CUSTOM_SCROLLBAR = true;
 					}
 				);
 			}
+
+			const team__area = document.querySelector('#our-team');
+			if( team__area ) {
+				//return;
+				TLscenes.push(
+					{
+						TimeLineScene: AnimationScenes.TLsceneAboutUs(), 
+						element: '#our-team'
+					}
+				);
+			}
 	
 			TLscenes.forEach((scene, index )=>{
 	
 				const sceneElem = document.querySelector(scene.element);
-				const sceneElemName = sceneElem.getAttribute('data-anchor');
+				const sceneElemName = sceneElem.getAttribute('data-anchor').toLowerCase();
 	
 				const sceneDuration = sceneElem.getAttribute('data-duration');
 	
@@ -268,7 +173,7 @@ const CUSTOM_SCROLLBAR = true;
 					//let aboutSwiper = (sceneElemName === 'About') ? new AboutSlider() : null;
 					let aboutSwiper = null;
 
-					if( (sceneElemName === 'About') ) {
+					if( (sceneElemName === 'about-us') ) {
 						aboutSwiper = new AboutSlider();
 						//console.log(aboutSwiper);
 						aboutSwiper.detachEvents();
@@ -279,6 +184,10 @@ const CUSTOM_SCROLLBAR = true;
 								activeIndex: swiper.activeIndex, 
 								isEnd: swiper.isEnd
 							});
+
+							scroll.scrollbar.scrollIntoView(document.querySelector(`#about-us`), {
+								offsetTop: 0
+							});
 						});
 						/**/
 					}
@@ -286,33 +195,71 @@ const CUSTOM_SCROLLBAR = true;
 					const currentScene = sceneFactory.createScene({
 						triggerElement: sceneElem,
 						//offset: $('#home').height()/2,
+						//offset: (sceneElemName === 'about-us' || sceneElemName === 'our-team') ? 0 : $(`#${sceneElemName}`).height(),
 						offset: 0,
 						duration: sceneDuration,
-						triggerHook: (sceneElemName === 'About') ? .1 : 0.9,
+						triggerHook: (sceneElemName === 'about-us') ? 0.1 : 0.9,
 						//triggerHook: 'onEnter',
-						setPin: (sceneElemName === 'About') ? false : false,
+						setPin: (sceneElemName === 'about-us') ? false : false,
 						setTween: scene.TimeLineScene,
 						addTo: controller,
 						toggleClass: 'visible'
-					}, scroll);
+					}, scroll); 
 	
 					currentScene.on('enter', () => {
 						console.log(`${sceneElemName} Entered`);
 
-						if( sceneElemName === 'About' && aboutSwiper !== null ) {
+						//document.body.classList.add(`page-active-${sceneElemName}`);
+						const menuBtn = document.querySelector(`.main-menu ul li a[href="#${sceneElemName}"`);
+						//const menuBtnMobi = document.querySelector(`.sidebar-menu-area .menu-list .menu-item a[href="#${sceneElemName}"`);
+						if( menuBtn ) {
+							menuBtn.classList.add('active');
+						}
+						//if( menuBtnMobi ) {
+						//	menuBtnMobi.classList.add('active');
+						//}
+
+						if( sceneElemName === 'about-us' && aboutSwiper !== null ) {
 							aboutSwiper.attachEvents();
 
-							scroll.scrollbar.scrollIntoView(document.querySelector(`#about-us`), {
-								offsetTop: 25
-							});
+							/**/
+							if ( !document.body.classList.contains('about-in-view') ) {
+								scroll.scrollbar.scrollIntoView(document.querySelector(`#about-us`), {
+									offsetTop: 0
+								});
+
+								document.body.classList.add('about-in-view');
+							}
+							/**/
+						}
+
+						if( sceneElemName === 'our-team') {
+							teamSlider.attachEvents();
+							//scroll.scrollbar.scrollIntoView(document.querySelector(`#our-team`), {
+							//	offsetTop: -100
+							//});
 						}
 					});
 	
 					currentScene.on('leave', () => {
 						console.log(`${sceneElemName} Left`);
 
-						if( sceneElemName === 'About' && aboutSwiper !== null ) {
+						//document.body.classList.remove(`page-active-${sceneElemName}`);
+						const menuBtn = document.querySelector(`.main-menu ul li a[href="#${sceneElemName}"`);
+						if( menuBtn ) {
+							menuBtn.classList.remove('active');
+						}
+						//const menuBtnMobi = document.querySelector(`.sidebar-menu-area .menu-list .menu-item a[href="#${sceneElemName}"`);
+						//if( menuBtnMobi ) {
+						//	menuBtnMobi.classList.add('active');
+						//}
+
+						if( sceneElemName === 'about-us' && aboutSwiper !== null ) {
 							aboutSwiper.detachEvents();
+							document.body.classList.remove('about-in-view');
+						}
+						if( sceneElemName === 'our-team') {
+							teamSlider.detachEvents();
 						}
 					});
 	

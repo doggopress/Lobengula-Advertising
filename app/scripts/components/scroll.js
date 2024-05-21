@@ -152,7 +152,7 @@ export default class Scroll {
 
 			this.scrollPos = status.offset.y;
 
-			this.viewportAnimationsToggle();
+			//this.viewportAnimationsToggle();
 
         });
 
@@ -233,18 +233,22 @@ export default class Scroll {
 			});
 		});
 
-		const aboutCTA = document.getElementById('about-us');
-		if( aboutCTA ) {
-			aboutCTA.addEventListener('click', (evt)=>{
+		document.querySelectorAll('.scroll-navigation').forEach((btn, index) => {
+			btn.addEventListener('click', (evt) => {
 
 				evt.preventDefault();
 
-				this.scrollbar.scrollIntoView(document.getElementById('about'), {
-					offsetTop: 25
-				});
+				const sectionId = evt.currentTarget.getAttribute('data-target');
+				if( sectionId ) {
+					this.scrollbar.scrollIntoView(document.querySelector(sectionId), {
+						offsetTop: 25
+					});
+				}
 
+				
 			});
-		}
+		});
+
 
 		// Fragment exists?
 		if(window.location.hash) {

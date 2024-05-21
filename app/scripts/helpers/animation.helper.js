@@ -4,6 +4,20 @@ import { TweenMax, Power0, Sine, gsap } from 'gsap/all';
 
 export default class AnimationHelper {
 
+    empty(target){
+
+		let tween = TweenMax.fromTo(target, .5,
+			{
+				autoAlpha: 1
+			},
+			{
+				autoAlpha: 1
+			}
+		);
+
+		return tween;
+	}
+
 	visualClipTween(target){
 
 		// let tween = TweenMax.to(target, .5, {

@@ -4,6 +4,11 @@ import { TimelineMax } from 'gsap/all';
 
 const animationhelper = new AnimationHelper();
 
+export const TLNavigation = (target) => {
+	return new TimelineMax()
+	.add(animationhelper.empty(target));
+};
+
 export const TLscene1 = () => {
 	return new TimelineMax()
 	//.add(animationhelper.slashInTween(document.querySelector('.hero-copy-introduction')))

@@ -10,7 +10,7 @@ export default class TeamSlider {
             parallax: false,
             freeMode: {
                 enabled: true,
-                sticky: false,
+                sticky: true,
             },
             //slidesPerView: 1,
             slidesPerView:'auto',
@@ -19,18 +19,22 @@ export default class TeamSlider {
             centeredSlides: true,
             simulateTouch: true,
             speed: 6000,
+            //mousewheel: false,
+            /**/
             mousewheel: {
                 invert: false,
-            },
-            navigation: {
-                nextEl: ".team-slider-button-next",
-                prevEl: ".team-slider-button-prev",
             },
             autoplay: {
                 delay: 1000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true
             },
+            /**/
+            navigation: {
+                nextEl: ".team-slider-button-next",
+                prevEl: ".team-slider-button-prev",
+            },
+            //autoplay: false,
             breakpoints: {
                 // when window width is >= 320px
                 320: {
