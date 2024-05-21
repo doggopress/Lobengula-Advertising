@@ -38,23 +38,15 @@
 
         // Set the recipient email address.
 
-        // FIXME: Update this to your desired email address.
-
         $recipient = "info@lobengula.co.za";
-
-
 
         // Set the email of sender.
 
         $sender = "New contact from $name";
 
-
-
         //Email Header
 
         $head = " ====== LOBENGULA ADVERTISING ====== ";
-
-
 
         // Build the email content.
 
@@ -68,13 +60,9 @@
 
         $email_content .= "Message:\n$message\n";
 
-
-
         // Build the email headers.
 
         $email_headers = "From: $name <$email>";
-
-
 
         // Send the email.
 

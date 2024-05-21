@@ -18,84 +18,6 @@ export default class AnimationHelper {
 		return tween;
 	}
 
-	visualClipTween(target){
-
-		// let tween = TweenMax.to(target, .5, {
-		// 	 	"-webkit-clip-path":"polygon("+ (-0.364 * window.innerHeight) +"px 0px, "+window.innerWidth+"px 0px, " + (0.364 * window.innerHeight + window.innerWidth) + "px 100%, 0% 100%)",
-		// 	 	ease: Power0.easeNone
-		// 	 });
-
-		let tween = TweenMax.to(target, .5, {
-			opacity: 1,
-			ease: Power0.easeNone
-		});
-
-		return tween;
-	}
-
-	visualInTween(target){
-
-		let tween = TweenMax.fromTo(
-			target, .5,
-			{
-				y: '50%',
-				autoAlpha: 0
-			},
-			{
-				y: '0%',
-				autoAlpha: 1,
-				delay: .5,
-				ease: Power0.easeNone
-			}
-		);
-
-		return tween;
-
-	}
-
-	videoInTween(target){
-
-		let tween = TweenMax.fromTo(
-			target, .5,
-			{
-				autoAlpha: 1,
-				scale: 2
-			},
-			{
-				autoAlpha: 1,
-				scale: 1,
-				ease: Power0.easeInOut
-				//ease: Power0.easeNone
-			}
-		);
-
-		return tween;
-
-	}
-
-	darkenOutTween(target){
-
-		let tween = TweenMax.to(target, .5, {
-			opacity: 1,
-			ease: Power0.easeNone
-		});
-
-		return tween;
-
-	}
-
-	visualOutTween(target){
-
-		let tween = TweenMax.to(target, .5, {
-			scale: 2,
-			ease: Power0.easeNone,
-			autoAlpha: 0
-		});
-
-		return tween;
-
-	}
-
 	bgScroll(target){
 
 		let tween = TweenMax.fromTo(target, .5,
@@ -111,31 +33,6 @@ export default class AnimationHelper {
 				ease: Sine.easeOut
 			}
 		);
-
-		return tween;
-	}
-
-	slashInTween(target){
-
-		let tween = TweenMax.fromTo(target, .5, {
-			x: '-100%'
-		},
-		{
-			x: '0%',
-			opacity: 1,
-			ease: Sine.easeOut
-		});
-
-		return tween;
-	}
-
-	slashOutTween(target){
-
-		let tween = TweenMax.to(target, .25, {
-			opacity: 0,
-			delay: .25,
-			ease: Power0.easeNone
-		});
 
 		return tween;
 	}
@@ -332,8 +229,4 @@ export default class AnimationHelper {
 		return tween;
 
 	}
-
-    portfolio(target) {
-
-    }
 }

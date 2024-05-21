@@ -20,7 +20,15 @@ module.exports = (env) => {
 			{
 				from: 'app/.htaccess',
 				to: ''
-			}
+			},
+			{
+				from: 'app/robots.txt',
+				to: ''
+			},
+			{
+				from: 'app/sitemap.xml',
+				to: ''
+			},
 		],
 		{
 			ignore: [

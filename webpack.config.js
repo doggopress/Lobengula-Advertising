@@ -98,17 +98,8 @@ module.exports = env => {
 				$: 'jquery',
 				jQuery: 'jquery',
 				'window.jQuery': 'jquery',
-				//ScrollTrigger: 'scrolltrigger',
 				//TweenMax: 'TweenMax',
 				//'window.TweenMax': 'TweenMax',
-				//gsap: './vendor/gsap.min',
-				//'window.gsap': 'gsap',
-				//SplitText: './vendor/SplitText.min',
-				//ScrollToPlugin: './vendor/ScrollToPlugin.min',
-				//ScrollTrigger: './vendor/ScrollTrigger.min',
-				ScrollSmoother: './vendor/ScrollSmoother.min'
-				//'window.ScrollToPlugin': 'ScrollToPlugin'
-				
 			}),
 			new ZipPlugin({
 				filename: 'lobengula-website.zip'
@@ -189,7 +180,6 @@ module.exports = env => {
 				'assets': path.resolve(__dirname, 'app/assets'),
 				'scripts': path.resolve(__dirname, 'app/scripts'),
 				'~': path.resolve(__dirname, 'node_modules'),
-				//'ScrollSmoother': path.resolve(__dirname, 'app/scripts/vendor/ScrollSmoother.min')
 			}
 		}
 	});

@@ -4,7 +4,8 @@ module.exports = {
 		'json'
 	],
 	transformIgnorePatterns: [
-		'/node_modules/'
+		'/node_modules/',
+		'/vendor/'
 	],
 	moduleNameMapper: {
 		'^@/(.*)$': '<rootDir>/src/$1'

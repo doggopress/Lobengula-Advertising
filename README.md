@@ -1,6 +1,6 @@
 <h1 align="center">LOBENGULA ADVERTISING - WEBSITE</h1>
 
-Most relevant technologies used in the Boilerplate:
+Technologies:
 
 - **JavaScript:** All the code uses JavaScript.
 - **SASS:** SCSS structure with good practises.
@@ -10,10 +10,18 @@ Most relevant technologies used in the Boilerplate:
 ### 📚 Setup and scripts
 
 > Before start [download](https://github.com/doggopress/Lobengula-Advertising.git) or clone the repo.
-> **Install** all the dependencies.
+> [Install Node.js and NPM](https://nodejs.org/en/download/package-manager)
+> **Install** all the js dependencies.
 
 ```shell
 $ npm install
+```
+
+> [Install Composer](https://getcomposer.org/doc/00-intro.md)
+> **Install** all the php dependencies.
+
+```shell
+$ composer update
 ```
 
 **Run** the project for local development.
@@ -22,7 +30,7 @@ $ npm install
 $ npm start
 ```
 
-**Build** the project for a production environment.
+**Build** the project for a production environment. Output will be in the generated dist folder
 
 ```shell
 $ npm run build
