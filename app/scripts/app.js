@@ -83,10 +83,22 @@ const CUSTOM_SCROLLBAR = true;
 
 	function createScenes( callback ) {
 
+		const sectionHome = document.querySelector('#home');
+		const portfolio__area = document.querySelector('.portfolio__area');
+		const sectionWWD = document.querySelector('#what-we-do');
+		const sectionOurWork = document.querySelector('#our-work');
+		const projects = document.querySelector('.project-area-2');
+		const team__area = document.querySelector('#our-team');
+		const sectionContact = document.querySelector('#contact');
+		
+
 		new MouseCursor();
 		new MenuMobile();
-		let teamSlider = new TeamSlider();
-		teamSlider.detachEvents();
+		if( team__area ) {
+			let teamSlider = new TeamSlider();
+			teamSlider.detachEvents();
+		}
+		
 		//new AboutSlider();
 		new TextScrollSlider();
 
@@ -102,6 +114,7 @@ const CUSTOM_SCROLLBAR = true;
 			const scroll = new Scroll({
 				onInit: (evt) => {
 					console.log('Scroll done');
+					
 					callback();
 				}
 			});
@@ -111,30 +124,23 @@ const CUSTOM_SCROLLBAR = true;
 			const sections = gsap.utils.toArray(".wf_panel");
 			const sectionIncrement = duration / (sections.length - 1);
 
-			const sectionHome = document.querySelector('#home');
-			const sectionWWD = document.querySelector('#what-we-do');
-			const sectionOurWork = document.querySelector('#our-work');
-			const sectionContact = document.querySelector('#contact');
+			
 
 			if( sectionHome ) {
 				TLscenes.push({TimeLineScene: AnimationScenes.TLNavigation(sectionHome), element: '#home'});
 			}
-			if( sectionWWD ) {
+			if( sectionWWD && document.body.classList.contains('page-home') ) {
 				TLscenes.push({TimeLineScene: AnimationScenes.TLNavigation(sectionWWD), element: '#what-we-do'});
 			}
 			if( sectionOurWork ) {
 				TLscenes.push({TimeLineScene: AnimationScenes.TLNavigation(sectionOurWork), element: '#our-work'});
+				TLscenes.push({TimeLineScene: AnimationScenes.TLsceneProject(), element: '.project-area-2'});
 			}
 			if( sectionContact ) {
 				TLscenes.push({TimeLineScene: AnimationScenes.TLNavigation(sectionContact), element: '#contact'});
 			}
 
-			const projects = document.querySelector('.project-area-2');
-			if( projects ) {
-				TLscenes.push({TimeLineScene: AnimationScenes.TLsceneProject(), element: '.project-area-2'});
-			}
-
-			const portfolio__area = document.querySelector('.portfolio__area');
+			
 			if( portfolio__area ) {
 				//return;
 				TLscenes.push(
@@ -145,7 +151,7 @@ const CUSTOM_SCROLLBAR = true;
 				);
 			}
 
-			const team__area = document.querySelector('#our-team');
+			
 			if( team__area ) {
 				//return;
 				TLscenes.push(
