@@ -1,12 +1,13 @@
 import $ from 'jquery';
 import 'scripts/vendor/swiper.bundle.min';
+import { Autoplay } from 'swiper/modules';
 
 export default class TeamSlider {
 
     constructor(options = {}) {
 
        return new Swiper(".team-slider", {
-            loop: true,
+            loop: false,
             parallax: false,
             freeMode: {
                 enabled: true,
@@ -16,7 +17,7 @@ export default class TeamSlider {
             slidesPerView:'auto',
             slidesPerGroupAuto: true,
             spaceBetween: 30,
-            centeredSlides: true,
+            centeredSlides: false,
             simulateTouch: true,
             speed: 6000,
             //mousewheel: false,
@@ -24,12 +25,14 @@ export default class TeamSlider {
             mousewheel: {
                 invert: false,
             },
+            /*
             autoplay: {
                 delay: 1000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true
             },
             /**/
+            autoplay: false,
             navigation: {
                 nextEl: ".team-slider-button-next",
                 prevEl: ".team-slider-button-prev",

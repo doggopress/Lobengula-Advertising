@@ -14,6 +14,10 @@ module.exports = (env) => {
 				to: ''
 			},
 			{
+				from: 'app/email_template',
+				to: 'email_template'
+			},
+			{
 				from: 'app/contact.php',
 				to: ''
 			},
