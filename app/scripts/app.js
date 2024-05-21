@@ -38,7 +38,7 @@ const CUSTOM_SCROLLBAR = true;
 	("use strict");
 
 	// HIDE LOGS ON PROD
-	/**/
+	/** /
 	console.log = function(){};
 	console.info = function(){};
 	console.warn = function(){};
@@ -94,12 +94,6 @@ const CUSTOM_SCROLLBAR = true;
 
 		new MouseCursor();
 		new MenuMobile();
-		if( team__area ) {
-			let teamSlider = new TeamSlider();
-			teamSlider.detachEvents();
-		}
-		
-		//new AboutSlider();
 		new TextScrollSlider();
 
 		if( CUSTOM_SCROLLBAR === true ) {
@@ -172,7 +166,8 @@ const CUSTOM_SCROLLBAR = true;
 				if ( sceneElem ) {
 
 					//let aboutSwiper = (sceneElemName === 'About') ? new AboutSlider() : null;
-					let aboutSwiper = null;
+					let aboutSwiper = null,
+						teamSlider = null;
 
 					if( (sceneElemName === 'about-us') ) {
 						aboutSwiper = new AboutSlider();
@@ -191,6 +186,11 @@ const CUSTOM_SCROLLBAR = true;
 							});
 						});
 						/**/
+					}
+
+					if( (sceneElemName === 'our-team') ) {
+						teamSlider = new TeamSlider();
+						teamSlider.detachEvents();
 					}
 	
 					const currentScene = sceneFactory.createScene({
