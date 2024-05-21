@@ -48,6 +48,8 @@
 }
 
 .team-area-2 {
+    padding-bottom: 200px ;
+
     &__bg {
         background: var(--clr-theme-1);
         z-index: -1;
@@ -68,6 +70,10 @@
                 display: none;
             }
         }
+    }
+
+    @media only screen and (max-width: 580px) {
+        padding-bottom: 50px;
     }
 }
 
@@ -293,7 +299,10 @@
                 @include transition(.5s);
 
                 @media (hover:none) {
-                    opacity: 0;
+                    opacity: 1;
+
+                    
+                
                 }
             }
 
@@ -326,10 +335,7 @@
                 overflow: hidden;
                 //@include transition(.5s);
 
-                @media (hover:none) {
-                    transform: translateY(0);
-                    opacity: 1;
-                }
+               
 
                 &:before {
                     content: '';
@@ -347,6 +353,28 @@
 
                     @include transition(.5s);
 
+                    @media only screen and (max-width: 580px) {
+                        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 10%, rgb(255, 255, 255) 50%);
+                    }
+
+                }
+
+                @media (hover:none) {
+                    transform: translateY(0);
+                    //opacity: 1;
+
+                    &:before {
+                        height: 100%;
+                        opacity: 1;
+                        -webkit-transform: translateY(40%);
+                        transform: translateY(40%);
+                        background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(255, 255, 255, 0)), color-stop(70%, rgb(255, 255, 255)));
+                        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 20%, rgb(255, 255, 255) 70%);
+
+                        @media only screen and (max-width: 580px) {
+                            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 10%, rgb(255, 255, 255) 50%);
+                        }
+                    }
                 }
 
                 &.brenda-image {
@@ -477,7 +505,11 @@
             @include transition(.5s);
 
             @media (hover:none) {
-                transform: translateY(0);
+                //transform: translateY(0);
+            }
+
+            @media only screen and (max-width: 580px) {
+                padding: 10px;
             }
         }
 
@@ -486,9 +518,15 @@
             font-weight: 700;
             margin-bottom: 5px;
             font-family: var(--tpl-ff-section);
-            color: var(--clr-theme-2);
+            //color: var(--clr-theme-2);
             //color: var(--clr-common-black);
-            text-shadow: 1px 1px 1px var(--clr-common-black);
+            //text-shadow: 1px 1px 1px var(--clr-common-black);
+
+            @media only screen and (max-width: 580px) {
+                font-size: 12px;
+                line-height: 1;
+                margin-bottom: 0;
+            }
         }
 
         &-designation {
@@ -496,6 +534,12 @@
             color: var(--clr-common-black);
             font-family: var(--tpl-ff-section);
             font-weight: 700;
+
+            @media only screen and (max-width: 580px) {
+                font-size: 8px;
+                line-height: 12px;
+                display: block;
+            }
         }
     }
 }

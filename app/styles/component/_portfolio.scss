@@ -12,6 +12,7 @@
     padding: 0;
     margin: 0;
     opacity: 0;
+    position: absolute;
 
     li {
         counter-increment: total;
@@ -22,6 +23,10 @@
     color: var(--clr-theme-primary);
     font-size: 30px;
     margin-bottom: 10px;
+
+    width: 100%;
+    max-width: 100px;
+    padding-left: 8%;
 
     @media #{$lg,$md,$sm,$xs} {
         display: none;
@@ -57,13 +62,15 @@
         background-position: center;
         background-image: url('../assets/images/patterns/pattern-horizontal-black.png');
     }
+
+    
 }
 
 // portfolio-horizontal-area
 .portfolio__area {
     overflow: hidden;
     direction: ltr;
-    background-color: var(--clr-common-white);;
+    background-color: var(--clr-common-white);
 
     /** /
     .about-pin {
@@ -78,12 +85,17 @@
     /**/
 
     @media #{$lg} {
-        background-color: var(--clr-common-white);;
+        background-color: var(--clr-common-white);
     }
 
 
     @media #{$md,$sm,$xs} {
-        background-color: var(--clr-common-white);;
+        background-color: var(--clr-common-white);
+       
+    }
+
+    @media only screen and (max-width: 768px) {
+        min-height: 100dvh;
     }
 
 }
@@ -92,6 +104,7 @@
     width: 100%;
     height: 100%;
     height: calc(100dvh - 70px);
+    height: calc(100dvh - 25dvh);
     will-change: transform;
     opacity: 1 !important;
     display: flex;
@@ -100,6 +113,18 @@
 
     .image-container {
         align-content: center;
+        pointer-events: none;
+    }
+
+    @media only screen and (max-width: 580px) {
+        .image-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            opacity: .2;
+        }
     }
 }
 
@@ -121,6 +146,11 @@
         width: 100%;
         height: auto;
         flex-wrap: wrap;
+    }
+
+    @media only screen and (max-width: 580px) {
+        position: relative;
+        top:15dvh;
     }
 
 }
@@ -176,7 +206,7 @@
     align-items: center;
 
     @media #{$lg,$md,$sm,$xs} {
-        background-color: var(--clr-bg-6);
+        //background-color: var(--clr-bg-6);
     }
 }
 
@@ -232,7 +262,13 @@
         pointer-events: none;
 
         @media #{$md,$sm,$xs} {
-            display: none;
+            //display: none;
+        }
+
+        @media only screen and (max-width: 580px) {
+            img {
+                max-width: 50%;
+            }
         }
 
         &::after {
@@ -294,6 +330,12 @@
             }
         }
     }
+
+    @media only screen and (max-width: 580px) {
+        > .container > .row {
+            flex-direction: column-reverse;
+        }
+    }
 }
 
 // portfolio-slide-2 style 
@@ -341,6 +383,15 @@
                     }
                 }
 
+            }
+        }
+
+         @media only screen and (max-width: 580px) {
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+
+            h2 {
+                margin-bottom: 0;
             }
         }
     }

@@ -34,16 +34,16 @@ export default class TeamSlider {
             breakpoints: {
                 // when window width is >= 320px
                 320: {
-                    slidesPerView: 1,
+                    slidesPerView: 2,
                 },
                 540: {
-                    slidesPerView: 1,
+                    slidesPerView: 2,
                 },
                 768: {
                     slidesPerView: 2,
                 },
                 992: {
-                    slidesPerView: 2,
+                    slidesPerView: 3,
                 },
                 1200: {
                     slidesPerView: 3,

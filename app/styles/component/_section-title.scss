@@ -43,6 +43,10 @@
                         display: inline-block;
                         position: relative;
 
+                        @media only screen and (max-width: 580px) {
+                            margin-bottom: .5em;
+                        }
+
                         &::after {
                             position: absolute;
                             content: "";

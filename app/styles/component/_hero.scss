@@ -571,7 +571,7 @@
 .hero-3-area {
     padding-top: 310px;
     padding-bottom: 150px;
-    min-height: 100vh;
+    min-height: 100dvh;
 
     @media #{$lg} {
         padding-top: 300px;
@@ -591,6 +591,7 @@
     @media #{$xs} {
         padding-top: 160px;
         padding-bottom: 90px;
+        min-height: 100dvh;
     }
 
     .area__btn {
@@ -823,7 +824,7 @@
 
     &__shape {
         pointer-events: none;
-        
+
         &-1 {
             position: absolute;
             top: 292px;
@@ -1190,4 +1191,10 @@
     opacity: 0.5;
     //background: var(--clr-common-black);
     background: #000000;
+
+    @media only screen and (max-width: 580px) {
+        top: auto;
+        bottom: 0;
+        height: auto;
+    }
 }

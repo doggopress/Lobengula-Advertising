@@ -237,6 +237,20 @@
 			margin-right: 10px;
 		}
 	}
+
+	@media only screen and (max-width: 580px) {
+		.input-wrapper {
+			gap: 30px;
+			flex-direction: column;
+			border-bottom-color: transparent;
+
+			input,
+			textarea {
+				border-bottom: 1px solid #414141;
+				padding-bottom: 1em;
+			}
+		}
+	}
 }
 
 // checkbox style start 
@@ -596,6 +610,14 @@ label {
 		}
 
 	}
+
+	@media only screen and (max-width: 580px) {
+		&__text {
+			p {
+				font-size: 12px;
+			}
+		}
+	}
 }
 
 // copyright style end
@@ -727,6 +749,14 @@ label {
 		//flex-direction: column-reverse;
 		justify-content: flex-start;
 		margin-bottom: 1em;
+	}
+
+	@media only screen and (max-width: 580px) {
+		flex-direction: column;
+
+		li {
+			margin-bottom: 1em;
+		}
 	}
 }
 

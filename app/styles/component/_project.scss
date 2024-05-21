@@ -452,6 +452,26 @@
     position: relative;
     background-color: #1c1c1c;
     overflow: hidden;
+    padding-bottom: 0;
+
+    .iframe {
+        display: block;
+        position: relative;
+        background-color: var(--clr-common-black);
+
+        .col-12 {
+            padding: 0;
+        }
+
+        iframe {
+            position: relative;
+            display: block;
+            width:100dvw;
+            min-height:80dvh;
+            margin:0 auto;
+            background-color: var(--clr-common-black);
+        }
+    }
 }
 
 .project__text {
@@ -583,7 +603,7 @@
 .project-box-3 {
     
     &:hover {
-
+        pointer-events: all;
         .area-thumb-content {
             transform: scale(0.92);
             opacity: 1;
@@ -602,7 +622,7 @@
 
             img {
                 width: 100%;
-                aspect-ratio: 100/110;
+                //aspect-ratio: 100/110;
                 border: 2px solid #FFFFFF;
             }
 
@@ -777,6 +797,8 @@
         position: absolute;
         right: -7.8%;
         bottom: 2.5%;
+        right: -7%;
+        bottom: 6.5%;
         padding: 0;
         //width: 120px;
         color: white;
@@ -789,10 +811,12 @@
 
         &.activation {
             border-top-color: #673ab7;
+            border-top-color:  var(--clr-theme-2);
         }
 
         &.digital-film {
             border-top-color: #2196f3;
+            border-top-color:  var(--clr-theme-2);
         }
     }
     .ribbon .txt {

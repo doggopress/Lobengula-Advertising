@@ -263,6 +263,10 @@
 
     .hero-3-area__bg::before {
         background: var(--clr-common-black);
+
+        @media only screen and (max-width: 580px) {
+            background: #000000;
+        }
     }
 
     .hero-3__title {

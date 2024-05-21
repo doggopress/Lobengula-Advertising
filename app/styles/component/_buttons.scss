@@ -1027,18 +1027,40 @@
 			}
 		}
 
-		.link-separate-icon {
-			svg {
-				width: 50px;
-				height: auto;
-			}
-		}
+		
 
 		.stroke-text {
 			font-size: inherit;
 		}
 	}
 
+	.link-separate-icon {
+		svg {
+			width: 50px;
+			height: auto;
+
+			top: 0;
+			left: 0;
+			position: relative;
+			transform: scale(1) translateX(5px) translateY(-30%);
+
+			@media only screen and (max-width: 580px) {
+				transform: scale(.5) translateX(50%) translateY(-30%);
+			}
+		}
+	}
+}
+
+.link-scroll-area.lsl-2 {
+	.link-separate-icon {
+		svg {
+			transform: scale(1) translateX(-5px) translateY(-30%);
+
+			@media only screen and (max-width: 580px) {
+				transform: scale(.5) translateX(-50%) translateY(-30%);
+			}
+		}
+	}
 }
 
 //  case btn
