@@ -20,6 +20,7 @@ import { gsap } from 'gsap';
 import 'magnific-popup';
 import 'vanilla-cookieconsent';
 import '@lottiefiles/lottie-player';
+import { create } from '@lottiefiles/lottie-interactivity';
 import 'scripts/components/sidebar';
 import 'scripts/components/backToTop';
 import 'scripts/components/ajax-form.js';
@@ -44,6 +45,8 @@ const CUSTOM_SCROLLBAR = true;
 	console.warn = function(){};
 	console.error = function(){};
 	/**/
+
+	
 
 	/*======================================
 	25. Gsap RegisterPlugin
@@ -81,7 +84,112 @@ const CUSTOM_SCROLLBAR = true;
 
 	}
 
+	function loadLottieIcon(icon) {
+		return new Promise( async (resolve, reject) => {
+
+			let lottiePlayerIconWarrior = document.querySelector(`#brand-icon-${icon}`);
+			lottiePlayerIconWarrior.load(`https://cdn.cloud5ive.io/lobengula/lottie/ci_icons/${icon}.json`);
+
+			lottiePlayerIconWarrior.addEventListener(`ready`, () => {
+				resolve(lottiePlayerIconWarrior);
+			});
+		
+		});
+	}
+
+	function lottieScrub( results, swiper, progress ) {
+
+		/** /
+		let seek1 = Math.round(
+			parseInt(
+				(progress * 100).toFixed(0)
+			)
+		);
+
+		animation.seek(
+			`${seek1}%`
+		);
+		/**/
+
+		let animation;
+
+		switch (swiper.activeIndex) {
+
+			// WARRIOR
+			case 2:
+
+				let seek1 = Math.round(
+					//progress * 100
+					parseInt(
+						(progress * 100).toFixed(0)
+					)
+				);
+
+				animation = results[0];
+
+				/**/
+				console.log('Scrubbing warrior animation:', {
+					activeIndex: swiper.activeIndex, 
+					progress: progress,
+					seek: seek1
+				});
+				/**/
+
+				animation.seek(
+					`${seek1}%`
+				);
+				break;
+			// MAP
+			case 3:
+
+				let seek2 = Math.round(
+					parseInt(
+						(progress * 100).toFixed(0)
+					)
+				);
+				animation = results[1];
+				
+				animation.seek(
+					`${seek2}%`
+				);
+				break;
+			// HUT
+			case 4:
+
+				let seek3 = Math.round(
+					parseInt(
+						(progress * 100).toFixed(0)
+					)
+				);
+
+				animation = results[2];
+				
+				animation.seek(
+					`${seek3}%`
+				);
+				break;
+			// BOWL
+			case 5:
+			
+				let seek4 = Math.round(
+					parseInt(
+						(progress * 100).toFixed(0)
+					)
+				);
+
+				animation = results[3];
+				
+				animation.seek(
+					`${seek4}%`
+				);
+				break;
+		}
+
+	}
+
 	function createScenes( callback ) {
+
+		let aboutInitialised = false;
 
 		const sectionHome = document.querySelector('#home');
 		const portfolio__area = document.querySelector('.portfolio__area');
@@ -149,7 +257,7 @@ const CUSTOM_SCROLLBAR = true;
 				TLscenes.push({TimeLineScene: AnimationScenes.TLNavigation(sectionContact), element: '#contact'});
 			}
 	
-			TLscenes.forEach((scene, index )=>{
+			TLscenes.forEach( async (scene, index )=>{
 	
 				const sceneElem = document.querySelector(scene.element);
 				const sceneElemName = sceneElem.getAttribute('data-anchor').toLowerCase();
@@ -163,6 +271,12 @@ const CUSTOM_SCROLLBAR = true;
 						teamSlider = null;
 
 					if( (sceneElemName === 'about-us') ) {
+
+						//const ply = await loadLottieIcons();
+						//const ply = document.querySelector("#brand-icon-warrior");
+
+						//console.log('ply:', ply);
+
 						aboutSwiper = new AboutSlider();
 						//console.log(aboutSwiper);
 						aboutSwiper.detachEvents();
@@ -174,6 +288,39 @@ const CUSTOM_SCROLLBAR = true;
 								isEnd: swiper.isEnd
 							});
 
+							scroll.scrollbar.scrollIntoView(document.querySelector(`#about-us`), {
+								offsetTop: 0
+							});
+						});
+
+						/*
+						aboutSwiper.on('progress', (swiper, progress) => {
+							
+							switch (swiper.activeIndex) {
+								case 2:
+
+									//const totalFrames = animation.getLottie().totalFrames;
+
+									console.log('slide changing', {
+										activeIndex: swiper.activeIndex, 
+										progress: progress
+									});
+
+									ply.seek( 
+										Math.round(
+											parseInt(
+												(progress * 100).toFixed(0)
+											)
+										)
+									);
+	
+									
+									break;
+							
+								default:
+									break;
+							}
+							
 							scroll.scrollbar.scrollIntoView(document.querySelector(`#about-us`), {
 								offsetTop: 0
 							});
@@ -225,6 +372,29 @@ const CUSTOM_SCROLLBAR = true;
 								document.body.classList.add('about-in-view');
 							}
 							/**/
+
+							if( [undefined, null, false].includes(aboutInitialised) === true ) {
+
+								Promise.all([
+									loadLottieIcon('warrior'),
+									loadLottieIcon('map'),
+									loadLottieIcon('hut'),
+									loadLottieIcon('bowl')
+								])
+								.then( (results) =>{
+
+									aboutInitialised = results;
+
+									//let animation;
+									aboutSwiper.on('progress', (swiper, progress) => {
+
+										lottieScrub(results, swiper, progress);
+
+									});
+
+								});
+							}
+							
 						}
 
 						if( sceneElemName === 'our-team') {

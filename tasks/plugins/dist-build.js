@@ -14,6 +14,10 @@ module.exports = (env) => {
 				to: ''
 			},
 			{
+				from: 'app/assets/lottie',
+				to: 'lottie'
+			},
+			{
 				from: 'app/email_template',
 				to: 'email_template'
 			},

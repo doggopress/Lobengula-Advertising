@@ -71,6 +71,7 @@
     overflow: hidden;
     direction: ltr;
     background-color: var(--clr-common-white);
+    background-color: #FFFFFF;
 
     /** /
     .about-pin {
@@ -208,12 +209,20 @@
 
 .portfolio__title-wrap {
     background-color: var(--clr-common-white);
-    display: -webkit-box;
-    display: -ms-flexbox;
+    background-color: #FFFFFF;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
+
+    .portfolio-title-area {
+
+        img {
+            max-width: 35vw;
+
+            @media #{$xs} {
+                max-width: 100%;
+            }
+        }
+    }
 
     @media #{$lg,$md,$sm,$xs} {
         //background-color: var(--clr-bg-6);
@@ -270,6 +279,15 @@
         top: 0;
         z-index: -1;
         pointer-events: none;
+
+        .brand-icon-animated {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            display: block;
+            background: transparent;
+        }
 
         @media #{$md,$sm,$xs} {
             //display: none;
