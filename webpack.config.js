@@ -77,6 +77,19 @@ module.exports = env => {
 					minifyURLs: true,
 				}
 			}),
+			new HtmlWebpackPlugin({
+				hash: true,
+				filename: 'kraal.html',
+				template: './app/kraal.html',
+				minify: {
+					collapseWhitespace: true,
+					removeComments: true,
+					useShortDoctype: true,
+					minifyJS: true,
+					minifyCSS: true,
+					minifyURLs: true,
+				}
+			}),
 			plugins.distBuild,
 			plugins.distClean,
 			plugins.extractStyles,
