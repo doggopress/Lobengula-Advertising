@@ -121,13 +121,13 @@ const CUSTOM_SCROLLBAR = true;
 				let seek1 = Math.round(
 					//progress * 100
 					parseInt(
-						(progress * 100).toFixed(0)
+						(progress * 110).toFixed(0)
 					)
 				);
 
 				animation = results[0];
 
-				/**/
+				/** /
 				console.log('Scrubbing warrior animation:', {
 					activeIndex: swiper.activeIndex, 
 					progress: progress,

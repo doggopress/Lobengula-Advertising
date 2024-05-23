@@ -273,6 +273,7 @@
     .hero-3__title {
         color: var(--clr-common-white);
         text-align: left;
+        font-weight: normal;
 
         @media only screen and (max-width: 580px) {
             text-align: center;
