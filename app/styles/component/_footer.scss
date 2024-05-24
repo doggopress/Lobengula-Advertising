@@ -188,6 +188,26 @@
 }
 
 .joining-form {
+
+	#form-response {
+		margin-bottom: 1em;
+		p {
+			margin: 0 auto;
+			color: #000000;
+			text-align: center;
+		}
+
+		&.alert-danger {
+			p {
+				color: #58151c;
+			}
+		}
+		&.alert-success {
+			p {
+				color: #0a3622;
+			}
+		}
+	}
 	.input-wrapper {
 		display: flex;
 		gap: 10px;
@@ -253,6 +273,14 @@
 
 		.check {
 			margin-right: 10px;
+		}
+
+		&.error {
+			color: red;
+
+			a {
+				color: red;
+			}
 		}
 	}
 

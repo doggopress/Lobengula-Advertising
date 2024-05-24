@@ -93,6 +93,7 @@ module.exports = env => {
 			plugins.distBuild,
 			plugins.distClean,
 			plugins.extractStyles,
+			/** /
 			new CompressionPlugin({
 				algorithm: 'gzip',
 				compressionOptions: { level: 9 },
@@ -107,6 +108,7 @@ module.exports = env => {
 				minRatio: 0.8,
 				test: /\.(js|css|html|svg)$/,
 			}),
+			/**/
 			new webpack.ProvidePlugin({
 				$: 'jquery',
 				jQuery: 'jquery',

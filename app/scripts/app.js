@@ -531,7 +531,14 @@ const CUSTOM_SCROLLBAR = true;
 
 		const Form = new ContactForm();
 
-		Form.submitForm();
+		Form.submitForm({
+			onError: (evt)=> {
+				console.error('FORM ERROR:', error);
+			},
+			onSuccess: (evt)=> {
+				console.log('FORM SUBMITTED SUCCESSFULLY.');
+			}
+		});
 	
 		var windowOn = $(window);
 		let larger = 1600;

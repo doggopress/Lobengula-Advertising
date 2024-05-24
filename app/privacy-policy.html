@@ -920,7 +920,10 @@ Copyright © 2024 Lobengula Advertising
 											We're always on the lookout for the cutting-edge tech and brand innovations. Join us today.
 										</p>
 										<div class="joining-form p-relative">
-											<form action="#">
+											<form id="contact-form" action="./contact.php" novalidate autocomplete="off">
+												<div id="form-response" class="alert">
+													<p class="form-response-message"></p>
+												</div>
 												<div class="input-wrapper mb-30">
 													<div class="single-input-field field-email">
 														<input id="input-name" type="text" name="name" placeholder="Name" pattern="[a-zA-Z][a-zA-Z ]{2,}" required />

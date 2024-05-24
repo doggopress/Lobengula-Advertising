@@ -3,58 +3,117 @@ import $ from 'jquery';
 export default class ContactForm {
 
 	constructor(options = {}) {
-
+		this.options = Object.assign({
+            onRefresh: (evt) => {},
+			onError: (evt) => {},
+			onSuccess: (evt) => {}
+        }, options);
 	}
 
-	sendContact ( obj, callback ) {
+	async sendContact ( obj ) {
 
-		$.ajax({
-			type: 'POST',
-			method: 'POST',
-			url: window.location.protocol + '//' + window.location.host + '/contact.php',
-			withCredentials: false,
-			timeout: 0,
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			},
-			data: {
-				'name': obj.name,
-				'company': obj.company,
-				'email': obj.email,
-				'tel': obj.tel,
-				'message': obj.message,
-				'tos': obj.tos,
-			}
-		})
-		.done( function(data, status) {
+		return new Promise( async (resolve, reject) => {
 
-			data = JSON.parse(data);
+			$.ajax({
+				type: 'POST',
+				method: 'POST',
+				url: window.location.protocol + '//' + window.location.host + '/contact.php',
+				//url: 'https://staging.lobengulaadvertising.co.za/contact.php',
+				withCredentials: false,
+				timeout: 0,
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				},
+				data: {
+					'name': obj.name,
+					'company': obj.company,
+					'email': obj.email,
+					'tel': obj.tel,
+					'message': obj.message,
+					'tos': obj.tos,
+				}
+			})
+			.done( (serverResponse, status) => {
 
-			//console.log('SendContact Request:', data);
+				let data = JSON.parse(serverResponse);
 
-			callback( data.error, data, obj );
+				console.log('SendContact Request:', data);
+				//callback( data.error, data, obj );
 
-			//card.classList.add('done');
-			/** /
-			$('#form-response .message').text(data.message);
-			$.fancybox.open({
-				src: '#form-response',
-				type: 'inline'
-			});
-			/**/
+				if( data.error === true ) {
+
+					reject({
+						error: data.error,
+						input: null,
+						message: data.message
+					})
+
+				} else {
+
+					resolve({
+						error: data.error,
+						input: null,
+						message: data.message
+					});
+
+				}
+
+			})
+			.catch((e)=>{
+				let data = JSON.parse(e);
+
+				if( data ) {
+					reject({
+						error: data.error,
+						input: null,
+						message: data.message
+					});
+				} else {
+					reject(e);
+				}
+			})
 
 		});
 
 	}
 
-	submitForm() {
+	showMessage(error, input, message) {
+
+		if( error === true ) {
+
+			if( input !== null ) {
+				$(input).addClass('error');
+				input.blur();
+			}
+
+			
+			$('#form-response').addClass('alert-danger');
+			$('.form-response-message').text(message);
+			$('#form-response').fadeIn();
+
+			//this.fieldClassUpdate(error, fieldName)
+			//this.options.formMessageElem.innerHTML(message);
+			//FormContact.Utils.fadeIn( this.options.formMessageElem );
+		} else {
+
+			//$(input).removeClass('success');
+			$('#form-response').addClass('alert-success');
+
+			//input.blur();
+			$('.form-response-message').text(message);
+			$('#form-response').fadeIn();
+			
+		}
+    }
+
+	async validateInputs() {
 
 		const emailPattern = new RegExp(/^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$/);
 
-		$('#contact-form').on('submit', (evt)=>{
-			evt.preventDefault();
+		return new Promise( async (resolve, reject) => {
 
-			$('#form-response').fadeOut();
+			//const form = document.querySelector('#contact-form');
+			//$('#form-response').fadeOut();
 
 			const name = document.querySelector('form [name="name"]'),
 				company = document.querySelector('form [name="company"]'),
@@ -65,41 +124,30 @@ export default class ContactForm {
 
 			if ( name.value === '' ) {
 
-				console.error('Name missing');
-
-				$('#form-response .message').text('Please provide a name.');
-				$('#form-response').fadeIn();
-
-				//name.blur();
-
-				$(name).addClass('error');
+				reject({
+					error: true,
+					input: name,
+					message: 'Please provide a name.'
+				});
 
 			} else if ( company.value === '' ) {
 
 				$(name).addClass('success');
-
-				console.error('Company name missing');
-
-				$('#form-response .message').text('Please provide a company name.');
-				$('#form-response').fadeIn();
-
-				//company.blur();
-
-				$(company).addClass('error');
+				reject({
+					error: true,
+					input: company,
+					message: 'Please provide a company name.'
+				});
 
 			} else if ( !emailPattern.test( email.value ) ) {
 
 				$(name).addClass('success');
 				$(company).addClass('success');
-
-				console.error('Email address not valid');
-
-				$('#form-response .message').text('Email address not valid');
-				$('#form-response').fadeIn();
-
-				//email.blur();
-
-				$(email).addClass('error');
+				reject({
+					error: true,
+					input: email,
+					message: 'Please provide a valid email address.'
+				});
 
 			} else if ( tel.value === '' ) {
 
@@ -107,14 +155,11 @@ export default class ContactForm {
 				$(company).addClass('success');
 				$(email).addClass('success');
 
-				console.error('Contact number missing');
-
-				$('#form-response .message').text('Please provide a Contact number.');
-				$('#form-response').fadeIn();
-
-				//tel.blur();
-
-				$(tel).addClass('error');
+				reject({
+					error: true,
+					input: tel,
+					message: 'Please provide a Contact number.'
+				});
 
 			} else if ( message.value === '' ) {
 
@@ -123,14 +168,11 @@ export default class ContactForm {
 				$(email).addClass('success');
 				$(tel).addClass('success');
 
-				console.error('Message missing');
-
-				$('#form-response .message').text('Please provide a message.');
-				$('#form-response').fadeIn();
-
-				//message.blur();
-
-				$(message).addClass('error');
+				reject({
+					error: true,
+					input: message,
+					message: 'Please provide a message.'
+				});
 
 			} else if ( tos.checked === false ) {
 
@@ -140,14 +182,13 @@ export default class ContactForm {
 				$(tel).addClass('success');
 				$(message).addClass('success');
 
-				console.error('Please confirm your agreement with our privacy policy.');
+				$(['[for="privacy-policy"']).addClass('error');
 
-				//$('#form-response .message').text('Please provide a message.');
-				//$('#form-response').fadeIn();
-
-				//message.blur();
-
-				$(tos).addClass('error');
+				reject({
+					error: true,
+					input: tos,
+					message: 'Please confirm your agreement with our privacy policy.'
+				});
 
 			} else {
 
@@ -157,48 +198,68 @@ export default class ContactForm {
 				$(tel).addClass('success');
 				$(message).addClass('success');
 
-				document.querySelector('form button').classList.add('disabled');
+				//form.querySelector('button').classList.add('disabled');
+				//$('#form-response').fadeOut();
 
-				$('#form-response').fadeOut();
-
-				//card.classList.add('saving');
-				this.sendContact({
+				resolve({
 					'name': name.value,
 					'company': company.value,
 					'email': email.value,
 					'tel': tel.value,
 					'message': message.value,
 					'tos': tos.checked
-				}, function(err, data) {
-
-					if ( err === false ) {
-						console.log('Success', err, data);
-						$('#form-response').addClass('success');
-						$('#form-response .message').text('Thank you, your message was sent successfully.');
-						$('#form-response').fadeIn();
-
-						document.querySelector('.form-contact').reset();
-
-						setTimeout(function(){
-							document.querySelector('.form-contact-submit').classList.remove('disabled');
-							$('#form-response .message').text('');
-							//MicroModal.close('modal-contact-form');
-							$('#form-response').fadeOut();
-
-						}, 4000);
-					} else {
-
-						$('#form-response .message').addClass('error');
-						$('#form-response .message').text(data.message);
-						$('#form-response').fadeIn();
-
-						document.querySelector('.form-contact-submit').classList.remove('disabled');
-
-					}
-
 				});
-
 			}
+
+		});
+	}
+
+	submitForm() {
+
+		$('#contact-form').on('submit', (evt)=>{
+
+			evt.preventDefault();
+
+			this.validateInputs()
+			.then((results)=>{
+
+				return this.sendContact(results);
+
+			})
+			.then((serverResponse) => {
+
+				if ( serverResponse.error === false ) {
+					console.log('Success', serverResponse);
+
+					this.options.onSuccess(serverResponse);
+
+					$('#contact-form input, #contact-form input').removeClass('success error');
+
+					$('#contact-form').trigger('reset');
+
+					this.showMessage(serverResponse.error, null, serverResponse.message );
+
+				} else {
+
+					this.options.onError(serverResponse);
+
+					this.showMessage(serverResponse.error, null, serverResponse.message );
+
+				}
+			})
+			.catch((serverError)=>{
+
+				console.error('FORM ERROR:', serverError);
+
+				this.showMessage(
+					serverError.error, 
+					(serverError.input !== null) ? serverError.input: null,
+					serverError.message 
+				);
+
+				this.options.onError(serverError);
+				
+			});
 
 		});
 	}
