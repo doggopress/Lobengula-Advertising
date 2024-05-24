@@ -217,17 +217,25 @@
 
     .portfolio-title-area {
 
+        
+
         img {
             max-width: 30vw;
+            max-width: 25vw;
 
             @media #{$xs} {
-                max-width: 100%;
+                max-width: 80%;
+                margin: 0 auto;
             }
         }
     }
 
     @media #{$lg,$md,$sm,$xs} {
         //background-color: var(--clr-bg-6);
+    }
+
+    @media #{$xs} {
+        padding-bottom: 120px;
     }
 }
 
