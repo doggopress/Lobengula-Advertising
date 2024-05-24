@@ -102,6 +102,12 @@ export default class ContactForm {
 			//input.blur();
 			$('.form-response-message').text(message);
 			$('#form-response').fadeIn();
+
+			setTimeout(()=>{
+				$('#contact-form input, #contact-form textarea, #contact-form label').removeClass('success error');
+				$('#contact-form #form-response').removeClass('alert-danger alert-success');
+				$('.form-response-message').text('');
+			}, 5000 );
 			
 		}
     }
@@ -182,7 +188,7 @@ export default class ContactForm {
 				$(tel).addClass('success');
 				$(message).addClass('success');
 
-				$(['[for="privacy-policy"']).addClass('error');
+				$('[for="privacy-policy"]').addClass('error');
 
 				reject({
 					error: true,
@@ -223,6 +229,12 @@ export default class ContactForm {
 			this.validateInputs()
 			.then((results)=>{
 
+				$('#contact-form input, #contact-form textarea, #contact-form label').removeClass('success error');
+				$('#contact-form #form-response').removeClass('alert-danger');
+				
+				$('#contact-form #form-response').addClass('alert-info');
+				$('.form-response-message').text('Sending message...');
+
 				return this.sendContact(results);
 
 			})
@@ -233,13 +245,17 @@ export default class ContactForm {
 
 					this.options.onSuccess(serverResponse);
 
-					$('#contact-form input, #contact-form input').removeClass('success error');
-
+					$('#contact-form input, #contact-form textarea, #contact-form label').removeClass('success error');
+					$('#contact-form #form-response').removeClass('alert-danger alert-info');
+					
+					$('#contact-form #form-response').addClass('alert-success');
 					$('#contact-form').trigger('reset');
 
 					this.showMessage(serverResponse.error, null, serverResponse.message );
 
 				} else {
+
+					$('#contact-form #form-response').removeClass('alert-success alert-info');
 
 					this.options.onError(serverResponse);
 

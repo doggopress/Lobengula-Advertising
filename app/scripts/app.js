@@ -42,7 +42,7 @@ const CUSTOM_SCROLLBAR = true;
 	("use strict");
 
 	// HIDE LOGS ON PROD
-	/** /
+	/**/
 	console.log = function(){};
 	console.info = function(){};
 	console.warn = function(){};
