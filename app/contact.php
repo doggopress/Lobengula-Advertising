@@ -128,12 +128,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // DO ALL YOUR FORM PROCESSING HERE
     // Send
-    /* */
+    /* * /
     $to      = 'max.sibande@5ivedesign.io';
     $subject = 'LA Website Contact Form';
     //$message =
     $headers = 'From: no-reply@lobengulaadvertising.co.za' . "\r\n" .
-        'Reply-To: '. $_POST['emailAddress'] . "\r\n" .
+        'Reply-To: '. $_POST['email'] . "\r\n" .
         'Content-type: text/html' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
@@ -202,10 +202,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Recipients
         $mail->setFrom('noreply@lobengulaadvertising.co.za', 'Lobengula Advertising');
         $mail->addAddress($_POST['email'], $_POST['name']);     		
-        $mail->addAddress('info@lobengula.co.za', 'Lobengula Advertising');             	// Name is optional
-        //$mail->addAddress('max.sibande@5ivedesign.io', 'Max Sibande');             	// Name is optional
         $mail->addReplyTo('info@lobengula.co.za', 'Lobengula Advertising');
-        //$mail->addBCC('max.sibande@5ivedesign.io');
+        $mail->addBCC('info@lobengula.co.za', 'Lobengula Advertising');
+        //$mail->addBCC('max.sibande@5ivedesign.io', 'Max Sibande');
 
         // Attachments
         //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
