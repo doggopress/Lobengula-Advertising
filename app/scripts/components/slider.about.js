@@ -5,7 +5,7 @@ export default class AboutSlider {
 
     constructor(options = {}) {
 
-       return new Swiper(".about-slider", {
+        return new Swiper(".about-slider", {
             loop: false,
             parallax: false,
             freeMode: {

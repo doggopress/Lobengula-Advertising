@@ -169,6 +169,19 @@ export default class Scroll {
 			});
 		}
 
+		const scrollToTop = document.querySelector('.progress-wrap');
+		if( scrollToTop ) {
+			scrollToTop.addEventListener('click', (evt)=>{
+
+				evt.preventDefault();
+
+				this.scrollbar.scrollIntoView(document.getElementById('home'), {
+					offsetTop: 25
+				});
+
+			});
+		}
+
 		document.querySelectorAll('#mobile-menu ul li a').forEach((btn, index) => {
 			btn.addEventListener('click', (evt) => {
 

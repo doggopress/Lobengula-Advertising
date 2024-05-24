@@ -9,6 +9,8 @@ Copyright © 2024 Lobengula Advertising
 import $ from 'jquery';
 import 'scripts/vendor/bootstrap.bundle.min';
 
+import 'lazysizes';
+
 import Scroll from 'scripts/components/scroll.js';
 import ScrollMagic from 'scrollmagic';
 
@@ -20,7 +22,7 @@ import { gsap } from 'gsap';
 import 'magnific-popup';
 import 'vanilla-cookieconsent';
 import '@lottiefiles/lottie-player';
-import { create } from '@lottiefiles/lottie-interactivity';
+//import { create } from '@lottiefiles/lottie-interactivity';
 import 'scripts/components/sidebar';
 import 'scripts/components/backToTop';
 import 'scripts/components/ajax-form.js';
@@ -39,14 +41,12 @@ const CUSTOM_SCROLLBAR = true;
 	("use strict");
 
 	// HIDE LOGS ON PROD
-	/** /
+	/**/
 	console.log = function(){};
 	console.info = function(){};
 	console.warn = function(){};
-	console.error = function(){};
+	//console.error = function(){};
 	/**/
-
-	
 
 	/*======================================
 	25. Gsap RegisterPlugin
@@ -189,7 +189,10 @@ const CUSTOM_SCROLLBAR = true;
 
 	function createScenes( callback ) {
 
+		//let scroll;
 		let aboutInitialised = false;
+		let aboutSwiper = null,
+			teamSlider = null;
 
 		const sectionHome = document.querySelector('#home');
 		const portfolio__area = document.querySelector('.portfolio__area');
@@ -202,6 +205,17 @@ const CUSTOM_SCROLLBAR = true;
 		new MouseCursor();
 		new MenuMobile();
 		new TextScrollSlider();
+
+		function aboutSwiperRefresh() {
+
+			if( aboutSwiper  && aboutInitialised === true ) {
+				aboutSwiper.update();
+
+				scroll.scrollbar.scrollIntoView(document.querySelector(`#about-us`), {
+					offsetTop: -20
+				});
+			}
+		}
 
 		if( CUSTOM_SCROLLBAR === true ) {
 
@@ -267,8 +281,8 @@ const CUSTOM_SCROLLBAR = true;
 				if ( sceneElem ) {
 
 					//let aboutSwiper = (sceneElemName === 'About') ? new AboutSlider() : null;
-					let aboutSwiper = null,
-						teamSlider = null;
+					//let aboutSwiper = null,
+					//	teamSlider = null;
 
 					if( (sceneElemName === 'about-us') ) {
 
@@ -280,6 +294,8 @@ const CUSTOM_SCROLLBAR = true;
 						aboutSwiper = new AboutSlider();
 						//console.log(aboutSwiper);
 						aboutSwiper.detachEvents();
+
+						
 
 						/**/
 						aboutSwiper.on('slideChange', (swiper) => {
@@ -362,6 +378,7 @@ const CUSTOM_SCROLLBAR = true;
 
 						if( sceneElemName === 'about-us' && aboutSwiper !== null ) {
 							aboutSwiper.attachEvents();
+							//window.addEventListener( 'resize', aboutSwiperRefresh );
 
 							/**/
 							if ( !document.body.classList.contains('about-in-view') ) {
@@ -421,6 +438,7 @@ const CUSTOM_SCROLLBAR = true;
 						if( sceneElemName === 'about-us' && aboutSwiper !== null ) {
 							aboutSwiper.detachEvents();
 							document.body.classList.remove('about-in-view');
+							//window.removeEventListener( 'resize', aboutSwiperRefresh );
 						}
 						if( sceneElemName === 'our-team') {
 							teamSlider.detachEvents();
@@ -526,49 +544,8 @@ const CUSTOM_SCROLLBAR = true;
 		});
 
 		/*======================================
-		05. Data Background
-		========================================*/
-		$("[data-background]").each(function () {
-			$(this).css(
-				"background-image",
-				"url( " + $(this).attr("data-background") + "  )"
-			);
-		});
-
-		/*======================================
-		06. Data mask
-		========================================*/
-		$("[data-mask").each(function () {
-			$(this).css("-webkit-mask-image", "url( " + $(this).attr("data-mask") + "  )");
-			$(this).css("mask-image", "url( " + $(this).attr("data-mask") + "  )");
-		});
-
-
-		/*======================================
-		11. magnificPopup js 
-		========================================*/
-		/* magnificPopup img view */
-		$(".popup-image").magnificPopup({
-			type: "image",
-			gallery: {
-				enabled: true,
-			},
-		});
-
-		/* magnificPopup video view */
-		$(".popup-video").magnificPopup({
-			// disableOn: 700,
-			preloader: true,
-			type: 'iframe',
-			mainClass: '.popup-video',
-			// removalDelay: 160,
-			preloader: true,
-			fixedContentPos: true
-		});
-
-		/*======================================
 		20. video play 
-		========================================*/
+		========================================* /
 		if ($(".video-area").length > 0) {
 			const video = document.getElementById("video");
 			const circlePlayButton = document.getElementById("circle-play-b");
@@ -597,75 +574,161 @@ const CUSTOM_SCROLLBAR = true;
 		}
 
 		/*======================================
-		54. Hero-3 Image Animation JS
+		11. magnificPopup js 
 		========================================*/
-
-		const hero_3_imgs = gsap.utils.toArray(".hero-3_wrapper");
-		if (hero_3_imgs.length > 0) {
-			var hero_3_img = gsap.utils.toArray(".hero-3_wrapper");
-		}
-		else {
-			var hero_3_img = gsap.utils.toArray("#hero-3_wrapper");
-		}
-		const hero_3_img_cirlce = gsap.utils.toArray(".hero-3-item");
-		hero_3_img.forEach((btn, i) => {
-			$(btn).mousemove(function (e) {
-				callParallax(e);
-			});
-			function callParallax(e) {
-				parallaxIt(e, hero_3_img_cirlce[i], 500);
-
-				if (device_width < 1600 && device_width > 1400) {
-					parallaxIt(e, hero_3_img_cirlce[i], 200);
-				}
-				if (device_width < 1400 && device_width > 1200) {
-					parallaxIt(e, hero_3_img_cirlce[i], 80);
-				}
-				if (device_width < 1200 && device_width > 992) {
-					parallaxIt(e, hero_3_img_cirlce[i], 50);
-				}
-				if (device_width < 992 && device_width > 0) {
-					parallaxIt(e, hero_3_img_cirlce[i], 0);
-				}
-
-			}
-
-			function parallaxIt(e, target, movement) {
-				var $this = $(btn);
-				var relX = e.pageX - $this.offset().left;
-				var relY = e.pageY - $this.offset().top;
-
-				gsap.to(target, 0.5, {
-					x: ((relX - $this.width() / 2) / $this.width()) * movement,
-					y: ((relY - $this.height() / 2) / $this.height()) * movement,
-					ease: Power2.easeOut,
-				});
-			}
-			$(btn).mouseleave(function (e) {
-				gsap.to(hero_3_img_cirlce[i], 0.5, {
-					x: 0,
-					y: 0,
-					ease: Power2.easeOut,
-				});
-			});
+		/* magnificPopup img view */
+		$(".popup-image").magnificPopup({
+			type: "image",
+			gallery: {
+				enabled: true,
+			},
 		});
 
-		/*----------------------------------------
-		55. Slider activation Js 
-		Personal Portfolio Hero Slider Activation
-		-----------------------------------------*/
-		if (jQuery(".slider-active").length > 0) {
-			let slider_active = new Swiper(".slider-active", {
-				slidesPerView: 1,
-				loop: true,
-				effect: 'fade',
-				autoplay: true,
-				autoplay: {
-					delay: 3000,
-					disableOnInteraction: false,
+		/* magnificPopup video view */
+
+		/**/
+		$(".popup-video").on('click', (evt)=>{
+			evt.preventDefault();
+
+			const link = evt.currentTarget;
+
+			if( link ) {
+				const url = link.getAttribute('href');
+				$.magnificPopup.open({
+					preloader: true,
+					fixedContentPos: true,
+					items: {
+						src: `
+						<div class="white-popup">
+							<span class="icon-box">
+								<svg width="24" height="26" viewBox="0 0 24 26" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M23.1646 13L0.66455 25.9904L0.664551 0.00961778L23.1646 13Z"
+										fill="white"></path>
+								</svg>
+							</span>
+							<video
+								crossorigin="anonymous"
+								preload="metadata"
+								disablepictureinpicture
+								disableremoteplayback
+								class="js-wwd-video"
+								playsinline autoplay controls controlslist="nodownload noremoteplayback noplaybackrate">
+									<source src="${url}" type="video/mp4" media="all and (max-width: 768px)" >
+									<source src="${url}" type="video/mp4" media="all and (min-width: 769px)" >
+							</video>
+						</div>`, // can be a HTML string, jQuery object, or CSS selector
+						type: 'inline'
+					},
+					callbacks: {
+						open: function() {
+							// Will fire when this exact popup is opened
+							// this - is Magnific Popup object
+							const video = document.querySelector('.mfp-content video');
+							const circlePlayButton = document.querySelector(".mfp-content .icon-box");
+
+							console.log('VIDEO OPEN:', video, this );
+							if( video ) {
+
+								if( circlePlayButton ) {
+
+									circlePlayButton.addEventListener('click', (evt)=>{
+										video.play();
+									});
+								}
+
+								video.play();
+								video.addEventListener("playing", function () {
+									circlePlayButton.style.opacity = 0;
+								});
+								video.addEventListener("pause", function () {
+									circlePlayButton.style.opacity = 1;
+								});
+								video.addEventListener("ended", function () {
+									circlePlayButton.style.opacity = 1;
+								});
+							}
+						},
+						close:  () => {
+							// Will fire when popup is closed
+							//video.removeEventListener();
+							console.log('VIDEO CLOSED:');
+						},
+						updateStatus: function(data) {
+							console.log('Status changed', data);
+							// "data" is an object that has two properties:
+							// "data.status" - current status type, can be "loading", "error", "ready"
+							// "data.text" - text that will be displayed (e.g. "Loading...")
+							// you may modify this properties to change current status or its text dynamically
+						},
+						imageLoadComplete: function() {
+							// fires when image in current popup finished loading
+							// avaiable since v0.9.0
+							console.log('Image loaded');
+						},
+					}
+				});
+			}
+		});
+		/**/
+
+		/** /
+		$(".popup-video").magnificPopup({
+			// disableOn: 700,
+			preloader: true,
+			type: 'iframe',
+			mainClass: '.popup-video',
+			// removalDelay: 160,
+			preloader: true,
+			fixedContentPos: true,
+			callbacks: {
+				open: function() {
+					// Will fire when this exact popup is opened
+					// this - is Magnific Popup object
+					const video = document.querySelector('.mfp-content video');
+					console.log('VIDEO OPEN:', video, this );
+					if( video ) {
+						video.play();
+					}
 				},
-			});
-		}
+				close:  () => {
+					// Will fire when popup is closed
+					console.log('VIDEO CLOSED:');
+				},
+				updateStatus: function(data) {
+					console.log('Status changed', data);
+					// "data" is an object that has two properties:
+					// "data.status" - current status type, can be "loading", "error", "ready"
+					// "data.text" - text that will be displayed (e.g. "Loading...")
+					// you may modify this properties to change current status or its text dynamically
+				},
+				imageLoadComplete: function() {
+					// fires when image in current popup finished loading
+					// avaiable since v0.9.0
+					console.log('Image loaded');
+				},
+			}
+		});
+		/**/
+
+		/*======================================
+		05. Data Background
+		========================================*/
+		$("[data-background]").each(function () {
+			$(this).css(
+				"background-image",
+				"url( " + $(this).attr("data-background") + "  )"
+			);
+		});
+
+		/*======================================
+		06. Data mask
+		========================================*/
+		$("[data-mask").each(function () {
+			$(this).css("-webkit-mask-image", "url( " + $(this).attr("data-mask") + "  )");
+			$(this).css("mask-image", "url( " + $(this).attr("data-mask") + "  )");
+		});
 
 		/*======================================
 		56. Progress Bar Animation JS
