@@ -116,17 +116,42 @@ const CUSTOM_SCROLLBAR = true;
 
 		switch (swiper.activeIndex) {
 
+			// SHIELD
+			case 1:
+
+				let seek0 = Math.round(
+					//progress * 100
+					parseInt(
+						(progress * 200).toFixed(0)
+					)
+				);
+
+				animation = results[0];
+
+				/** /
+				console.log('Scrubbing warrior animation:', {
+					activeIndex: swiper.activeIndex, 
+					progress: progress,
+					seek: seek1
+				});
+				/**/
+
+				animation.seek(
+					`${seek0}%`
+				);
+				break;
+
 			// WARRIOR
 			case 2:
 
 				let seek1 = Math.round(
 					//progress * 100
 					parseInt(
-						(progress * 110).toFixed(0)
+						(progress * 100).toFixed(0)
 					)
 				);
 
-				animation = results[0];
+				animation = results[1];
 
 				/** /
 				console.log('Scrubbing warrior animation:', {
@@ -148,7 +173,7 @@ const CUSTOM_SCROLLBAR = true;
 						(progress * 100).toFixed(0)
 					)
 				);
-				animation = results[1];
+				animation = results[2];
 				
 				animation.seek(
 					`${seek2}%`
@@ -163,7 +188,7 @@ const CUSTOM_SCROLLBAR = true;
 					)
 				);
 
-				animation = results[2];
+				animation = results[3];
 				
 				animation.seek(
 					`${seek3}%`
@@ -174,11 +199,11 @@ const CUSTOM_SCROLLBAR = true;
 			
 				let seek4 = Math.round(
 					parseInt(
-						(progress * 100).toFixed(0)
+						(progress * 88).toFixed(0)
 					)
 				);
 
-				animation = results[3];
+				animation = results[4];
 				
 				animation.seek(
 					`${seek4}%`
@@ -399,6 +424,7 @@ const CUSTOM_SCROLLBAR = true;
 							if( [undefined, null, false].includes(aboutInitialised) === true ) {
 
 								Promise.all([
+									loadLottieIcon('shield'),
 									loadLottieIcon('warrior'),
 									loadLottieIcon('map'),
 									loadLottieIcon('hut'),
