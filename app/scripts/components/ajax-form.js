@@ -91,9 +91,15 @@ export default class ContactForm {
 			$('.form-response-message').text(message);
 			$('#form-response').fadeIn();
 
-			//this.fieldClassUpdate(error, fieldName)
-			//this.options.formMessageElem.innerHTML(message);
-			//FormContact.Utils.fadeIn( this.options.formMessageElem );
+			/** /
+			const t1 = setTimeout(()=>{
+				$('#contact-form input, #contact-form textarea, #contact-form label').removeClass('success error');
+				$('#contact-form #form-response').removeClass('alert-danger alert-success');
+				$('.form-response-message').text('');
+				clearTimeout(t1);
+			}, 5000 );
+			/**/
+
 		} else {
 
 			//$(input).removeClass('success');
@@ -103,10 +109,11 @@ export default class ContactForm {
 			$('.form-response-message').text(message);
 			$('#form-response').fadeIn();
 
-			setTimeout(()=>{
+			const t1 = setTimeout(()=>{
 				$('#contact-form input, #contact-form textarea, #contact-form label').removeClass('success error');
 				$('#contact-form #form-response').removeClass('alert-danger alert-success');
 				$('.form-response-message').text('');
+				clearTimeout(t1);
 			}, 5000 );
 			
 		}
