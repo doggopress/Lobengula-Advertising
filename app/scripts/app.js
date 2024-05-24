@@ -25,9 +25,10 @@ import '@lottiefiles/lottie-player';
 //import { create } from '@lottiefiles/lottie-interactivity';
 import 'scripts/components/sidebar';
 import 'scripts/components/backToTop';
-import 'scripts/components/ajax-form.js';
 import 'scripts/components/service-accordion.js';
 
+
+import ContactForm from 'scripts/components/ajax-form.js';
 import AboutSlider from 'scripts/components/slider.about';
 import TeamSlider from 'scripts/components/slider.team';
 import MenuMobile from 'scripts/components/menu.mobile';
@@ -41,7 +42,7 @@ const CUSTOM_SCROLLBAR = true;
 	("use strict");
 
 	// HIDE LOGS ON PROD
-	/**/
+	/** /
 	console.log = function(){};
 	console.info = function(){};
 	console.warn = function(){};
@@ -366,6 +367,8 @@ const CUSTOM_SCROLLBAR = true;
 					currentScene.on('enter', () => {
 						console.log(`${sceneElemName} Entered`);
 
+						
+
 						//document.body.classList.add(`page-active-${sceneElemName}`);
 						const menuBtn = document.querySelector(`.main-menu ul li a[href="#${sceneElemName}"`);
 						//const menuBtnMobi = document.querySelector(`.sidebar-menu-area .menu-list .menu-item a[href="#${sceneElemName}"`);
@@ -377,16 +380,24 @@ const CUSTOM_SCROLLBAR = true;
 						//}
 
 						if( sceneElemName === 'about-us' && aboutSwiper !== null ) {
-							aboutSwiper.attachEvents();
+							//aboutSwiper.attachEvents();
 							//window.addEventListener( 'resize', aboutSwiperRefresh );
 
 							/**/
 							if ( !document.body.classList.contains('about-in-view') ) {
-								scroll.scrollbar.scrollIntoView(document.querySelector(`#about-us`), {
-									offsetTop: 0
-								});
 
-								document.body.classList.add('about-in-view');
+								//aboutSwiper.slideTo(0,5000,false);
+
+								//setTimeout(()=>{
+
+									scroll.scrollbar.scrollIntoView(document.querySelector(`#about-us`), {
+										offsetTop: 0
+									});
+
+									document.body.classList.add('about-in-view');
+								//}, 5000);
+							} else {
+								//aboutSwiper.slideTo(0,5000,false);
 							}
 							/**/
 
@@ -517,6 +528,10 @@ const CUSTOM_SCROLLBAR = true;
 	});
 
 	document.addEventListener("DOMContentLoaded", () => {
+
+		const Form = new ContactForm();
+
+		Form.submitForm();
 	
 		var windowOn = $(window);
 		let larger = 1600;
@@ -597,6 +612,9 @@ const CUSTOM_SCROLLBAR = true;
 				$.magnificPopup.open({
 					preloader: true,
 					fixedContentPos: true,
+					mainClass: 'mfp-fade',
+					// Delay in milliseconds before popup is removed
+  					removalDelay: 300,
 					items: {
 						src: `
 						<div class="white-popup">

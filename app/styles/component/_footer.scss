@@ -203,10 +203,28 @@
 		input,
 		textarea {
 			background: transparent;
-			border: 0;
+			border: 1px solid transparent;
 			color: var(--clr-common-white);
 			outline: 0;
 			width: 100%;
+
+			&.error {
+				//border-color: red;
+				color: red;
+
+				&::placeholder {
+					color: red;
+				}
+			}
+
+			&.success {
+				//border-color: red;
+				color: green;
+
+				&::placeholder {
+					color: green;
+				}
+			}
 		}
 	}
 

@@ -107,6 +107,75 @@ export default class Scroll {
 		}
 	}
 
+	scrollHome() {
+		document.body.classList.add('scrolling-active');
+
+		const home = document.getElementById('home');
+		if( home ) {
+
+			const dimensions = home.getBoundingClientRect();
+
+			this.scrollbar.scrollTo(0, dimensions.y, 500, {
+				/**
+				 * Callback function that will be invoked when easing animation is done
+				 */
+				callback: (sb) => {
+					console.log('[scrollHome] SCROLL COMPLETE');
+					document.body.classList.remove('scrolling-active');
+				},
+			
+				/**
+				 * Custom easing function, default is `easeOutCubic`.
+				 * You can find more easing function on <https://github.com/danro/easing-js>
+				 */
+				//easing: (percent: number) => number;
+			});
+
+		}
+	}
+
+	scrollToSection(elementId) {
+
+
+		this.scrollbar.scrollIntoView(document.querySelector(elementId), {
+			offsetTop: 25
+		});
+
+		return;
+
+		document.body.classList.add('scrolling-active');
+		
+
+		const section = document.querySelector(elementId);
+		if( section ) {
+
+			const dimensions = section.getBoundingClientRect();
+
+			console.log(`Scrolling to section: ${elementId}`, dimensions);
+
+			this.scrollbar.scrollTo(0, dimensions.y, 500, {
+				/**
+				 * Callback function that will be invoked when easing animation is done
+				 */
+				callback: (sb) => {
+					console.log('[scrollToSection] SCROLL COMPLETE');
+					document.body.classList.remove('scrolling-active');
+				},
+			
+				/**
+				 * Custom easing function, default is `easeOutCubic`.
+				 * You can find more easing function on <https://github.com/danro/easing-js>
+				 */
+				//easing: (percent: number) => number;
+			});
+
+		}
+
+		//this.scrollbar.scrollIntoView(document.querySelector(sectionId), {
+		//	offsetTop: 25
+		//});
+	}
+
     initEvents(){
         // eslint-disable-next-line no-underscore-dangle
         let _this = this;
@@ -175,9 +244,10 @@ export default class Scroll {
 
 				evt.preventDefault();
 
-				this.scrollbar.scrollIntoView(document.getElementById('home'), {
-					offsetTop: 25
-				});
+				//this.scrollbar.scrollIntoView(document.getElementById('home'), {
+				//	offsetTop: 0
+				//});
+				this.scrollHome();
 
 			});
 		}
@@ -191,9 +261,10 @@ export default class Scroll {
 				if( sectionId ) {
 					//gsap.to(window, {duration: 1, scrollTo:{y:'#section' + (index + 1), offsetY:70}});
 					if( document.body.classList.contains('page-home') ) {
-						this.scrollbar.scrollIntoView(document.querySelector(sectionId), {
-							offsetTop: 25
-						});
+						this.scrollToSection(sectionId);
+						//this.scrollbar.scrollIntoView(document.querySelector(sectionId), {
+						//	offsetTop: 25
+						//});
 					} else {
 						//window.location.href=
 						window.open(`${window.location.origin}/${sectionId}`,'_self'); 
@@ -211,9 +282,12 @@ export default class Scroll {
 				if( sectionId ) {
 					//gsap.to(window, {duration: 1, scrollTo:{y:'#section' + (index + 1), offsetY:70}});
 					if( document.body.classList.contains('page-home') ) {
-						this.scrollbar.scrollIntoView(document.querySelector(sectionId), {
-							offsetTop: 25
-						});
+
+						this.scrollToSection(sectionId);
+						//this.scrollbar.scrollIntoView(document.querySelector(sectionId), {
+						//	offsetTop: 25
+						//});
+						
 					} else {
 						//window.location.href=
 						window.open(`${window.location.origin}/${sectionId}`,'_self'); 
@@ -233,9 +307,7 @@ export default class Scroll {
 				if( sectionId ) {
 					//gsap.to(window, {duration: 1, scrollTo:{y:'#section' + (index + 1), offsetY:70}});
 					if( document.body.classList.contains('page-home') ) {
-						this.scrollbar.scrollIntoView(document.querySelector(sectionId), {
-							offsetTop: 25
-						});
+						this.scrollHome();
 					} else {
 						//window.location.href=
 						window.open(`${window.location.origin}/${sectionId}`,'_self'); 
@@ -253,9 +325,10 @@ export default class Scroll {
 
 				const sectionId = evt.currentTarget.getAttribute('data-target');
 				if( sectionId ) {
-					this.scrollbar.scrollIntoView(document.querySelector(sectionId), {
-						offsetTop: 25
-					});
+					this.scrollToSection(sectionId);
+					//this.scrollbar.scrollIntoView(document.querySelector(sectionId), {
+					//	offsetTop: 25
+					//});
 				}
 
 				
