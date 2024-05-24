@@ -201,22 +201,10 @@ const CUSTOM_SCROLLBAR = true;
 		const sectionOurWork = document.querySelector('#our-work');
 		const team__area = document.querySelector('#our-team');
 		const sectionContact = document.querySelector('#contact');
-		
 
 		new MouseCursor();
 		new MenuMobile();
 		new TextScrollSlider();
-
-		function aboutSwiperRefresh() {
-
-			if( aboutSwiper  && aboutInitialised === true ) {
-				aboutSwiper.update();
-
-				scroll.scrollbar.scrollIntoView(document.querySelector(`#about-us`), {
-					offsetTop: -20
-				});
-			}
-		}
 
 		if( CUSTOM_SCROLLBAR === true ) {
 
@@ -234,6 +222,24 @@ const CUSTOM_SCROLLBAR = true;
 					callback();
 				}
 			});
+
+			function aboutSwiperRefresh() {
+
+				//if( aboutSwiper && aboutInitialised === true ) {
+				//if( aboutSwiper ) {
+					console.log('Update About Swiper');
+					aboutSwiper.update();
+
+					if( document.body.classList.contains('about-in-view') ) {
+	
+						scroll.scrollbar.scrollIntoView(document.querySelector(`#about-us`), {
+							offsetTop: 0
+						});
+					}
+				//}
+			}
+
+			window.addEventListener( 'resize', aboutSwiperRefresh );
 			
 			let duration = 1;
 			const controller = new ScrollMagic.Controller();
@@ -287,17 +293,8 @@ const CUSTOM_SCROLLBAR = true;
 
 					if( (sceneElemName === 'about-us') ) {
 
-						//const ply = await loadLottieIcons();
-						//const ply = document.querySelector("#brand-icon-warrior");
-
-						//console.log('ply:', ply);
-
 						aboutSwiper = new AboutSlider();
-						//console.log(aboutSwiper);
 						aboutSwiper.detachEvents();
-
-						
-
 						/**/
 						aboutSwiper.on('slideChange', (swiper) => {
 							console.log('slide changed', {
@@ -366,8 +363,6 @@ const CUSTOM_SCROLLBAR = true;
 	
 					currentScene.on('enter', () => {
 						console.log(`${sceneElemName} Entered`);
-
-						
 
 						//document.body.classList.add(`page-active-${sceneElemName}`);
 						const menuBtn = document.querySelector(`.main-menu ul li a[href="#${sceneElemName}"`);
@@ -533,10 +528,10 @@ const CUSTOM_SCROLLBAR = true;
 
 		Form.submitForm({
 			onError: (evt)=> {
-				console.error('FORM ERROR:', error);
+				console.error('[APP] FORM ERROR:', error);
 			},
 			onSuccess: (evt)=> {
-				console.log('FORM SUBMITTED SUCCESSFULLY.');
+				console.log('[APP] FORM SUBMITTED SUCCESSFULLY.');
 			}
 		});
 	
