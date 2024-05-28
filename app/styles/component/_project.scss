@@ -535,13 +535,13 @@ body.page-kraal {
         .iframe{
             background-image: none;
             width: 100dvw;
-            min-height: 100dvh;
+            min-height: calc(100dvh - 100px);
             padding-top: 0;
             padding-bottom: 0;
             align-content: flex-start;
 
             iframe {
-                min-height: 100dvh;
+                min-height: calc(100dvh - 100px);
             }
 
             &:after,

@@ -264,6 +264,15 @@
 	padding-top: 0;
 	padding-bottom: 5dvh;
 	min-height: 100dvh;
+
+	.section__title-3-wrapper {
+		display: none;
+	}
+
+	.case-study.container-fluid {
+		padding-top: 60px;
+		padding-bottom: 60px;	
+	}
 }
 
 .case-study-slider {
