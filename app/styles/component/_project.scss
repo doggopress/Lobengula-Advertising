@@ -457,7 +457,28 @@
     .iframe {
         display: block;
         position: relative;
-        background-color: var(--clr-common-black);
+        padding-top: 60px;
+        padding-bottom: 120px;
+        min-height: 50dvh;
+        align-content: center;
+
+        //background-image: url('../assets/images/shapes/idea.png');
+        //background-image: url('../assets/images/bg/noise-2.png');
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+        //background-color: var(--clr-common-black);
+
+        .area__btn {
+            //left: 50%;
+            //top:50%;
+            text-align: center;
+
+            .icon-box {
+                background: var(--clr-common-white);;
+                padding: 5px;
+            }
+        }
 
         .col-12 {
             padding: 0;
