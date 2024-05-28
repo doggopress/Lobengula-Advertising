@@ -463,15 +463,44 @@
         align-content: center;
 
         //background-image: url('../assets/images/shapes/idea.png');
-        //background-image: url('../assets/images/bg/noise-2.png');
+        background-image: url('../assets/images/bg/kraal2.jpg');
         background-size: cover;
         background-position: top center;
         background-repeat: no-repeat;
         //background-color: var(--clr-common-black);
 
+        &:after {
+            content: '';
+            position: absolute;
+            top:100px;
+            left:0;
+            width:100%;
+            height: calc(100% - 100px);
+            z-index: 1;
+            pointer-events: none;
+            background-color: rgba(0,0,0,.8);
+            background: linear-gradient(0deg, rgba(28,28,28,1) 0%, rgba(28,28,28,0.23993347338935578) 66%, rgba(28,28,28,0) 100%);
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            //background-color: #1c1c1c;
+            background: linear-gradient(180deg, rgba(28,28,28,1) 0%, rgba(28,28,28,0.23993347338935578) 66%, rgba(28,28,28,0) 100%);
+        }
+
         .area__btn {
             //left: 50%;
             //top:50%;
+            z-index: 2;
+            display: block;
+            position: relative;
             text-align: center;
 
             .icon-box {
@@ -491,6 +520,11 @@
             min-height:80dvh;
             margin:0 auto;
             background-color: var(--clr-common-black);
+        }
+
+        @media only screen and (max-width: 580px) {
+            min-height: 30dvh;
+            padding-top: 20px;
         }
     }
 }
