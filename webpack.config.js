@@ -90,6 +90,58 @@ module.exports = env => {
 					minifyURLs: true,
 				}
 			}),
+			new HtmlWebpackPlugin({
+				hash: true,
+				filename: 'case-studies/bali/index.html',
+				template: './app/case-study-bali.html',
+				minify: {
+					collapseWhitespace: true,
+					removeComments: true,
+					useShortDoctype: true,
+					minifyJS: true,
+					minifyCSS: true,
+					minifyURLs: true,
+				}
+			}),
+			new HtmlWebpackPlugin({
+				hash: true,
+				filename: 'case-studies/han/index.html',
+				template: './app/case-study-sb-han.html',
+				minify: {
+					collapseWhitespace: true,
+					removeComments: true,
+					useShortDoctype: true,
+					minifyJS: true,
+					minifyCSS: true,
+					minifyURLs: true,
+				}
+			}),
+			new HtmlWebpackPlugin({
+				hash: true,
+				filename: 'case-studies/flp/index.html',
+				template: './app/case-study-sb-flexible-life-plan.html',
+				minify: {
+					collapseWhitespace: true,
+					removeComments: true,
+					useShortDoctype: true,
+					minifyJS: true,
+					minifyCSS: true,
+					minifyURLs: true,
+				}
+			}),
+			new HtmlWebpackPlugin({
+				hash: true,
+				filename: 'case-studies/sb-ee/index.html',
+				template: './app/case-study-sb-employee-experiences.html',
+				minify: {
+					collapseWhitespace: true,
+					removeComments: true,
+					useShortDoctype: true,
+					minifyJS: true,
+					minifyCSS: true,
+					minifyURLs: true,
+				}
+			}),
 			plugins.distBuild,
 			plugins.distClean,
 			plugins.extractStyles,

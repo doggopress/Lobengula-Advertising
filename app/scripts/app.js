@@ -31,6 +31,7 @@ import 'scripts/components/service-accordion.js';
 import ContactForm from 'scripts/components/ajax-form.js';
 import AboutSlider from 'scripts/components/slider.about';
 import TeamSlider from 'scripts/components/slider.team';
+import CaseStudySlider from 'scripts/components/slider.case-studies';
 import MenuMobile from 'scripts/components/menu.mobile';
 import MouseCursor from 'scripts/components/mouse.cursor';
 import TextScrollSlider from 'scripts/components/slider.text-scroll';
@@ -218,7 +219,8 @@ const CUSTOM_SCROLLBAR = true;
 		//let scroll;
 		let aboutInitialised = false;
 		let aboutSwiper = null,
-			teamSlider = null;
+			teamSlider = null,
+			caseStudySlider = null;
 
 		const sectionHome = document.querySelector('#home');
 		const portfolio__area = document.querySelector('.portfolio__area');
@@ -226,6 +228,11 @@ const CUSTOM_SCROLLBAR = true;
 		const sectionOurWork = document.querySelector('#our-work');
 		const team__area = document.querySelector('#our-team');
 		const sectionContact = document.querySelector('#contact');
+
+		if( document.querySelector('.case-study-slider') ) {
+
+			caseStudySlider = new CaseStudySlider();
+		}
 
 		new MouseCursor();
 		new MenuMobile();
@@ -264,8 +271,6 @@ const CUSTOM_SCROLLBAR = true;
 				//}
 			}
 
-			window.addEventListener( 'resize', aboutSwiperRefresh );
-			
 			let duration = 1;
 			const controller = new ScrollMagic.Controller();
 			const sections = gsap.utils.toArray(".wf_panel");
@@ -275,6 +280,7 @@ const CUSTOM_SCROLLBAR = true;
 				TLscenes.push({TimeLineScene: AnimationScenes.TLNavigation(sectionHome), element: '#home'});
 			}
 			if( portfolio__area ) {
+				window.addEventListener( 'resize', aboutSwiperRefresh );
 				//return;
 				TLscenes.push(
 					{
@@ -291,6 +297,8 @@ const CUSTOM_SCROLLBAR = true;
 				TLscenes.push({TimeLineScene: AnimationScenes.TLsceneProject(), element: '.project-area-2'});
 			}
 			if( team__area ) {
+
+				
 				//return;
 				TLscenes.push(
 					{
