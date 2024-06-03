@@ -174,7 +174,7 @@ module.exports = env => {
 		],
 		devServer: {
 			open: false,
-			port: 5001,
+			port: 5002,
 			compress: true,
 			https: {
 				key: '../../conf/crt/cloud5ive/localhost.key',
